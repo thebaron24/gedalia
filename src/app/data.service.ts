@@ -30,7 +30,7 @@ export class DataService {
 
 	getPages() {
     console.log("from getPages: ", this.config);
-    console.log("from getPages: ", this.config['apidomain']);
+    //console.log("from getPages: ", this.config['apidomain']);
   	//return this.getArray(this.config['apidomain'] + this.config['pages']);
 	}
 }
