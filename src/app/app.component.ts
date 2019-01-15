@@ -17,6 +17,8 @@ export class AppComponent {
   	//	console.log(data);
   	//	this.pages = data;
   	//});
+
+    dataService.getPages();
   }
 
 }

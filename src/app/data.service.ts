@@ -16,7 +16,7 @@ export class DataService {
   	this.getJson("http://www.baronwilson.io/assets/config.json").subscribe(data => {
   		console.log(data);
   		this.config = data;
-  		//this.apidomain =  this.config['apidomain'];
+  		this.apidomain =  this.config['apidomain'];
   	});
   }
 
@@ -29,6 +29,8 @@ export class DataService {
 	}
 
 	getPages() {
+    console.log("from getPages: ", this.config);
+    console.log("from getPages: ", this.config['apidomain']);
   	//return this.getArray(this.config['apidomain'] + this.config['pages']);
 	}
 }
