@@ -11,15 +11,7 @@ export class AppComponent implements OnInit {
 
   pages;
 
-  constructor(private dataService: DataService) {
-
-  	//dataService.getPages().subscribe(data => {
-  	//	console.log(data);
-  	//	this.pages = data;
-  	//});
-
-    dataService.getPages();
-  }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
     // ...

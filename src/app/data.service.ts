@@ -1,4 +1,4 @@
-import { Injectable, Inject, Optional } from '@angular/core';
+import { OnInit, Injectable, Inject, Optional } from '@angular/core';
 import { Location, APP_BASE_HREF } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -6,18 +6,21 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService implements OnInit {
 
 	config: Object;
 	apidomain: String;
 
-  constructor(private http: HttpClient) {
-  	//get config
-  	this.getJson("http://www.baronwilson.io/assets/config.json").subscribe(data => {
-  		console.log(data);
-  		this.config = data;
-  		this.apidomain =  this.config['apidomain'];
-  	});
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    // ...
+    //get config
+    this.getJson("http://www.baronwilson.io/assets/config.json").subscribe(data => {
+      console.log(data);
+      this.config = data;
+      this.apidomain =  this.config['apidomain'];
+    });
   }
 
   getJson(url) {
