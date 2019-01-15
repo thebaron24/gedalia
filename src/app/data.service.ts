@@ -13,7 +13,7 @@ export class DataService {
 
   constructor(private http: HttpClient) {
   	//get config
-  	this.getJson("/assets/config.json").subscribe(data => {
+  	this.getJson("http://www.baronwilson.io/assets/config.json").subscribe(data => {
   		console.log(data);
   		this.config = data;
   		this.apidomain =  this.config['apidomain'];
