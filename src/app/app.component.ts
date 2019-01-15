@@ -13,10 +13,10 @@ export class AppComponent {
 
   constructor(private dataService: DataService) {
 
-  	dataService.getPages().subscribe(data => {
-  		console.log(data);
-  		this.pages = data;
-  	});
+  	//dataService.getPages().subscribe(data => {
+  	//	console.log(data);
+  	//	this.pages = data;
+  	//});
   }
 
 }
