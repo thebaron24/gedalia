@@ -1,26 +1,27 @@
-import { OnInit, Injectable, Inject, Optional } from '@angular/core';
-import { Location, APP_BASE_HREF } from '@angular/common';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Subject }    from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService implements OnInit {
+export class DataService {
 
-	config: Object;
-	apidomain: String;
+  // Observable string sources
+  private configSource = new Subject<Object>();
+  private pagesSource  = new Subject<any[]>();
+  private postsSource  = new Subject<any[]>();
+ 
+  // Observable string streams
+  config$ = this.configSource.asObservable();
+  pages$  = this.pagesSource.asObservable();
+  posts$  = this.postsSource.asObservable();
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit() {
-    // ...
+  constructor(private http: HttpClient) {
     //get config
-    this.getJson("http://www.baronwilson.io/assets/config.json").subscribe(data => {
-      console.log(data);
-      this.config = data;
-      this.apidomain =  this.config['apidomain'];
-    });
+    this.getConfig();
+    this.getPages();
+    this.getPosts();
   }
 
   getJson(url) {
@@ -31,9 +32,24 @@ export class DataService implements OnInit {
   	return this.http.get<any[]>(url);
 	}
 
+  getConfig() {
+    this.getJson("http://www.baronwilson.io/assets/config.json").subscribe(data => {
+      console.log("api call for config", data);
+      this.configSource.next(data);
+    });
+  }
+
 	getPages() {
-    console.log("from getPages: ", this.config);
-    //console.log("from getPages: ", this.config['apidomain']);
-  	//return this.getArray(this.config['apidomain'] + this.config['pages']);
+    this.getArray("http://api.baronwilson.io/wp-json/wp/v2/pages").subscribe(data => {
+      console.log("api call for pages", data);
+      this.pagesSource.next(data);
+    });
 	}
+
+  getPosts() {
+    this.getArray("http://api.baronwilson.io/wp-json/wp/v2/posts").subscribe(data => {
+      console.log("api call for posts", data);
+      this.postsSource.next(data);
+    });
+  }
 }

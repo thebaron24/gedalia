@@ -5,10 +5,19 @@
   </h1>
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Pages registered with WordPress</h2>
+<!-- <h2 *ngIf="config">Angular Wordpress Config</h2>
+<h3 *ngIf="config">API Domain</h3>
+<p>{{config[apidomain]}}</p> -->
+<h2 *ngIf="pages">Pages registered with WordPress</h2>
 <ul *ngIf="pages">
   <li *ngFor="let page of pages">
     <h2><a target="_blank" rel="noopener" href="/{{page.slug}}">{{page.title.rendered}}</a></h2>
+  </li>
+</ul>
+<h2 *ngIf="posts">Posts registered with WordPress</h2>
+<ul *ngIf="posts">
+  <li *ngFor="let post of posts">
+    <h2><a target="_blank" rel="noopener" href="/{{post.slug}}">{{post.title.rendered}}</a></h2>
   </li>
 </ul>
 

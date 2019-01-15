@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [DataService]
 })
-export class AppComponent implements OnInit {
-  title = 'angular-universal';
+export class AppComponent {
+  title = 'angular-wordpress';
+  config: Object;
+  pages: any[];
+  posts: any[];
 
-  pages;
-
-  constructor(private dataService: DataService) {}
-
-  ngOnInit() {
-    // ...
-    this.dataService.getPages();
+  constructor(private dataService: DataService) {
+    dataService.config$.subscribe(config => {this.config = config});
+    dataService.pages$.subscribe(pages => {this.pages = pages});
+    dataService.posts$.subscribe(posts => {this.posts = posts});
   }
 
 }
