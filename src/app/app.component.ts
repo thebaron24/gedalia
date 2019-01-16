@@ -10,6 +10,8 @@ import { ChangeDetectorRef, OnDestroy } from '@angular/core';
   providers: [DataService]
 })
 export class AppComponent implements OnDestroy {
+  title = 'Baron Wilson';
+  
   pages: any[];
   posts: any[];
 
