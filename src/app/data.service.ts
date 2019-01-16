@@ -11,17 +11,23 @@ export class DataService {
   private configSource = new Subject<Object>();
   private pagesSource  = new Subject<any[]>();
   private postsSource  = new Subject<any[]>();
+  private menuSource  = new Subject<Object>();
  
   // Observable string streams
   config$ = this.configSource.asObservable();
   pages$  = this.pagesSource.asObservable();
   posts$  = this.postsSource.asObservable();
+  menu$  = this.menuSource.asObservable();
 
   constructor(private http: HttpClient) {
     //get config
     this.getConfig();
-    this.getPages();
-    this.getPosts();
+
+    this.config$.subscribe(config => {
+      this.getMenu();
+      this.getPages();
+      this.getPosts();
+    });
   }
 
   getJson(url) {
@@ -33,7 +39,7 @@ export class DataService {
 	}
 
   getConfig() {
-    this.getJson("http://www.baronwilson.io/assets/config.json").subscribe(data => {
+    this.getJson("/assets/config.json").subscribe(data => {
       console.log("api call for config", data);
       this.configSource.next(data);
     });
@@ -50,6 +56,13 @@ export class DataService {
     this.getArray("http://api.baronwilson.io/wp-json/wp/v2/posts").subscribe(data => {
       console.log("api call for posts", data);
       this.postsSource.next(data);
+    });
+  }
+
+  getMenu() {
+    this.getJson("http://api.baronwilson.io/wp-json/wp-api-menus/v2/menus").subscribe(data => {
+      console.log("api call for menus", data);
+      this.menuSource.next(data);
     });
   }
 }

@@ -1,4 +1,11 @@
 {
 	"apidomain": "http://api.baronwilson.io",
-	"pages": "/wp-json/wp/v2/pages"
+	"pages": "/wp-json/wp/v2/pages",
+	"apiUrls": {
+		"domain": "http://www.baronwilson.io",
+		"apidomain": "http://api.baronwilson.io",
+		"menu": "/wp-json/wp-api-menus/v2/menus/2",
+		"pages": "/wp-json/wp/v2/pages",
+		"posts": "/wp-json/wp/v2/posts"
+	}
 }
