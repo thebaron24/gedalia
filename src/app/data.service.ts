@@ -60,8 +60,8 @@ export class DataService {
   }
 
   getMenu() {
-    this.getJson("http://api.baronwilson.io/wp-json/wp-api-menus/v2/menus").subscribe(data => {
-      console.log("api call for menus", data);
+    this.getJson("http://api.baronwilson.io/wp-json/wp-api-menus/v2/menus/2").subscribe(data => {
+      console.log("api call for menu", data);
       this.menuSource.next(data);
     });
   }
