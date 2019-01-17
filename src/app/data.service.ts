@@ -21,8 +21,8 @@ export class DataService {
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
 
-  config: Object;
-  menu: Object;
+  config: Object = {};
+  menu: Object = {};
   pageMap: Object = {};
   currentPage: Array<any>;
 
@@ -47,35 +47,35 @@ export class DataService {
 	}
 
   getConfig() {
-    if(this.config && Object.keys(this.config).length) {
+    if(Object.keys(this.config).length) {
+      console.log("config already exists - using", this.config);
+      this.configSource.next(this.config);
+    } else {
       this.getJson("/assets/config.json").subscribe(data => {
         console.log("api call returned for config", data);
         this.config = data;
         this.configSource.next(data);
       });
-    } else {
-      console.log("config already exists - using", this.config);
-      this.configSource.next(this.config);
     }
   }
 
   getPage(page: string) {
-    if(Object.keys(this.config).length > 0 && this.pageMap[page]){
-      console.log(page + " page already exists - using: ", this.pageMap[page]);
-      this.currentPage = this.pageMap[page];
-      this.pageSource.next(this.pageMap[page]);
-    } else {
+    if(!this.pageMap.hasOwnProperty(page) && !this.pageMap[page].length){
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
         console.log("api call returned for " + page + " page: ", data);
         this.currentPage = data;
         this.pageMap[page] = data;
         this.pageSource.next(data);
       });
+    } else {
+      console.log(page + " page already exists - using: ", this.pageMap[page]);
+      this.currentPage = this.pageMap[page];
+      this.pageSource.next(this.pageMap[page]);
     }
   }
 
   getMenu() {
-    if(!this.menu || Object.keys(this.menu).length) {
+    if(Object.keys(this.menu).length) {
       this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
         console.log("api call returned for menu: ", data);
         this.menu = data;
