@@ -9,15 +9,15 @@ import { DataService } from '../data.service';
 })
 export class SideMenuComponent implements OnInit {
 
-	menu: Object;
+	menu: Object = {};
 
 	constructor(private dataService: DataService) {
 		dataService.menu$.subscribe(menu => {
-			if(!this.menu && Object.keys(this.menu).length){
-				console.log("using new menu received: ", menu);
-				this.menu = menu;
+			if(Object.keys(this.menu).length) {
+				console.log("side menu component: menu exists - not updating: ", this.menu);
+				//this.menu = menu;
 			} else {
-				console.log("menu exists - using: ", this.menu);
+				console.log("side menu component: using new menu received: ", menu);
 				this.menu = menu;
 			}
 		});

@@ -32,6 +32,8 @@ export class DataService {
 
     this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize menu
+      //redundant | or is it
+      this.config = config;
       this.getMenu();
       //this.getPages();
       //this.getPosts();
@@ -60,17 +62,17 @@ export class DataService {
   }
 
   getPage(page: string) {
-    if(!this.pageMap.hasOwnProperty(page) && !this.pageMap[page].length){
+    if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
+      console.log(page + " page already exists - using: ", this.pageMap[page]);
+      this.currentPage = this.pageMap[page];
+      this.pageSource.next(this.pageMap[page]);
+    } else {
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
         console.log("api call returned for " + page + " page: ", data);
         this.currentPage = data;
         this.pageMap[page] = data;
         this.pageSource.next(data);
       });
-    } else {
-      console.log(page + " page already exists - using: ", this.pageMap[page]);
-      this.currentPage = this.pageMap[page];
-      this.pageSource.next(this.pageMap[page]);
     }
   }
 
