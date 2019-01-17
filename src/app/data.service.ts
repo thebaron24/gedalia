@@ -22,6 +22,8 @@ export class DataService {
   menu$  = this.menuSource.asObservable();
 
   config: Object;
+  menu: Object;
+  pageMap: Object = {};
   currentPage: Array<any>;
 
   constructor(private http: HttpClient) {
@@ -45,18 +47,28 @@ export class DataService {
 	}
 
   getConfig() {
-    this.getJson("/assets/config.json").subscribe(data => {
-      console.log("api call for config", data);
-      this.configSource.next(data);
-    });
+    if(this.config) {
+      this.configSource.next(this.config)
+    } else {
+      this.getJson("/assets/config.json").subscribe(data => {
+        console.log("api call for config", data);
+        this.configSource.next(data);
+      });
+    }
   }
 
   getPage(page: string) {
-    this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
-      console.log("api call for page " + page + ":", data);
-      this.currentPage = data;
-      this.pageSource.next(data);
-    });
+    if(this.pageMap[page]){
+      this.currentPage = this.pageMap[page];
+      this.pageSource.next(this.pageMap[page]);
+    } else {
+      this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+        console.log("api call for page " + page + ":", data);
+        this.currentPage = data;
+        this.pageMap[page] = data;
+        this.pageSource.next(data);
+      });
+    }
   }
 
 	getPages() {
@@ -74,9 +86,12 @@ export class DataService {
   }
 
   getMenu() {
-    this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
-      console.log("api call for menu", data);
-      this.menuSource.next(data);
-    });
+    if(!this.menu){
+      this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
+        console.log("api call returned for menu: ", data);
+        this.menu = data;
+        this.menuSource.next(data);
+      });
+    }
   }
 }
