@@ -47,15 +47,15 @@ export class DataService {
 	}
 
   getConfig() {
-    if(this.config && Object.keys(this.config).length > 0) {
-      console.log("config already exists - using", this.config);
-      this.configSource.next(this.config)
-    } else {
+    if(this.config && Object.keys(this.config).length) {
       this.getJson("/assets/config.json").subscribe(data => {
         console.log("api call returned for config", data);
         this.config = data;
         this.configSource.next(data);
       });
+    } else {
+      console.log("config already exists - using", this.config);
+      this.configSource.next(this.config);
     }
   }
 
@@ -75,7 +75,7 @@ export class DataService {
   }
 
   getMenu() {
-    if(this.menu && Object.keys(this.menu).length > 0) {
+    if(!this.menu || Object.keys(this.menu).length) {
       this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
         console.log("api call returned for menu: ", data);
         this.menu = data;

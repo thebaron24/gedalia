@@ -13,10 +13,11 @@ export class SideMenuComponent implements OnInit {
 
 	constructor(private dataService: DataService) {
 		dataService.menu$.subscribe(menu => {
-			if(this.menu){
-				console.log("menu exists - using: ", this.menu);
-			} else {
+			if(!this.menu && Object.keys(this.menu).length){
 				console.log("using new menu received: ", menu);
+				this.menu = menu;
+			} else {
+				console.log("menu exists - using: ", this.menu);
 				this.menu = menu;
 			}
 		});
