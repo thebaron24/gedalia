@@ -31,7 +31,7 @@ export class DataService {
     this.getConfig();
 
     this.config$.subscribe(config => {
-      this.config = config;
+      //here we know the config is set - safe to initialize menu
       this.getMenu();
       //this.getPages();
       //this.getPosts();
@@ -52,7 +52,8 @@ export class DataService {
       this.configSource.next(this.config)
     } else {
       this.getJson("/assets/config.json").subscribe(data => {
-        console.log("api call for config", data);
+        console.log("api call returned for config", data);
+        this.config = data;
         this.configSource.next(data);
       });
     }
