@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
 
 	constructor(private dataService: DataService) {
 		dataService.page$.subscribe(page => {
-			this.page = page;
+			console.log("page received:", page)
+			this.page.push(page[0]);
 		});
 		dataService.config$.subscribe(config => {
       console.log("config is loaded");
@@ -21,7 +22,6 @@ export class HomeComponent implements OnInit {
     });
 	}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 }
