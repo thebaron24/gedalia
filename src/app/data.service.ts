@@ -47,7 +47,8 @@ export class DataService {
 	}
 
   getConfig() {
-    if(this.config) {
+    if(this.config && Object.keys(this.config).length > 0) {
+      console.log("config already exists - using", this.config);
       this.configSource.next(this.config)
     } else {
       this.getJson("/assets/config.json").subscribe(data => {
@@ -58,12 +59,13 @@ export class DataService {
   }
 
   getPage(page: string) {
-    if(this.pageMap[page]){
+    if(Object.keys(this.config).length > 0 && this.pageMap[page]){
+      console.log(page + " page already exists - using: ", this.pageMap[page]);
       this.currentPage = this.pageMap[page];
       this.pageSource.next(this.pageMap[page]);
     } else {
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
-        console.log("api call for page " + page + ":", data);
+        console.log("api call returned for " + page + " page: ", data);
         this.currentPage = data;
         this.pageMap[page] = data;
         this.pageSource.next(data);
@@ -71,27 +73,29 @@ export class DataService {
     }
   }
 
-	getPages() {
+  getMenu() {
+    if(this.menu && Object.keys(this.menu).length > 0) {
+      this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
+        console.log("api call returned for menu: ", data);
+        this.menu = data;
+        this.menuSource.next(data);
+      });
+    } else {
+      console.log("menu object exists - using: ", this.menu);
+    }
+  }
+
+  getPages() {
     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']).subscribe(data => {
       console.log("api call for pages", data);
       this.pagesSource.next(data);
     });
-	}
+  }
 
   getPosts() {
     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']).subscribe(data => {
       console.log("api call for posts", data);
       this.postsSource.next(data);
     });
-  }
-
-  getMenu() {
-    if(!this.menu){
-      this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
-        console.log("api call returned for menu: ", data);
-        this.menu = data;
-        this.menuSource.next(data);
-      });
-    }
   }
 }

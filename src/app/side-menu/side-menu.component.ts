@@ -12,7 +12,14 @@ export class SideMenuComponent implements OnInit {
 	menu: Object;
 
 	constructor(private dataService: DataService) {
-		dataService.menu$.subscribe(menu => {this.menu = menu});
+		dataService.menu$.subscribe(menu => {
+			if(this.menu){
+				console.log("menu exists - using: ", this.menu);
+			} else {
+				console.log("using new menu received: ", menu);
+				this.menu = menu;
+			}
+		});
 	}
 
 	ngOnInit() {

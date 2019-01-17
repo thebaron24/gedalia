@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 			this.page = page;
 		});
 		dataService.config$.subscribe(config => {
-      console.log("config is loaded");
+      console.log("config was received from service - fetching home");
       dataService.getPage('home');
     });
 	}
