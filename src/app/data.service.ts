@@ -10,16 +10,19 @@ export class DataService {
   // Observable string sources
   private configSource = new Subject<Object>();
   private pagesSource  = new Subject<any[]>();
+  private pageSource  = new Subject<any[]>();
   private postsSource  = new Subject<any[]>();
   private menuSource  = new Subject<Object>();
  
   // Observable string streams
   config$ = this.configSource.asObservable();
   pages$  = this.pagesSource.asObservable();
+  page$  = this.pagesSource.asObservable();
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
 
   config: Object;
+  currentPage: Array<any>;
 
   constructor(private http: HttpClient) {
     //get config
@@ -28,8 +31,8 @@ export class DataService {
     this.config$.subscribe(config => {
       this.config = config;
       this.getMenu();
-      this.getPages();
-      this.getPosts();
+      //this.getPages();
+      //this.getPosts();
     });
   }
 
@@ -45,6 +48,14 @@ export class DataService {
     this.getJson("/assets/config.json").subscribe(data => {
       console.log("api call for config", data);
       this.configSource.next(data);
+    });
+  }
+
+  getPage(page: string) {
+    this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+      console.log("api call for page " + page + ":", data);
+      this.currentPage = data;
+      this.pageSource.next(data);
     });
   }
 

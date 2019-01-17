@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
