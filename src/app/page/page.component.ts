@@ -21,8 +21,8 @@ export class PageComponent implements OnInit {
       else this.router.navigateByUrl('/404');
   	});
   	dataService.config$.subscribe(config => {
-      console.log("config is loaded - fetching page");
-      dataService.getPage(this.router.url);
+      console.log("config is loaded - fetching page: ", this.router.url);
+      dataService.getPage(this.router.url.replace('/',''));
     });
   }
 

@@ -10,7 +10,6 @@ const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
-  // { path: ':slug', component: PageComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', component: PageComponent }
 ];
