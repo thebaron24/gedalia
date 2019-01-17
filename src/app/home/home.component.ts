@@ -9,7 +9,7 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent implements OnInit {
 
-	page: any[];
+	page: any[] = [];
 
 	constructor(private dataService: DataService) {
 		dataService.page$.subscribe(page => {this.page = page});

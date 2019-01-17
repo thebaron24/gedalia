@@ -11,7 +11,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class PageComponent implements OnInit {
 
-	page: any[];
+	page: any[] = [];
 
   constructor(private dataService: DataService,
   						private route: ActivatedRoute,
