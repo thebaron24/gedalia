@@ -9,12 +9,12 @@ import { DataService } from '../data.service';
 })
 export class HomeComponent implements OnInit {
 
-	page: any[] = [];
+	page: any[];
 
 	constructor(private dataService: DataService) {
 		dataService.page$.subscribe(page => {
 			console.log("page received:", page)
-			this.page.push(page[0]);
+			this.page = page;
 		});
 		dataService.config$.subscribe(config => {
       console.log("config is loaded");

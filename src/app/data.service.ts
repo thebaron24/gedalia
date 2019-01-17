@@ -17,7 +17,7 @@ export class DataService {
   // Observable string streams
   config$ = this.configSource.asObservable();
   pages$  = this.pagesSource.asObservable();
-  page$  = this.pagesSource.asObservable();
+  page$  = this.pageSource.asObservable();
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
 

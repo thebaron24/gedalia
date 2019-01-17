@@ -11,13 +11,13 @@ import { switchMap } from 'rxjs/operators';
 })
 export class PageComponent implements OnInit {
 
-	page: any[] = [];
+	page: any[];
 
   constructor(private dataService: DataService,
   						private route: ActivatedRoute,
   						private router: Router) {
   	dataService.page$.subscribe(page => {
-  		if(page.length) this.page.push(page[0]);
+  		if(page.length) this.page = page;
       else this.router.navigateByUrl('/404');
   	});
   	dataService.config$.subscribe(config => {
