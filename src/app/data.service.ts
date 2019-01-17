@@ -77,14 +77,14 @@ export class DataService {
   }
 
   getMenu() {
-    if(Object.keys(this.menu).length) {
+    if(Object.keys(this.menu).length > 0) {
+      console.log("menu object exists - using: ", this.menu);
+    } else {
       this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
         console.log("api call returned for menu: ", data);
         this.menu = data;
         this.menuSource.next(data);
       });
-    } else {
-      console.log("menu object exists - using: ", this.menu);
     }
   }
 
