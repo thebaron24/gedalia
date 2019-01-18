@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 //import { switchMap } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss']
 })
-export class PageComponent implements OnInit {
+export class PageComponent implements OnInit, OnDestroy {
 
 	page: any[];
 
@@ -21,6 +21,12 @@ export class PageComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    console.log("PageComponent: OnInit firing");
+  }
+
+  ngOnDestroy(): void {
+    console.log("PageComponent: OnDestroy firing");
+  }
 
 }

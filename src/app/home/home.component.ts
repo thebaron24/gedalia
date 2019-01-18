@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
 	page: any[];
 
@@ -17,6 +17,12 @@ export class HomeComponent implements OnInit {
 		});
 	}
 
-	ngOnInit() {}
+	ngOnInit(): void {
+		console.log("HomeComponent: OnInit firing");
+	}
+
+	ngOnDestroy(): void {
+		console.log("HomeComponent: OnDestroy firing");
+	}
 
 }

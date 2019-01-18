@@ -1,4 +1,4 @@
-import { Injectable, OnInit  } from '@angular/core';
+import { Injectable, OnInit, OnDestroy  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject }    from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
@@ -6,7 +6,7 @@ import { Router, NavigationEnd } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService implements OnInit {
+export class DataService implements OnInit, OnDestroy {
 
   // Observable string sources
   private configSource = new Subject<Object>();
@@ -28,6 +28,7 @@ export class DataService implements OnInit {
   currentPage: Array<any>;
 
   constructor(private http: HttpClient, private router: Router) {
+    console.log("DataService: constructor firing");
     //get config fot initial setup
     this.getConfig();
 
@@ -46,7 +47,13 @@ export class DataService implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("DataService: OnInit firing");
+  }
+
+  ngOnDestroy() {
+    console.log("DataService: OnDestroy firing");
+  }
 
   getJson(url) {
   	return this.http.get(url);
