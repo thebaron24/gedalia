@@ -33,14 +33,14 @@ export class DataService {
 
     this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
-        console.log(val);
+        //console.log(val);
         this.getPage(val.url === '/' || this.router.url === '/home' ? 'home' : val.url.replace('/',''));
       }
     });
 
     this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize
-      this.config = config;
+      //this.config = config;
       this.getMenu();
       this.getPage(this.router.url === '/' || this.router.url === '/home' ? 'home' : this.router.url.replace('/',''));
     });
@@ -55,23 +55,11 @@ export class DataService {
 	}
 
   getConfig() {
-
     this.getJson("/assets/config.json").subscribe(data => {
-      console.log("api call returned for config", data);
+      //console.log("api call returned for config", data);
       this.config = data;
       this.configSource.next(data);
     });
-
-    // if(Object.keys(this.config).length) {
-    //   console.log("config already exists - using", this.config);
-    //   this.configSource.next(this.config);
-    // } else {
-    //   this.getJson("/assets/config.json").subscribe(data => {
-    //     console.log("api call returned for config", data);
-    //     this.config = data;
-    //     this.configSource.next(data);
-    //   });
-    // }
   }
 
   getPage(page: string) {
