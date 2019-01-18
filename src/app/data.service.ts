@@ -32,10 +32,9 @@ export class DataService {
     this.getConfig();
 
     this.router.events.subscribe((val) => {
-      if(val instanceof NavigationEnd && Object.keys(this.config).length) {
-        console.log("this.router.url: ", this.router.url);
+      if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         console.log(val);
-        this.getPage(this.router.url === '/' || 'home' ? 'home' : this.router.url.replace('/',''));
+        this.getPage(val.url === '/' || 'home' ? 'home' : val.url.replace('/',''));
       }
     });
 
@@ -43,7 +42,12 @@ export class DataService {
       //here we know the config is set - safe to initialize
       this.config = config;
       this.getMenu();
-      this.getPage(this.router.url === '/' || 'home' ? 'home' : this.router.url.replace('/',''));
+      this.router.events.subscribe((val) => {
+        if(val instanceof NavigationEnd) {
+          console.log(val);
+          this.getPage(val.url === '/' || 'home' ? 'home' : val.url.replace('/',''));
+        }
+      });
     });
   }
 
