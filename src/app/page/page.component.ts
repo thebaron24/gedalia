@@ -13,14 +13,14 @@ export class PageComponent implements OnInit {
 	page: any[];
 
   constructor(private dataService: DataService,
-  						private router: Router) {}
-
-  ngOnInit() {
+  						private router: Router) {
     this.dataService.page$.subscribe(page => {
       console.log("PageComponent: page received - ", page);
       if(page.length) this.page = page;
       else this.router.navigateByUrl('/404');
     });
   }
+
+  ngOnInit() {}
 
 }

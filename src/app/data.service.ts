@@ -30,9 +30,6 @@ export class DataService implements OnInit {
   constructor(private http: HttpClient, private router: Router) {
     //get config fot initial setup
     this.getConfig();
-  }
-
-  ngOnInit() {
 
     //to catch any router events and update component data
     this.router.events.subscribe((val) => {
@@ -48,6 +45,8 @@ export class DataService implements OnInit {
       this.getPage(this.router.url === '/' || this.router.url === '/home' ? 'home' : this.router.url.replace('/',''));
     });
   }
+
+  ngOnInit() {}
 
   getJson(url) {
   	return this.http.get(url);

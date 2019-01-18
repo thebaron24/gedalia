@@ -10,13 +10,13 @@ export class HomeComponent implements OnInit {
 
 	page: any[];
 
-	constructor(private dataService: DataService) {}
-
-	ngOnInit() {
+	constructor(private dataService: DataService) {
 		this.dataService.page$.subscribe(page => {
 			console.log("HomeComponent: page received - ", page)
 			this.page = page;
 		});
 	}
+
+	ngOnInit() {}
 
 }
