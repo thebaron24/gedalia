@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router } from '@angular/router';
 //import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -13,16 +13,14 @@ export class PageComponent implements OnInit {
 	page: any[];
 
   constructor(private dataService: DataService,
-  						private activatedRoute: ActivatedRoute,
-  						private router: Router) {
-  	dataService.page$.subscribe(page => {
-      console.log("PageComponent: page received - ", page);
-  		if(page.length) this.page = page;
-      else this.router.navigateByUrl('/404');
-  	});
-  }
+  						private router: Router) {}
 
   ngOnInit() {
+    this.dataService.page$.subscribe(page => {
+      console.log("PageComponent: page received - ", page);
+      if(page.length) this.page = page;
+      else this.router.navigateByUrl('/404');
+    });
   }
 
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject }    from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
@@ -6,7 +6,7 @@ import { Router, NavigationEnd } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class DataService implements OnInit {
 
   // Observable string sources
   private configSource = new Subject<Object>();
@@ -27,14 +27,17 @@ export class DataService {
   pageMap: Object = {};
   currentPage: Array<any>;
 
-  constructor(private http: HttpClient, private router: Router) {
-    //get config
+  constructor(private http: HttpClient, private router: Router) {}
+
+  ngOnInit() {
+    //get config fot initial setup
     this.getConfig();
 
+    //to catch any router events and update component data
     this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         console.log("DataService: router event NavigationEnd - ", val);
-        this.getPage(val.url === '/' || this.router.url === '/home' ? 'home' : val.url.replace('/',''));
+        this.getPage(val.url === '/' || val.url === '/home' ? 'home' : val.url.replace('/',''));
       }
     });
 
