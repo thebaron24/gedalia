@@ -30,26 +30,20 @@ export class DataService {
   currentPage: Array<any>;
   url: UrlSegment[];
 
-  constructor(private http: HttpClient,
-              private activatedRoute: ActivatedRoute,
-              private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
     //get config
     this.getConfig();
 
+    this.router.events.subscribe((val) => {
+      console.log("this.router.url: ", this.router.url);
+      console.log(val);
+    });
+
     this.config$.subscribe(config => {
-      //here we know the config is set - safe to initialize menu
-      //redundant | or is it
-      console.log("this.config:", this.config);
-      console.log("config:", config);
+      //here we know the config is set - safe to initialize
       this.config = config;
       this.getMenu();
-      this.activatedRoute.url.subscribe((url) => {
-        console.log("UrlSegment[]", url);
-        console.log("this.router.url: ", this.router.url);
-        if (this.router.url !== "/404"){
-          this.getPage(this.router.url === '/' || 'home' ? 'home' : this.router.url.replace('/',''));
-        }
-      });
+      this.getPage(this.router.url === '/' || 'home' ? 'home' : this.router.url.replace('/',''));
     });
   }
 
