@@ -27,11 +27,12 @@ export class DataService implements OnInit {
   pageMap: Object = {};
   currentPage: Array<any>;
 
-  constructor(private http: HttpClient, private router: Router) {}
-
-  ngOnInit() {
+  constructor(private http: HttpClient, private router: Router) {
     //get config fot initial setup
     this.getConfig();
+  }
+
+  ngOnInit() {
 
     //to catch any router events and update component data
     this.router.events.subscribe((val) => {
