@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
 	constructor(private dataService: DataService) {
 		dataService.page$.subscribe(page => {
-			//console.log("page received:", page)
+			console.log("HomeComponent: page received - ", page)
 			this.page = page;
 		});
 	}

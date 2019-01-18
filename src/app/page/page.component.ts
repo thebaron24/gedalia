@@ -16,6 +16,7 @@ export class PageComponent implements OnInit {
   						private activatedRoute: ActivatedRoute,
   						private router: Router) {
   	dataService.page$.subscribe(page => {
+      console.log("PageComponent: page received - ", page);
   		if(page.length) this.page = page;
       else this.router.navigateByUrl('/404');
   	});

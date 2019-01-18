@@ -33,14 +33,13 @@ export class DataService {
 
     this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
-        //console.log(val);
+        console.log("DataService: router event NavigationEnd - ", val);
         this.getPage(val.url === '/' || this.router.url === '/home' ? 'home' : val.url.replace('/',''));
       }
     });
 
     this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize
-      //this.config = config;
       this.getMenu();
       this.getPage(this.router.url === '/' || this.router.url === '/home' ? 'home' : this.router.url.replace('/',''));
     });
@@ -56,7 +55,7 @@ export class DataService {
 
   getConfig() {
     this.getJson("/assets/config.json").subscribe(data => {
-      //console.log("api call returned for config", data);
+      console.log("DataService: config loaded - ", data);
       this.config = data;
       this.configSource.next(data);
     });
@@ -64,12 +63,12 @@ export class DataService {
 
   getPage(page: string) {
     if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
-      console.log(page + " page already exists - using: ", this.pageMap[page]);
+      console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
       this.currentPage = this.pageMap[page];
       this.pageSource.next(this.pageMap[page]);
     } else {
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
-        console.log("api call returned for " + page + " page: ", data);
+        console.log("DataService: api call returned for " + page + " page: ", data);
         this.currentPage = data;
         this.pageMap[page] = data;
         this.pageSource.next(data);
@@ -79,7 +78,7 @@ export class DataService {
 
   getMenu() {
     this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
-      console.log("api call returned for menu: ", data);
+      console.log("DataService: menu loaded - ", data);
       this.menu = data;
       this.menuSource.next(data);
     });
@@ -87,14 +86,14 @@ export class DataService {
 
   getPages() {
     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']).subscribe(data => {
-      console.log("api call for pages", data);
+      console.log("DataService: api call for all pages - ", data);
       this.pagesSource.next(data);
     });
   }
 
   getPosts() {
     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']).subscribe(data => {
-      console.log("api call for posts", data);
+      console.log("DataService: api call for all posts - ", data);
       this.postsSource.next(data);
     });
   }

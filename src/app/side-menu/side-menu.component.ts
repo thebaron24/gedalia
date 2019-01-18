@@ -12,6 +12,7 @@ export class SideMenuComponent implements OnInit {
 
 	constructor(private dataService: DataService) {
 		dataService.menu$.subscribe(menu => {
+			console.log("SideMenuComponent: menu received - ", menu);
 			this.menu = menu;
 		});
 	}
