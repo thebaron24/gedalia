@@ -14,7 +14,7 @@ export class PageComponent implements OnInit {
 	page: any[];
 
   constructor(private dataService: DataService,
-  						private route: ActivatedRoute,
+  						private activatedRoute: ActivatedRoute,
   						private router: Router) {
   	dataService.page$.subscribe(page => {
   		if(page.length) this.page = page;
@@ -22,6 +22,10 @@ export class PageComponent implements OnInit {
   	});
   	dataService.config$.subscribe(config => {
       console.log("config was received from service - fetching page: ", this.router.url);
+      dataService.getPage(this.router.url.replace('/',''));
+    });
+
+    this.activatedRoute.url.subscribe((url) => {
       dataService.getPage(this.router.url.replace('/',''));
     });
   }
