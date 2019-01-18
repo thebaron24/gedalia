@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { takeUntil } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs'
@@ -17,6 +17,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		console.log("HomeComponent: OnInit firing");
+	}
+
+	ngAfterViewInit() {
+		console.log("HomeComponent: AfterViewInit firing");
 		this.dataService.page$.pipe(takeUntil(this.destroyed$)).subscribe(page => {
 			console.log("HomeComponent: page received - ", page)
 			this.page = page;
