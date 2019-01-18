@@ -34,7 +34,7 @@ export class DataService {
     this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         console.log(val);
-        this.getPage(val.url === '/' || 'home' ? 'home' : val.url.replace('/',''));
+        this.getPage(val.url === '/' || this.router.url === '/home' ? 'home' : val.url.replace('/',''));
       }
     });
 
@@ -42,7 +42,7 @@ export class DataService {
       //here we know the config is set - safe to initialize
       this.config = config;
       this.getMenu();
-      this.getPage(this.router.url === '/' || 'home' ? 'home' : this.router.url.replace('/',''));
+      this.getPage(this.router.url === '/' || this.router.url === '/home' ? 'home' : this.router.url.replace('/',''));
     });
   }
 
