@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject }    from 'rxjs';
-import { Router, ActivatedRoute, ParamMap, UrlSegment } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,6 @@ export class DataService {
   private pageSource  = new Subject<any[]>();
   private postsSource  = new Subject<any[]>();
   private menuSource  = new Subject<Object>();
-  private urlSource  = new Subject<UrlSegment[]>();
  
   // Observable string streams
   config$ = this.configSource.asObservable();
@@ -22,21 +21,22 @@ export class DataService {
   page$  = this.pageSource.asObservable();
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
-  url$  = this.urlSource.asObservable();
 
   config: Object = {};
   menu: Object = {};
   pageMap: Object = {};
   currentPage: Array<any>;
-  url: UrlSegment[];
 
   constructor(private http: HttpClient, private router: Router) {
     //get config
     this.getConfig();
 
     this.router.events.subscribe((val) => {
-      console.log("this.router.url: ", this.router.url);
-      console.log(val);
+      if(val instanceof NavigationEnd && Object.keys(this.config).length) {
+        console.log("this.router.url: ", this.router.url);
+        console.log(val);
+        this.getPage(this.router.url === '/' || 'home' ? 'home' : this.router.url.replace('/',''));
+      }
     });
 
     this.config$.subscribe(config => {
