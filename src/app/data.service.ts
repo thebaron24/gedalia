@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject }    from 'rxjs';
+import { Router, ActivatedRoute, ParamMap, UrlSegment } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class DataService {
   private pageSource  = new Subject<any[]>();
   private postsSource  = new Subject<any[]>();
   private menuSource  = new Subject<Object>();
+  private urlSource  = new Subject<UrlSegment[]>();
  
   // Observable string streams
   config$ = this.configSource.asObservable();
@@ -20,23 +22,34 @@ export class DataService {
   page$  = this.pageSource.asObservable();
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
+  url$  = this.urlSource.asObservable();
 
   config: Object = {};
   menu: Object = {};
   pageMap: Object = {};
   currentPage: Array<any>;
+  url: UrlSegment[];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
     //get config
     this.getConfig();
+
+    this.activatedRoute.url.subscribe((url) => {
+      console.log(url);
+      //this.getPage(this.router.url.replace('/',''));
+    });
 
     this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize menu
       //redundant | or is it
       this.config = config;
       this.getMenu();
-      //this.getPages();
-      //this.getPosts();
+      this.activatedRoute.url.subscribe((url) => {
+        //console.log(url);
+        this.getPage(this.router.url.replace('/',''));
+      });
     });
   }
 
@@ -49,16 +62,23 @@ export class DataService {
 	}
 
   getConfig() {
-    if(Object.keys(this.config).length) {
-      console.log("config already exists - using", this.config);
-      this.configSource.next(this.config);
-    } else {
-      this.getJson("/assets/config.json").subscribe(data => {
-        console.log("api call returned for config", data);
-        this.config = data;
-        this.configSource.next(data);
-      });
-    }
+
+    this.getJson("/assets/config.json").subscribe(data => {
+      console.log("api call returned for config", data);
+      this.config = data;
+      this.configSource.next(data);
+    });
+
+    // if(Object.keys(this.config).length) {
+    //   console.log("config already exists - using", this.config);
+    //   this.configSource.next(this.config);
+    // } else {
+    //   this.getJson("/assets/config.json").subscribe(data => {
+    //     console.log("api call returned for config", data);
+    //     this.config = data;
+    //     this.configSource.next(data);
+    //   });
+    // }
   }
 
   getPage(page: string) {
@@ -77,15 +97,11 @@ export class DataService {
   }
 
   getMenu() {
-    if(Object.keys(this.menu).length > 0) {
-      console.log("menu object exists - using: ", this.menu);
-    } else {
-      this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
-        console.log("api call returned for menu: ", data);
-        this.menu = data;
-        this.menuSource.next(data);
-      });
-    }
+    this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
+      console.log("api call returned for menu: ", data);
+      this.menu = data;
+      this.menuSource.next(data);
+    });
   }
 
   getPages() {

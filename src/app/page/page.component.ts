@@ -20,10 +20,6 @@ export class PageComponent implements OnInit {
   		if(page.length) this.page = page;
       else this.router.navigateByUrl('/404');
   	});
-  	dataService.config$.subscribe(config => {
-      console.log("config was received from service - fetching page: ", this.router.url);
-      dataService.getPage(this.router.url.replace('/',''));
-    });
 
     this.activatedRoute.url.subscribe((url) => {
       dataService.getPage(this.router.url.replace('/',''));
