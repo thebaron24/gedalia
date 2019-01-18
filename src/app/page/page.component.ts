@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+//import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
-  styleUrls: ['./page.component.scss'],
-  providers: [DataService]
+  styleUrls: ['./page.component.scss']
 })
 export class PageComponent implements OnInit {
 
@@ -20,10 +19,6 @@ export class PageComponent implements OnInit {
   		if(page.length) this.page = page;
       else this.router.navigateByUrl('/404');
   	});
-
-    this.activatedRoute.url.subscribe((url) => {
-      dataService.getPage(this.router.url.replace('/',''));
-    });
   }
 
   ngOnInit() {

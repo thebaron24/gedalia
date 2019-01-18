@@ -36,19 +36,19 @@ export class DataService {
     //get config
     this.getConfig();
 
-    this.activatedRoute.url.subscribe((url) => {
-      console.log(url);
-      //this.getPage(this.router.url.replace('/',''));
-    });
-
     this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize menu
       //redundant | or is it
+      console.log("this.config:", this.config);
+      console.log("config:", config);
       this.config = config;
       this.getMenu();
       this.activatedRoute.url.subscribe((url) => {
-        //console.log(url);
-        this.getPage(this.router.url.replace('/',''));
+        console.log("UrlSegment[]", url);
+        console.log("this.router.url: ", this.router.url);
+        if (this.router.url !== "/404"){
+          this.getPage(this.router.url === '/' || 'home' ? 'home' : this.router.url.replace('/',''));
+        }
       });
     });
   }
