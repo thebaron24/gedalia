@@ -1,7 +1,5 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { takeUntil } from 'rxjs/operators';
-import { ReplaySubject } from 'rxjs'
 
 @Component({
   selector: 'app-home',
@@ -9,19 +7,15 @@ import { ReplaySubject } from 'rxjs'
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
-
-	private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 	page: any[];
-	subscription: any;
+	subscriptions: any = {};
 
 	constructor(private dataService: DataService) {
 		console.log("HomeComponent: Constructor firing");
-		this.subscription = this.dataService.page$.pipe(takeUntil(this.destroyed$)).subscribe(page => {
+		this.subscriptions.home = this.dataService.home$.subscribe(page => {
 			console.log("HomeComponent: page received - ", page)
 			this.page = page;
 		});
-
-		console.log("this.subscription: ", this.subscription)
 	}
 
 	ngOnInit(): void {
@@ -34,9 +28,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngOnDestroy(): void {
 		console.log("HomeComponent: OnDestroy firing");
-		this.subscription.unsubscribe();
-		// this.destroyed$.next(true);
-  //   this.destroyed$.complete();
+		this.subscriptions.home.unsubscribe();
 	}
 
 }

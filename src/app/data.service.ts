@@ -11,6 +11,7 @@ export class DataService implements OnInit, OnDestroy {
   // Observable string sources
   private configSource = new Subject<Object>();
   private pagesSource  = new Subject<any[]>();
+  private homeSource  = new Subject<any[]>();
   private pageSource  = new Subject<any[]>();
   private postsSource  = new Subject<any[]>();
   private menuSource  = new Subject<Object>();
@@ -18,6 +19,7 @@ export class DataService implements OnInit, OnDestroy {
   // Observable string streams
   config$ = this.configSource.asObservable();
   pages$  = this.pagesSource.asObservable();
+  home$  = this.homeSource.asObservable();
   page$  = this.pageSource.asObservable();
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
@@ -36,14 +38,23 @@ export class DataService implements OnInit, OnDestroy {
     this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         console.log("DataService: router event NavigationEnd - ", val);
-        this.getPage(val.url === '/' || val.url === '/home' ? 'home' : val.url.replace('/',''));
+        if(val.url === '/' || val.url === '/home') {
+          
+          this.getHome('home');
+        } else {
+          this.getPage(val.url.replace('/',''));
+        }
       }
     });
 
     this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize
       this.getMenu();
-      this.getPage(this.router.url === '/' || this.router.url === '/home' ? 'home' : this.router.url.replace('/',''));
+      if(this.router.url === '/' || this.router.url === '/home'){
+        this.getHome('home');
+      } else {
+        this.getPage(this.router.url.replace('/',''));
+      }
     });
   }
 
@@ -69,6 +80,21 @@ export class DataService implements OnInit, OnDestroy {
       this.config = data;
       this.configSource.next(data);
     });
+  }
+
+  getHome(page: string) {
+    if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
+      console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
+      this.currentPage = this.pageMap[page];
+      this.homeSource.next(this.pageMap[page]);
+    } else {
+      this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+        console.log("DataService: api call returned for " + page + " page: ", data);
+        this.currentPage = data;
+        this.pageMap[page] = data;
+        this.homeSource.next(data);
+      });
+    }
   }
 
   getPage(page: string) {

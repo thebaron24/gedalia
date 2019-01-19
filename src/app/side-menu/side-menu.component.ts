@@ -9,10 +9,11 @@ import { DataService } from '../data.service';
 export class SideMenuComponent implements OnInit, OnDestroy {
 
 	menu: Object = {};
+	subscriptions: any = {};
 
 	constructor(private dataService: DataService) {
 		console.log("SideMenuComponent: constructor firing");
-		dataService.menu$.subscribe(menu => {
+		this.subscriptions.menu = dataService.menu$.subscribe(menu => {
 			console.log("SideMenuComponent: menu received - ", menu);
 			this.menu = menu;
 		});
@@ -24,6 +25,7 @@ export class SideMenuComponent implements OnInit, OnDestroy {
 
 	ngOnDestroy(): void {
 		console.log("SideMenuComponent: OnDestroy firing");
+		this.subscriptions.menu.unsubscribe();
 	}
 
 }

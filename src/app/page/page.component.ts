@@ -11,10 +11,12 @@ import { Router } from '@angular/router';
 export class PageComponent implements OnInit, OnDestroy {
 
 	page: any[];
+  subscriptions: any = {};
 
   constructor(private dataService: DataService,
   						private router: Router) {
-    this.dataService.page$.subscribe(page => {
+    console.log("PageComponent: Constructor firing");
+    this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("PageComponent: page received - ", page);
       if(page.length) this.page = page;
       else this.router.navigateByUrl('/404');
@@ -27,6 +29,7 @@ export class PageComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log("PageComponent: OnDestroy firing");
+    this.subscriptions.page.unsubscribe();
   }
 
 }
