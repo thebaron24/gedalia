@@ -8,12 +8,18 @@ import { ReplaySubject } from 'rxjs'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 	page: any[];
 
-	constructor(private dataService: DataService) {}
+	constructor(private dataService: DataService) {
+		console.log("HomeComponent: Constructor firing");
+		this.dataService.page$.pipe(takeUntil(this.destroyed$)).subscribe(page => {
+			console.log("HomeComponent: page received - ", page)
+			this.page = page;
+		});
+	}
 
 	ngOnInit(): void {
 		console.log("HomeComponent: OnInit firing");
@@ -21,16 +27,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 	ngAfterViewInit() {
 		console.log("HomeComponent: AfterViewInit firing");
-		this.dataService.page$.pipe(takeUntil(this.destroyed$)).subscribe(page => {
-			console.log("HomeComponent: page received - ", page)
-			this.page = page;
-		});
 	}
 
 	ngOnDestroy(): void {
 		console.log("HomeComponent: OnDestroy firing");
-		this.destroyed$.next(true);
-    this.destroyed$.complete();
+		// this.destroyed$.next(true);
+  //   this.destroyed$.complete();
 	}
 
 }
