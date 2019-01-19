@@ -12,13 +12,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	private destroyed$: ReplaySubject<boolean> = new ReplaySubject(1);
 	page: any[];
+	subscription: any;
 
 	constructor(private dataService: DataService) {
 		console.log("HomeComponent: Constructor firing");
-		this.dataService.page$.pipe(takeUntil(this.destroyed$)).subscribe(page => {
+		this.subscription = this.dataService.page$.pipe(takeUntil(this.destroyed$)).subscribe(page => {
 			console.log("HomeComponent: page received - ", page)
 			this.page = page;
 		});
+
+		console.log("this.subscription: ", this.subscription)
 	}
 
 	ngOnInit(): void {
@@ -31,6 +34,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngOnDestroy(): void {
 		console.log("HomeComponent: OnDestroy firing");
+		this.subscription.unsubscribe();
 		// this.destroyed$.next(true);
   //   this.destroyed$.complete();
 	}
