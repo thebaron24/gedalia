@@ -9,11 +9,79 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
+
+//http://mcg.mbitson.com awesome custom theme helper
+$gedalia-blue: (
+    50 : #e0f2f9,
+    100 : #b3def1,
+    200 : #80c9e7,
+    300 : #4db3dd,
+    400 : #26a2d6,
+    500 : #0092cf,
+    600 : #008aca,
+    700 : #007fc3,
+    800 : #0075bd,
+    900 : #0063b2,
+    A100 : #dbedff,
+    A200 : #a8d3ff,
+    A400 : #75b9ff,
+    A700 : #5cacff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$gedalia-yellow: (
+    50 : #fefcf6,
+    100 : #fcf9e9,
+    200 : #faf5da,
+    300 : #f8f0cb,
+    400 : #f7edbf,
+    500 : #f5eab4,
+    600 : #f4e7ad,
+    700 : #f2e4a4,
+    800 : #f0e19c,
+    900 : #eedb8c,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angular-universal-primary: mat-palette($mat-blue);
-$angular-universal-accent: mat-palette($mat-blue, A200, A100, A400);
+$angular-universal-primary: mat-palette($gedalia-blue);
+$angular-universal-accent: mat-palette($gedalia-yellow);
 
 // The warn palette is optional (defaults to red).
 $angular-universal-warn: mat-palette($mat-red);
