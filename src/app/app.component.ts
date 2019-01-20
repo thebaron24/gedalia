@@ -8,7 +8,7 @@ import { ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'Gedalia - Energy Healer';
+  logo = 'Gedalia';
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
