@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { SafeHtmlPipe } from '../safe-html.pipe'
 
 @Component({
   selector: 'app-home',
