@@ -8,7 +8,7 @@ import { ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'Baron Wilson';
+  title = 'Gedalia - Energy Healer';
   mobileQuery: MediaQueryList;
 
   private _mobileQueryListener: () => void;
