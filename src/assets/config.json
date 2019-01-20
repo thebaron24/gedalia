@@ -2,7 +2,7 @@
 	"apiUrls": {
 		"domain": "http://www.baronwilson.io",
 		"apidomain": "http://api.baronwilson.io",
-		"menu": "/wp-json/wp-api-menus/v2/menus/2",
+		"menu": "/wp-json/wp-api-menus/v2/menus/105",
 		"pages": "/wp-json/wp/v2/pages",
 		"posts": "/wp-json/wp/v2/posts",
 		"param": {
