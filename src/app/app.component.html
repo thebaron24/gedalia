@@ -5,19 +5,13 @@
     <span class="example-app-name"><a class="logo" routerLink="/home">{{ logo }}</a></span>
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
-
-    <span>
-      <button mat-icon-button>
-        <mat-icon>share</mat-icon>
-      </button>
-    </span>
     <span>
       <button mat-icon-button [matMenuTriggerFor]="socialMenu">
-        <mat-icon>share</mat-icon>
+        <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #socialMenu="matMenu">
-        <button mat-menu-item>Facebook</button>
-        <button mat-menu-item>Contact</button>
+        <a mat-menu-item href="tel:678-357-3443"><mat-icon>call</mat-icon> 678-357-3443</a>
+        <a href="https://www.facebook.com/GedaliaHealingArts/" target="_blank" mat-menu-item><mat-icon>message</mat-icon> Facebook</a>
       </mat-menu>
     </span>
   </mat-toolbar>
