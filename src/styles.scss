@@ -99,6 +99,11 @@ $angular-universal-theme: mat-light-theme($angular-universal-primary, $angular-u
 html, body, app-root { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.logo {
+	color: #fff;
+	text-decoration: none;
+}
+
 .jumbotron {
 	// Use mat-color to extract individual colors a palette.
 	background-color: mat-color($angular-universal-primary);
