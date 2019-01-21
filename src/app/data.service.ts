@@ -28,6 +28,7 @@ export class DataService implements OnInit, OnDestroy {
   menu: Object = {};
   pageMap: Object = {};
   currentPage: Array<any>;
+  subscriptions: any = {};
 
   constructor(private http: HttpClient, private router: Router) {
     console.log("DataService: constructor firing");
@@ -35,7 +36,7 @@ export class DataService implements OnInit, OnDestroy {
     this.getConfig();
 
     //to catch any router events and update component data
-    this.router.events.subscribe((val) => {
+    this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         console.log("DataService: router event NavigationEnd - ", val);
         if(val.url === '/' || val.url === '/home') {
@@ -47,7 +48,7 @@ export class DataService implements OnInit, OnDestroy {
       }
     });
 
-    this.config$.subscribe(config => {
+    this.subscriptions.config = this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize
       this.getMenu();
       if(this.router.url === '/' || this.router.url === '/home'){
@@ -64,6 +65,8 @@ export class DataService implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     console.log("DataService: OnDestroy firing");
+    this.subscriptions.config.unsubscribe();
+    this.subscriptions.routerEvents.unsubscribe();
   }
 
   getJson(url) {
@@ -105,6 +108,27 @@ export class DataService implements OnInit, OnDestroy {
     } else {
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
         console.log("DataService: api call returned for " + page + " page: ", data);
+
+        if(data.length){
+          this.currentPage = data;
+          this.pageMap[page] = data;
+          this.pageSource.next(data);
+        } else {
+          this.getPost(page);
+        }
+
+      });
+    }
+  }
+
+  getPost(page: string) {
+    if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
+      console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
+      this.currentPage = this.pageMap[page];
+      this.pageSource.next(this.pageMap[page]);
+    } else {
+      this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+        console.log("DataService: api call returned for " + page + " post: ", data);
         this.currentPage = data;
         this.pageMap[page] = data;
         this.pageSource.next(data);
