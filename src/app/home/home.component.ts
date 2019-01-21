@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		//to reset the loading bar so the user knows something is loading
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
       if(val instanceof NavigationStart) {
-        console.log("DataService: router event NavigationStart - ", val);
+        console.log("HomeComponent: router event NavigationStart - ", val);
         this.page = [];
       }
     });
