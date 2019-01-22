@@ -80,7 +80,7 @@ $gedalia-yellow: (
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $custom-typography: mat-typography-config(
-    $font-family:   'Open Sans, sans-serif',
+    $font-family:   'Lato, sans-serif',
     $display-4:     mat-typography-level(112px, 112px, 300),
     $display-3:     mat-typography-level(56px, 56px, 400),
     $display-2:     mat-typography-level(45px, 48px, 400),
