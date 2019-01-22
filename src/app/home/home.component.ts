@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { DataService } from '../data.service';
-import { SafeHtmlPipe } from '../safe-html.pipe'
+import { SafeHtmlPipe } from '../safe-html.pipe';
 
 @Component({
   selector: 'app-home',

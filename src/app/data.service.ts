@@ -108,21 +108,6 @@ export class DataService implements OnInit, OnDestroy {
     }
   }
 
-  // getHome(page: string) {
-  //   if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
-  //     console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
-  //     this.currentPage = this.pageMap[page];
-  //     this.homeSource.next(this.pageMap[page]);
-  //   } else {
-  //     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
-  //       console.log("DataService: api call returned for " + page + " page: ", data);
-  //       this.currentPage = data;
-  //       this.pageMap[page] = data;
-  //       this.homeSource.next(data);
-  //     });
-  //   }
-  // }
-
   getHome(page: string) {
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
@@ -158,27 +143,6 @@ export class DataService implements OnInit, OnDestroy {
     }
   }
 
-  // getPage(page: string) {
-  //   if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
-  //     console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
-  //     this.currentPage = this.pageMap[page];
-  //     this.pageSource.next(this.pageMap[page]);
-  //   } else {
-  //     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
-  //       console.log("DataService: api call returned for " + page + " page: ", data);
-
-  //       if(data.length){
-  //         this.currentPage = data;
-  //         this.pageMap[page] = data;
-  //         this.pageSource.next(data);
-  //       } else {
-  //         this.getPost(page);
-  //       }
-
-  //     });
-  //   }
-  // }
-
   getPost(page: string) {
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " post already exists - using: ", this.getStoredPage(page));
@@ -192,21 +156,6 @@ export class DataService implements OnInit, OnDestroy {
       });
     }
   }
-
-  // getPost(page: string) {
-  //   if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
-  //     console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
-  //     this.currentPage = this.pageMap[page];
-  //     this.pageSource.next(this.pageMap[page]);
-  //   } else {
-  //     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
-  //       console.log("DataService: api call returned for " + page + " post: ", data);
-  //       this.currentPage = data;
-  //       this.pageMap[page] = data;
-  //       this.pageSource.next(data);
-  //     });
-  //   }
-  // }
 
   getMenu() {
     this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {

@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PageComponent } from './page/page.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SafeHtmlPipe } from './safe-html.pipe';
     HomeComponent,
     PageNotFoundComponent,
     PageComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    BlogComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
