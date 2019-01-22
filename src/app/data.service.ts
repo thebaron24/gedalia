@@ -39,8 +39,8 @@ export class DataService implements OnInit, OnDestroy {
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         console.log("DataService: router event NavigationEnd - ", val);
+        //special case for home page
         if(val.url === '/' || val.url === '/home') {
-          
           this.getHome('home');
         } else {
           this.getPage(val.url.replace('/',''));
@@ -51,6 +51,8 @@ export class DataService implements OnInit, OnDestroy {
     this.subscriptions.config = this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize
       this.getMenu();
+
+      //special case for home page
       if(this.router.url === '/' || this.router.url === '/home'){
         this.getHome('home');
       } else {
@@ -85,34 +87,69 @@ export class DataService implements OnInit, OnDestroy {
     });
   }
 
+  pageIsStored(page: string): boolean {
+    return this.pageMap.hasOwnProperty(page) && this.pageMap[page].length;
+  }
+
+  storePage(page: string, pageArray: Array<any>): void {
+    this.currentPage = pageArray;
+    this.pageMap[page] = pageArray;
+  }
+
+  getStoredPage(page: string): Array<any> {
+    return this.pageMap[page];
+  }
+
+  notifyPage(page: string): void {
+    if(page === 'home'){
+      this.homeSource.next(this.getStoredPage(page));
+    } else {
+      this.pageSource.next(this.getStoredPage(page));
+    }
+  }
+
+  // getHome(page: string) {
+  //   if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
+  //     console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
+  //     this.currentPage = this.pageMap[page];
+  //     this.homeSource.next(this.pageMap[page]);
+  //   } else {
+  //     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+  //       console.log("DataService: api call returned for " + page + " page: ", data);
+  //       this.currentPage = data;
+  //       this.pageMap[page] = data;
+  //       this.homeSource.next(data);
+  //     });
+  //   }
+  // }
+
   getHome(page: string) {
-    if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
+    if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
-      this.currentPage = this.pageMap[page];
-      this.homeSource.next(this.pageMap[page]);
+      this.currentPage = this.getStoredPage(page);
+      this.notifyPage(page);
     } else {
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
         console.log("DataService: api call returned for " + page + " page: ", data);
-        this.currentPage = data;
-        this.pageMap[page] = data;
-        this.homeSource.next(data);
+        this.storePage(page, data);
+        this.notifyPage(page);
       });
     }
   }
 
+
   getPage(page: string) {
-    if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
+    if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
-      this.currentPage = this.pageMap[page];
-      this.pageSource.next(this.pageMap[page]);
+      this.currentPage = this.getStoredPage(page);
+      this.notifyPage(page);
     } else {
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
         console.log("DataService: api call returned for " + page + " page: ", data);
 
         if(data.length){
-          this.currentPage = data;
-          this.pageMap[page] = data;
-          this.pageSource.next(data);
+          this.storePage(page, data);
+          this.notifyPage(page);
         } else {
           this.getPost(page);
         }
@@ -121,20 +158,55 @@ export class DataService implements OnInit, OnDestroy {
     }
   }
 
+  // getPage(page: string) {
+  //   if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
+  //     console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
+  //     this.currentPage = this.pageMap[page];
+  //     this.pageSource.next(this.pageMap[page]);
+  //   } else {
+  //     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+  //       console.log("DataService: api call returned for " + page + " page: ", data);
+
+  //       if(data.length){
+  //         this.currentPage = data;
+  //         this.pageMap[page] = data;
+  //         this.pageSource.next(data);
+  //       } else {
+  //         this.getPost(page);
+  //       }
+
+  //     });
+  //   }
+  // }
+
   getPost(page: string) {
-    if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
-      console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
-      this.currentPage = this.pageMap[page];
-      this.pageSource.next(this.pageMap[page]);
+    if(this.pageIsStored(page)){
+      console.log("DataService: " + page + " post already exists - using: ", this.getStoredPage(page));
+      this.currentPage = this.getStoredPage(page);
+      this.notifyPage(page);
     } else {
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
         console.log("DataService: api call returned for " + page + " post: ", data);
-        this.currentPage = data;
-        this.pageMap[page] = data;
-        this.pageSource.next(data);
+        this.storePage(page, data);
+        this.notifyPage(page);
       });
     }
   }
+
+  // getPost(page: string) {
+  //   if(this.pageMap.hasOwnProperty(page) && this.pageMap[page].length){
+  //     console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
+  //     this.currentPage = this.pageMap[page];
+  //     this.pageSource.next(this.pageMap[page]);
+  //   } else {
+  //     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+  //       console.log("DataService: api call returned for " + page + " post: ", data);
+  //       this.currentPage = data;
+  //       this.pageMap[page] = data;
+  //       this.pageSource.next(data);
+  //     });
+  //   }
+  // }
 
   getMenu() {
     this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
