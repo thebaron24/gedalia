@@ -18,6 +18,11 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 							private router: Router) {
   	console.log("BlogComponent: Constructor firing");
 
+    this.subscriptions.config = this.dataService.config$.subscribe(config => {
+      console.log("BlogComponent: config received - ", config);
+      this.dataService.getPosts();
+    });
+
     this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("BlogComponent: page received - ", page);
       if(page.length) this.page = page;
@@ -40,6 +45,7 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
 		console.log("BlogComponent: OnInit firing");
+
 	}
 
 	ngAfterViewInit() {
@@ -48,6 +54,7 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngOnDestroy(): void {
 		console.log("BlogComponent: OnDestroy firing");
+    this.subscriptions.config.unsubscribe();
 		this.subscriptions.page.unsubscribe();
     this.subscriptions.posts.unsubscribe();
 		this.subscriptions.routerEvents.unsubscribe();
