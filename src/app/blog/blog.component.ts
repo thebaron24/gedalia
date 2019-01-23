@@ -11,7 +11,7 @@ import { SafeHtmlPipe } from '../safe-html.pipe';
 export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	page: any[];
-  posts: any[];
+  posts: any[] = [];
 	subscriptions: any = {};
 
   constructor(private dataService: DataService,
