@@ -18,24 +18,24 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 							private router: Router) {
   	console.log("BlogComponent: Constructor firing");
 
-    this.subscriptions.page = this.dataService.page$.subscribe(page => {
-      console.log("BlogComponent: page received - ", page);
-      if(page.length) this.page = page;
-      else this.router.navigateByUrl('/404');
-    });
+    // this.subscriptions.page = this.dataService.page$.subscribe(page => {
+    //   console.log("BlogComponent: page received - ", page);
+    //   if(page.length) this.page = page;
+    //   else this.router.navigateByUrl('/404');
+    // });
 
-    this.subscriptions.posts = this.dataService.posts$.subscribe(posts => {
-      console.log("BlogComponent: posts received - ", posts);
-      if(posts.length) this.posts = posts;
-    });
+    // this.subscriptions.posts = this.dataService.posts$.subscribe(posts => {
+    //   console.log("BlogComponent: posts received - ", posts);
+    //   if(posts.length) this.posts = posts;
+    // });
 
-    //to reset the loading bar so the user knows something is loading
-    this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
-      if(val instanceof NavigationStart) {
-        console.log("BlogComponent: router event NavigationStart - ", val);
-        this.page = [];
-      }
-    });
+    // //to reset the loading bar so the user knows something is loading
+    // this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
+    //   if(val instanceof NavigationStart) {
+    //     console.log("BlogComponent: router event NavigationStart - ", val);
+    //     this.page = [];
+    //   }
+    // });
   }
 
   ngOnInit(): void {
@@ -48,9 +48,9 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngOnDestroy(): void {
 		console.log("BlogComponent: OnDestroy firing");
-		this.subscriptions.page.unsubscribe();
-    this.subscriptions.posts.unsubscribe();
-		this.subscriptions.routerEvents.unsubscribe();
+		// this.subscriptions.page.unsubscribe();
+  //   this.subscriptions.posts.unsubscribe();
+		// this.subscriptions.routerEvents.unsubscribe();
 	}
 
 }
