@@ -4,5 +4,11 @@
 		<!-- <div [innerHTML]="item.content.rendered"></div> -->
 		<mat-card [innerHTML]="item.content.rendered"></mat-card>
 	</div>
+	<mat-grid-list ngIf="posts?.length; else elseBlockForGrid" cols="4" rowHeight="2:1">
+	  <mat-grid-tile *ngFor="let item of posts">
+	  	<mat-card [innerHTML]="item.excerpt.rendered"></mat-card>
+	  </mat-grid-tile>
+	</mat-grid-list>
+	<ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
 </div>
 <ng-template #elseBlock><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
