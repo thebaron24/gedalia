@@ -8,8 +8,8 @@
 <ng-template #elseBlock><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
 <div *ngIf="posts?.length; else elseBlockForGrid">
 	<div class="container-content" >
-		<div fxLayout="row wrap">
-  			<div *ngFor="let post of posts">
+		<div fxLayout="row wrap" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+  			<div *ngFor="let post of posts" fxFlex="1 2 auto">
   				<mat-card [innerHTML]="post.excerpt.rendered"></mat-card>
   			</div>
 		</div>	
