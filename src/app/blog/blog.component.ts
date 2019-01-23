@@ -17,7 +17,7 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private dataService: DataService,
 							private router: Router) {
   	console.log("BlogComponent: Constructor firing");
-    
+
     this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("BlogComponent: page received - ", page);
       if(page.length) this.page = page;
@@ -40,7 +40,6 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
 		console.log("BlogComponent: OnInit firing");
-    this.dataService.getPosts();
 	}
 
 	ngAfterViewInit() {
