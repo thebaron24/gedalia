@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-import { CdkTableModule } from '@angular/cdk/table';
-import { CdkTreeModule } from '@angular/cdk/tree';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {A11yModule} from '@angular/cdk/a11y';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -40,13 +41,14 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatTreeModule
+  MatTreeModule,
 } from '@angular/material';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    A11yModule,
     CdkTableModule,
     CdkTreeModule,
     DragDropModule,
@@ -88,6 +90,7 @@ import {
     ScrollingModule
   ],
   exports: [
+    A11yModule,
     CdkTableModule,
     CdkTreeModule,
     DragDropModule,
@@ -126,7 +129,7 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    ScrollingModule
+    ScrollingModule,
   ]
 })
 export class MaterialModule { }

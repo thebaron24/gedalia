@@ -9,8 +9,8 @@
 <div ngIf="posts?.length; else elseBlockForGrid">
 	<div class="container-content">
 		<mat-grid-list cols="4" rowHeight="2:1">
-		  <mat-grid-tile *ngFor="let item of posts">
-		  	<mat-card [innerHTML]="item.excerpt.rendered"></mat-card>
+		  <mat-grid-tile *ngFor="let post of posts">
+		  	<mat-card [innerHTML]="post.excerpt.rendered"></mat-card>
 		  </mat-grid-tile>
 		</mat-grid-list>	
 	</div>
