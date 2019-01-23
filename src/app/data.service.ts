@@ -173,9 +173,12 @@ export class DataService implements OnInit, OnDestroy {
   }
 
   getPosts() {
-    this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']).subscribe(data => {
-      console.log("DataService: api call for all posts - ", data);
-      this.postsSource.next(data);
-    });
+
+    if(Object.keys(this.config).length){
+      this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']).subscribe(data => {
+        console.log("DataService: api call for all posts - ", data);
+        this.postsSource.next(data);
+      });
+    }
   }
 }
