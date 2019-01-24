@@ -9,10 +9,10 @@
 <div
 	*ngIf="posts?.length; else elseBlockForGrid"
 	class="container-content"
-	fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="center"
+	fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="space-around center"
 	>
-	<!-- <a routerLink="/{{post.slug}}" fxFlex *ngFor="let post of posts"> -->
-		<mat-card fxFlex *ngFor="let post of posts">
+	<div fxFlex *ngFor="let post of posts">
+		<mat-card fxFlex>
 			<mat-card-header>
 			    <!-- <div mat-card-avatar></div> -->
 			    <mat-card-title>{{post.title.rendered}}</mat-card-title>
@@ -27,6 +27,6 @@
 			    <!-- <button mat-button>SHARE</button> -->
 			</mat-card-actions>
 		</mat-card>
-	<!-- </a> -->
+	</div>
 </div>
 <ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
