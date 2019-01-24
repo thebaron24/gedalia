@@ -11,8 +11,8 @@
 	class="container-content"
 	fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="center"
 	>
-	<a routerLink="/{{post.slug}}" fxFlex *ngFor="let post of posts">
-		<mat-card fxFlex>
+	<!-- <a routerLink="/{{post.slug}}" fxFlex *ngFor="let post of posts"> -->
+		<mat-card fxFlex *ngFor="let post of posts">
 			<mat-card-header>
 			    <!-- <div mat-card-avatar></div> -->
 			    <mat-card-title>{{post.title.rendered}}</mat-card-title>
@@ -22,11 +22,11 @@
 			<mat-card-content>
 	    		<p [innerHTML]="post.excerpt.rendered"></p>
 	  		</mat-card-content>
-	  		<!-- <mat-card-actions>
-			    <button mat-button>LIKE</button>
-			    <button mat-button>SHARE</button>
-			</mat-card-actions> -->
+	  		<mat-card-actions>
+			    <button mat-button routerLink="/{{post.slug}}">READ MORE</button>
+			    <!-- <button mat-button>SHARE</button> -->
+			</mat-card-actions>
 		</mat-card>
-	</a>
+	<!-- </a> -->
 </div>
 <ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
