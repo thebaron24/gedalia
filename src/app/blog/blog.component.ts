@@ -18,10 +18,10 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 							private router: Router) {
   	console.log("BlogComponent: Constructor firing");
 
-    this.subscriptions.config = this.dataService.config$.subscribe(config => {
-      console.log("BlogComponent: config received - ", config);
-      this.dataService.getPosts();
-    });
+    // this.subscriptions.config = this.dataService.config$.subscribe(config => {
+    //   console.log("BlogComponent: config received - ", config);
+    //   this.dataService.getPosts();
+    // });
 
     this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("BlogComponent: page received - ", page);
@@ -35,12 +35,12 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     //to reset the loading bar so the user knows something is loading
-    this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
-      if(val instanceof NavigationStart) {
-        console.log("BlogComponent: router event NavigationStart - ", val);
-        this.page = [];
-      }
-    });
+    // this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
+    //   if(val instanceof NavigationStart) {
+    //     console.log("BlogComponent: router event NavigationStart - ", val);
+    //     this.page = [];
+    //   }
+    // });
   }
 
   ngOnInit(): void {
@@ -50,7 +50,7 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 	}
 
-	ngAfterViewInit() {
+	ngAfterViewInit(): void {
 		console.log("BlogComponent: AfterViewInit firing");
 	}
 

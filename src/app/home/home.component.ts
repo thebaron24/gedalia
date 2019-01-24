@@ -15,25 +15,26 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	constructor(private dataService: DataService,
 							private router: Router) {
 		console.log("HomeComponent: Constructor firing");
+
 		this.subscriptions.home = this.dataService.home$.subscribe(page => {
 			console.log("HomeComponent: page received - ", page)
 			this.page = page;
 		});
 
 		//to reset the loading bar so the user knows something is loading
-    this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
-      if(val instanceof NavigationStart) {
-        console.log("HomeComponent: router event NavigationStart - ", val);
-        this.page = [];
-      }
-    });
+    // this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
+    //   if(val instanceof NavigationStart) {
+    //     console.log("HomeComponent: router event NavigationStart - ", val);
+    //     this.page = [];
+    //   }
+    // });
 	}
 
 	ngOnInit(): void {
 		console.log("HomeComponent: OnInit firing");
 	}
 
-	ngAfterViewInit() {
+	ngAfterViewInit(): void {
 		console.log("HomeComponent: AfterViewInit firing");
 	}
 

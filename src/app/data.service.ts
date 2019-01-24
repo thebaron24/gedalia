@@ -1,7 +1,7 @@
 import { Injectable, OnInit, OnDestroy  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject }    from 'rxjs';
-import { Router, NavigationEnd } from '@angular/router';
+import { Observable, Subject }    from 'rxjs';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -24,18 +24,7 @@ export class DataService implements OnInit, OnDestroy {
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
 
-  config: Object = {
-    "apiUrls": {
-      "domain": "http://www.baronwilson.io",
-      "apidomain": "http://api.baronwilson.io",
-      "menu": "/wp-json/wp-api-menus/v2/menus/105",
-      "pages": "/wp-json/wp/v2/pages",
-      "posts": "/wp-json/wp/v2/posts",
-      "param": {
-        "slug": "?slug="
-      }
-    }
-  };
+  config: Object = {};
   menu: Object = {};
   pageMap: Object = {};
   currentPage: Array<any>;
@@ -48,11 +37,27 @@ export class DataService implements OnInit, OnDestroy {
 
     //to catch any router events and update component data
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
+
+      //to reset the loading bar so the user knows something is loading
+      if(val instanceof NavigationStart) {
+        console.log("PageComponent: router event NavigationStart - ", val);
+
+        //special case for home page
+        if(val.url === '/' || val.url === '/home') {
+          this.homeSource.next([]);
+        } else {
+          this.pageSource.next([]);
+        }
+      }
+
+
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         console.log("DataService: router event NavigationEnd - ", val);
         //special case for home page
         if(val.url === '/' || val.url === '/home') {
           this.getHome('home');
+        } else if(val.url === '/blog') {
+          this.getPosts();
         } else {
           this.getPage(val.url.replace('/',''));
         }
@@ -62,7 +67,7 @@ export class DataService implements OnInit, OnDestroy {
     this.subscriptions.config = this.config$.subscribe(config => {
       //here we know the config is set - safe to initialize
       this.getMenu();
-
+      this.getPosts();
       //special case for home page
       if(this.router.url === '/' || this.router.url === '/home'){
         this.getHome('home');
@@ -72,25 +77,25 @@ export class DataService implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log("DataService: OnInit firing");
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     console.log("DataService: OnDestroy firing");
     this.subscriptions.config.unsubscribe();
     this.subscriptions.routerEvents.unsubscribe();
   }
 
-  getJson(url) {
+  getJson(url): Observable<any> {
   	return this.http.get(url);
 	}
 
-	getArray(url) {
+	getArray(url): Observable<Array<any>> {
   	return this.http.get<any[]>(url);
 	}
 
-  getConfig() {
+  getConfig(): void {
     this.getJson("/assets/config.json").subscribe(data => {
       console.log("DataService: config loaded - ", data);
       this.config = data;
@@ -119,7 +124,7 @@ export class DataService implements OnInit, OnDestroy {
     }
   }
 
-  getHome(page: string) {
+  getHome(page: string): void {
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
       this.currentPage = this.getStoredPage(page);
@@ -134,7 +139,7 @@ export class DataService implements OnInit, OnDestroy {
   }
 
 
-  getPage(page: string) {
+  getPage(page: string): void {
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
       this.currentPage = this.getStoredPage(page);
@@ -154,7 +159,7 @@ export class DataService implements OnInit, OnDestroy {
     }
   }
 
-  getPost(page: string) {
+  getPost(page: string): void {
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " post already exists - using: ", this.getStoredPage(page));
       this.currentPage = this.getStoredPage(page);
@@ -168,7 +173,7 @@ export class DataService implements OnInit, OnDestroy {
     }
   }
 
-  getMenu() {
+  getMenu(): void {
     this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
       console.log("DataService: menu loaded - ", data);
       this.menu = data;
@@ -176,15 +181,14 @@ export class DataService implements OnInit, OnDestroy {
     });
   }
 
-  getPages() {
+  getPages(): void {
     this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']).subscribe(data => {
       console.log("DataService: api call for all pages - ", data);
       this.pagesSource.next(data);
     });
   }
 
-  getPosts() {
-
+  getPosts(): void {
     if(Object.keys(this.config).length){
       this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']).subscribe(data => {
         console.log("DataService: api call for all posts - ", data);

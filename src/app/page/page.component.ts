@@ -16,6 +16,7 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(private dataService: DataService,
   						private router: Router) {
     console.log("PageComponent: Constructor firing");
+
     this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("PageComponent: page received - ", page);
       if(page.length) this.page = page;
@@ -23,19 +24,19 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     //to reset the loading bar so the user knows something is loading
-    this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
-      if(val instanceof NavigationStart) {
-        console.log("PageComponent: router event NavigationStart - ", val);
-        this.page = [];
-      }
-    });
+    // this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
+    //   if(val instanceof NavigationStart) {
+    //     console.log("PageComponent: router event NavigationStart - ", val);
+    //     this.page = [];
+    //   }
+    // });
   }
 
   ngOnInit(): void {
     console.log("PageComponent: OnInit firing");
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     console.log("PageComponent: AfterViewInit firing");
   }
 
