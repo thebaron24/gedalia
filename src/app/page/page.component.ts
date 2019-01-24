@@ -22,14 +22,6 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
       if(page.length) this.page = page;
       else this.router.navigateByUrl('/404');
     });
-
-    //to reset the loading bar so the user knows something is loading
-    // this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
-    //   if(val instanceof NavigationStart) {
-    //     console.log("PageComponent: router event NavigationStart - ", val);
-    //     this.page = [];
-    //   }
-    // });
   }
 
   ngOnInit(): void {
@@ -43,7 +35,6 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     console.log("PageComponent: OnDestroy firing");
     this.subscriptions.page.unsubscribe();
-    // this.subscriptions.routerEvents.unsubscribe();
   }
 
 }

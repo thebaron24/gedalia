@@ -20,14 +20,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 			console.log("HomeComponent: page received - ", page)
 			this.page = page;
 		});
-
-		//to reset the loading bar so the user knows something is loading
-    // this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
-    //   if(val instanceof NavigationStart) {
-    //     console.log("HomeComponent: router event NavigationStart - ", val);
-    //     this.page = [];
-    //   }
-    // });
 	}
 
 	ngOnInit(): void {
@@ -41,7 +33,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	ngOnDestroy(): void {
 		console.log("HomeComponent: OnDestroy firing");
 		this.subscriptions.home.unsubscribe();
-		// this.subscriptions.routerEvents.unsubscribe();
 	}
 
 }

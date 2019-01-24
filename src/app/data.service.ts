@@ -58,6 +58,7 @@ export class DataService implements OnInit, OnDestroy {
           this.getHome('home');
         } else if(val.url === '/blog') {
           this.getPosts();
+          this.getPage(val.url.replace('/',''));
         } else {
           this.getPage(val.url.replace('/',''));
         }
