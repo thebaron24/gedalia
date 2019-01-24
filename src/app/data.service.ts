@@ -24,7 +24,18 @@ export class DataService implements OnInit, OnDestroy {
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
 
-  config: Object = {};
+  config: Object = {
+    "apiUrls": {
+      "domain": "http://www.baronwilson.io",
+      "apidomain": "http://api.baronwilson.io",
+      "menu": "/wp-json/wp-api-menus/v2/menus/105",
+      "pages": "/wp-json/wp/v2/pages",
+      "posts": "/wp-json/wp/v2/posts",
+      "param": {
+        "slug": "?slug="
+      }
+    }
+  };
   menu: Object = {};
   pageMap: Object = {};
   currentPage: Array<any>;

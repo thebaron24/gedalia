@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import {FlexLayoutModule} from "@angular/flex-layout";
+
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -48,6 +50,7 @@ import {
   declarations: [],
   imports: [
     CommonModule,
+    FlexLayoutModule,
     A11yModule,
     CdkTableModule,
     CdkTreeModule,
@@ -90,6 +93,7 @@ import {
     ScrollingModule
   ],
   exports: [
+    FlexLayoutModule,
     A11yModule,
     CdkTableModule,
     CdkTreeModule,
