@@ -43,7 +43,7 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     console.log("PageComponent: OnDestroy firing");
     this.subscriptions.page.unsubscribe();
-    this.subscriptions.routerEvents.unsubscribe();
+    // this.subscriptions.routerEvents.unsubscribe();
   }
 
 }

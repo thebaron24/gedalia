@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	ngOnDestroy(): void {
 		console.log("HomeComponent: OnDestroy firing");
 		this.subscriptions.home.unsubscribe();
-		this.subscriptions.routerEvents.unsubscribe();
+		// this.subscriptions.routerEvents.unsubscribe();
 	}
 
 }

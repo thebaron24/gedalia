@@ -56,10 +56,10 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngOnDestroy(): void {
 		console.log("BlogComponent: OnDestroy firing");
-    this.subscriptions.config.unsubscribe();
+    // this.subscriptions.config.unsubscribe();
 		this.subscriptions.page.unsubscribe();
     this.subscriptions.posts.unsubscribe();
-		this.subscriptions.routerEvents.unsubscribe();
+		// this.subscriptions.routerEvents.unsubscribe();
 	}
 
 }
