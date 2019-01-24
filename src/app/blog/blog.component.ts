@@ -45,7 +45,7 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
 		console.log("BlogComponent: OnInit firing");
-    if(this.posts.length === 0){
+    if(this.posts && this.posts.length === 0){
       this.dataService.getPosts();
     }
 	}
