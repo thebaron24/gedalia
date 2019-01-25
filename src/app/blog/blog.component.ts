@@ -21,7 +21,8 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("BlogComponent: page received - ", page);
       if(page.length) this.page = page;
-      else this.router.navigateByUrl('/404');
+      else this.page = [];
+      //else this.router.navigateByUrl('/404');
     });
 
     this.subscriptions.posts = this.dataService.posts$.subscribe(posts => {

@@ -19,8 +19,9 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("PageComponent: page received - ", page);
-      if(page.length) this.page = page;
-      else this.router.navigateByUrl('/404');
+      if(page && page.length) this.page = page;
+      else if(page && page.length === 0) this.router.navigateByUrl('/404');
+      else this.page = [];
     });
   }
 

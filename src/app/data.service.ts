@@ -46,7 +46,7 @@ export class DataService implements OnInit, OnDestroy {
         if(val.url === '/' || val.url === '/home') {
           this.homeSource.next([]);
         } else {
-          this.pageSource.next([]);
+          this.pageSource.next(undefined);
         }
       }
 
