@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1004,
+    "date": "2011-12-13T19:45:36",
+    "date_gmt": "2011-12-14T00:45:36",
+    "guid": {
+      "rendered": "http://gedaliahealingarts.com/?page_id=1004"
+    },
+    "modified": "2019-01-19T19:44:22",
+    "modified_gmt": "2019-01-20T00:44:22",
+    "slug": "testimonials",
+    "status": "publish",
+    "type": "page",
+    "link": "http://api.baronwilson.io/testimonials/",
+    "title": {
+      "rendered": "Testimonials"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/1004"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=1004"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/1004/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 12531,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/1004/revisions/12531"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=1004"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

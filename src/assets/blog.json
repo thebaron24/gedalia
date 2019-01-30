@@ -1,0 +1,88 @@
+[
+  {
+    "id": 13,
+    "date": "2011-12-10T18:23:04",
+    "date_gmt": "2011-12-10T23:23:04",
+    "guid": {
+      "rendered": "http://gedaliahealingarts.com/?page_id=13"
+    },
+    "modified": "2019-01-19T19:44:38",
+    "modified_gmt": "2019-01-20T00:44:38",
+    "slug": "blog",
+    "status": "publish",
+    "type": "page",
+    "link": "http://api.baronwilson.io/blog/",
+    "title": {
+      "rendered": "Blog"
+    },
+    "content": {
+      "rendered": "<p>[mk_page_section][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][mk_fancy_title font_family=&#8221;none&#8221;]</p>\n<h4 style=\"text-align: center;\">Gedalia&#8217;s Holistic Tips</h4>\n<h4 style=\"text-align: center;\"></h4>\n<p>[/mk_fancy_title][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_fancy_title font_family=&#8221;none&#8221;]</p>\n<h4 style=\"text-align: center;\"></h4>\n<h4 style=\"text-align: center;\"><span style=\"color: #800000;\"><a style=\"color: #800000;\" href=\"http://gedaliahealingarts.com/sign-up-for-my-blogs/\" target=\"_blank\">Sign up</a></span>&nbsp;here</h4>\n<p>[/mk_fancy_title][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_social_networks facebook=&#8221;https://www.facebook.com/GedaliaHealingArts&#8221; instagram=&#8221;https://www.instagram.com/gedaliahdoc/&#8221; pinterest=&#8221;https://www.pinterest.com/gedaliahdoc/&#8221; linkedin=&#8221;https://www.linkedin.com/in/gedalia-genin-79280361/&#8221;][/vc_column][/mk_page_section][vc_row][vc_column][mk_blog cropping=&#8221;false&#8221; excerpt_length=&#8221;400&#8243; item_id=&#8221;1453277307-569f407b87f94&#8243;][/vc_column][/vc_row]</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>[mk_page_section][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][mk_fancy_title font_family=&#8221;none&#8221;] Gedalia&#8217;s Holistic Tips [/mk_fancy_title][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_fancy_title font_family=&#8221;none&#8221;] Sign up&nbsp;here [/mk_fancy_title][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_social_networks facebook=&#8221;https://www.facebook.com/GedaliaHealingArts&#8221; instagram=&#8221;https://www.instagram.com/gedaliahdoc/&#8221; pinterest=&#8221;https://www.pinterest.com/gedaliahdoc/&#8221; linkedin=&#8221;https://www.linkedin.com/in/gedalia-genin-79280361/&#8221;][/vc_column][/mk_page_section][vc_row][vc_column][mk_blog cropping=&#8221;false&#8221; excerpt_length=&#8221;400&#8243; item_id=&#8221;1453277307-569f407b87f94&#8243;][/vc_column][/vc_row]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 3,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/13"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=13"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/13/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 12532,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/13/revisions/12532"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=13"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

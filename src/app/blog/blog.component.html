@@ -9,7 +9,7 @@
 <section class="container-content">
 	<div
 		*ngIf="posts?.length; else elseBlockForGrid"
-		fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="space-around center"
+		fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10px grid"
 		>
 		<div fxFlex *ngFor="let post of posts">
 			<mat-card fxFlex>
@@ -29,5 +29,5 @@
 			</mat-card>
 		</div>
 	</div>
+	<ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
 </section>
-<ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>

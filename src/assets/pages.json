@@ -1,0 +1,524 @@
+[
+  {
+    "id": 11622,
+    "date": "2018-05-25T10:40:44",
+    "date_gmt": "2018-05-25T14:40:44",
+    "guid": {
+      "rendered": "http://gedaliahealingarts.com/?page_id=11622"
+    },
+    "modified": "2019-01-21T21:00:30",
+    "modified_gmt": "2019-01-22T02:00:30",
+    "slug": "home",
+    "status": "publish",
+    "type": "page",
+    "link": "http://api.baronwilson.io/",
+    "title": {
+      "rendered": "Gedalia Energy Healer"
+    },
+    "content": {
+      "rendered": "\n<h1>Gedalia | Energy Healer</h1>\n\n\n\n<h2>Welcome to my online healing space.</h2>\n\n\n\n<p>I&#8217;ve helped hundreds of women <strong>eliminate stress, anxiety</strong>, <strong>depression</strong>, <strong>grief, loss</strong>, <strong>improve hormonal imbalance</strong>, and <strong>weight loss</strong>.  By <strong>awakening the body&#8217;s healing potential</strong> and <strong>increasing energy flow</strong> women <strong>feel grounded</strong>, have <strong>improved sleep</strong>, <strong>feel unburdened emotionally</strong>, <strong>lose weight naturally</strong>, <strong>feel vitality</strong>, <strong>increased creativity</strong>, and a <strong>renewed sense of well being</strong>.</p>\n\n\n\n<p>As a <strong>mind-body therapist</strong> / <strong>energy healer</strong>, I focus on unblocking and increasing energy flow with a rare anti-aging healing modality called &#8221; Marma&#8221;. Marma is a hands-on therapy (with the client fully clothed) using <strong>acupressure points</strong>, <strong>essential oils</strong>, <strong>gemstones</strong>, <strong>sound-Tibetan bowls</strong> and ends with <strong>Polarity therapy</strong>. All the benefits of Acupuncture with no needles.</p>\n\n\n\n<h3>How can I help you return to vibrant health and inner peace?</h3>\n\n\n\n<ul><li><a href=\"/sign-up-for-my-blogs\">Sign Up For My Weekly Holistic Tips Blog</a></li><li><a href=\"/services\">See My Services</a></li><li>Don&#8217;t take my word for it: <a href=\"/testimonials\">Read Testimonials from women I have already helped</a></li><li>Read my paperback guide: <a rel=\"noreferrer noopener\" href=\"https://www.amazon.com/Enough-Drugs-Woman-Heal-Naturally/dp/0692811613/ref=sr_1_1?ie=UTF8&amp;qid=1512770516&amp;sr=8-1&amp;keywords=enough+drugs+i+am+a+woman\" target=\"_blank\">Enough Drugs! I Am a Woman and Can Heal Naturally: A practical guide to feeling your best</a> </li></ul>\n\n\n\n<p>The Enough Drugs! guide empowers women with a wealth of holistic gems to reclaim vibrant health and inner peace.<br>For those seeking an alternative to a reliance on prescription drugs,&nbsp;or for those seeking a holistic lifestyle,<br>the author clearly distills the benefits of creativity, meditation, movement, Ayurveda, vibrational healing<br>and shows you how to get started on a path to healing and wholeness.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Gedalia | Energy Healer Welcome to my online healing space. I&#8217;ve helped hundreds of women eliminate stress, anxiety, depression, grief, loss, improve hormonal imbalance, and weight loss.  By awakening the body&#8217;s healing potential and increasing energy flow women feel grounded, have improved sleep, feel unburdened emotionally, lose weight naturally, feel vitality, increased creativity, and a [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 12564,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/11622"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=11622"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 26,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/11622/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 12573,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/11622/revisions/12573"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media/12564"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=11622"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 11055,
+    "date": "2017-12-10T15:16:55",
+    "date_gmt": "2017-12-10T20:16:55",
+    "guid": {
+      "rendered": "http://gedaliahealingarts.com/?page_id=11055"
+    },
+    "modified": "2019-01-19T19:44:00",
+    "modified_gmt": "2019-01-20T00:44:00",
+    "slug": "services",
+    "status": "publish",
+    "type": "page",
+    "link": "http://api.baronwilson.io/services/",
+    "title": {
+      "rendered": "Services"
+    },
+    "content": {
+      "rendered": "<p style=\"text-align: center;\"><span style=\"font-size: 36pt; font-family: raleway;\">Services</span></p>\n<p style=\"text-align: center;\">\n<p style=\"text-align: center;\"><span style=\"font-family: raleway; font-size: 14pt;\">What to Expect</span></p>\n<p><span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">Each session will last 60 minutes. It is recommended that a client questionnaire and consult form be filled out prior to your session. (See below)</span></span></p>\n<p><span style=\"font-family: raleway;\"><span style=\"font-size: 14pt;\">Your first session can include a tongue and pulse evaluation based on Ayurveda</span>.</span></p>\n<p style=\"text-align: left;\"><span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">During your healing session (fully clothed) you may experience insights, see colors, feel tingling or warmth and have a deep feeling of peace and calm. </span></span></p>\n<p style=\"text-align: left;\"><span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">Following your session, you will be provided with recommendations such as essential oils, herbs, meditation, diet, and gemstones.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></span></p>\n<p>[/vc_column_text][mk_divider divider_width=&#8221;one_half&#8221;][mk_padding_divider][vc_column_text][/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][vc_column_text]</p>\n<p style=\"text-align: center;\"><span style=\"font-family: raleway;\"><strong><span style=\"font-size: 24pt;\">Office Visit</span></strong></span></p>\n<p style=\"text-align: left;\"><span style=\"font-family: raleway;\"><strong><span style=\"font-size: 14pt;\">&nbsp;Marma therapy-One Hour- $175</span></strong></span></p>\n<p><span style=\"font-family: raleway; font-size: 14pt;\">Marmas&nbsp;are the junction or entry points between body, mind, and emotions. Gently pressing these points along the front and back of the body increases vital energy flow for restoration and rejuvenation, awakening your inner healing system. Marma is anti-aging and also rejuvenates the skin.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">Essential oils, gemstones, and sound are part of this unique mind/body therapy.</span></p>\n<p><strong><span style=\"font-family: raleway; font-size: 14pt;\">Package of Three Sessions- $475 (Valid for three months from the first session)</span></strong></p>\n<p><strong><span style=\"font-family: raleway; font-size: 14pt;\">Remote sessions are also available by phone.</span></strong></p>\n<h4><span style=\"font-family: raleway; font-size: 14pt;\">Schedule a free 20 minute /question/strategy session</span></h4>\n<h4><span style=\"font-family: raleway; font-size: 14pt;\">678-357-3443</span></h4>\n<h4></h4>\n<h4 style=\"text-align: center;\"><span style=\"font-family: raleway; font-size: 14pt;\">&nbsp;</span></h4>\n<p>[/vc_column_text][vc_column_text]</p>\n<p style=\"text-align: center;\"><strong><span style=\"font-size: 24pt;\">Whole Health Home Visit for Women- balancing your inner and outer home.</span></strong></p>\n<p><span style=\"font-family: raleway;\"><strong><span style=\"font-size: 14pt;\">First Hour- $185</span></strong></span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">No traffic, no stress, I come right to your own home!</span></p>\n<p><span style=\"font-family: raleway; font-size: 14pt;\">We will begin by tuning and balancing your inner being with &#8220;Marma Therapy&#8221;. Marma points are the junction between mind/body and emotions. When gently pressed along the front and back of the body this gentle pressure will restore and rejuvenate your entire being. Marma is like going on a vacation except the results are lasting.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">Essential oils, sound, and gemstones are used to harmonize the vibrational frequencies of your body/mind. You will feel a renewed glow.</span></p>\n<p><span style=\"font-size: 14pt;\">&nbsp;</span></p>\n<p><span style=\"font-size: 14pt;\">&nbsp;</span><strong><span style=\"font-size: 14pt;\">Second Hour (optional)- $100</span></strong></p>\n<p><span style=\"font-family: raleway; font-size: 14pt;\">Your outer home needs to reflect the harmony and balance you need to maintain your new vibe.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">You may want to know, &#8220;Where is the ideal spot in my home for a sacred space?&#8221;</span></p>\n<p><span style=\"font-family: raleway; font-size: 14pt;\">&#8221; What are some easy yoga postures I can do at home&#8221;? &#8221; What colors will uplift or calm me and my family?&#8221; &#8221; What essential oils should I use at home&#8221;?</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">You will have all the answers and inspiration you need to balance your inner and outer home!</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">&nbsp;</span></p>\n<p style=\"text-align: center;\"><span style=\"font-family: raleway; font-size: 14pt;\"><strong>Cash or checks are accepted. Credit Cards accepted with 4% processing fee added.</strong></span></p>\n<p>[/vc_column_text][mk_divider divider_width=&#8221;one_half&#8221;][/vc_column][/vc_row][mk_page_section][vc_column][vc_column_text]</p>\n<p style=\"text-align: center;\"><span style=\"font-family: raleway; font-size: 14pt;\">Prior to your visit, please complete these forms and bring with you to your first appointment.</span></p>\n<p><strong><span style=\"font-family: raleway; font-size: 14pt;\">Client Questionnaire</span></strong></p>\n<p>[easy_media_download url=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2018/10/Client-Questionnaire.pdf&#8221; text=&#8221;Download &#8221; color= blue&#8221;]</p>\n<p><strong><span style=\"font-family: raleway; font-size: 14pt;\">Client Consent Form</span></strong></p>\n<p>[easy_media_download url=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2018/10/Client-Consent-Form.pdf&#8221; text=&#8221;Download&#8221; color= blue&#8221;]</p>\n<p><strong><span style=\"font-family: raleway; font-size: 14pt;\">Unique Body Type Quiz</span></strong></p>\n<p>[easy_media_download url=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2018/10/Dosha-Body-Type-Quiz.pdf&#8221; text=&#8221;Download&#8221; color= blue&#8221;][/vc_column_text][mk_divider divider_width=&#8221;one_half&#8221;][/vc_column][/mk_page_section][mk_page_section][vc_column][mk_fancy_title font_family=&#8221;none&#8221;]<strong><span style=\"font-family: raleway; font-size: 14pt;\">Gedalia is available over the phone if you are not in the Atlanta area</span></strong>[/mk_fancy_title][vc_raw_html]JTNDZm9ybSUyMGFjdGlvbiUzRCUyMmh0dHBzJTNBJTJGJTJGd3d3LnBheXBhbC5jb20lMkZjZ2ktYmluJTJGd2Vic2NyJTIyJTIwbWV0aG9kJTNEJTIycG9zdCUyMiUyMHRhcmdldCUzRCUyMl90b3AlMjIlM0UlMEElM0NpbnB1dCUyMHR5cGUlM0QlMjJoaWRkZW4lMjIlMjBuYW1lJTNEJTIyY21kJTIyJTIwdmFsdWUlM0QlMjJfcy14Y2xpY2slMjIlM0UlMEElM0NpbnB1dCUyMHR5cGUlM0QlMjJoaWRkZW4lMjIlMjBuYW1lJTNEJTIyaG9zdGVkX2J1dHRvbl9pZCUyMiUyMHZhbHVlJTNEJTIySzJBVjI4SFVOSFJUTiUyMiUzRSUwQSUzQ3RhYmxlJTNFJTBBJTNDdHIlM0UlM0N0ZCUzRSUzQ2lucHV0JTIwdHlwZSUzRCUyMmhpZGRlbiUyMiUyMG5hbWUlM0QlMjJvbjAlMjIlMjB2YWx1ZSUzRCUyMkNvbnN1bHRhdGlvbiUyMFNlcnZpY2VzJTIyJTNFQ29uc3VsdGF0aW9uJTIwU2VydmljZXMlM0MlMkZ0ZCUzRSUzQyUyRnRyJTNFJTNDdHIlM0UlM0N0ZCUzRSUzQ3NlbGVjdCUyMG5hbWUlM0QlMjJvczAlMjIlM0UlMEElMDklM0NvcHRpb24lMjB2YWx1ZSUzRCUyMlBob25lJTIwQ29uc3VsdGF0aW9uJTIyJTNFUGhvbmUlMjBDb25zdWx0YXRpb24lMjAlMjQxNTAuMDAlMjBVU0QlM0MlMkZvcHRpb24lM0UlMEElM0MlMkZzZWxlY3QlM0UlMjAlM0MlMkZ0ZCUzRSUzQyUyRnRyJTNFJTBBJTNDJTJGdGFibGUlM0UlMEElM0NpbnB1dCUyMHR5cGUlM0QlMjJoaWRkZW4lMjIlMjBuYW1lJTNEJTIyY3VycmVuY3lfY29kZSUyMiUyMHZhbHVlJTNEJTIyVVNEJTIyJTNFJTBBJTNDaW5wdXQlMjB0eXBlJTNEJTIyaW1hZ2UlMjIlMjBzcmMlM0QlMjJodHRwcyUzQSUyRiUyRnd3dy5wYXlwYWxvYmplY3RzLmNvbSUyRmVuX1VTJTJGaSUyRmJ0biUyRmJ0bl9idXlub3dDQ19MRy5naWYlMjIlMjBib3JkZXIlM0QlMjIwJTIyJTIwbmFtZSUzRCUyMnN1Ym1pdCUyMiUyMGFsdCUzRCUyMlBheVBhbCUyMC0lMjBUaGUlMjBzYWZlciUyQyUyMGVhc2llciUyMHdheSUyMHRvJTIwcGF5JTIwb25saW5lJTIxJTIyJTNFJTBBJTNDaW1nJTIwYWx0JTNEJTIyJTIyJTIwYm9yZGVyJTNEJTIyMCUyMiUyMHNyYyUzRCUyMmh0dHBzJTNBJTJGJTJGd3d3LnBheXBhbG9iamVjdHMuY29tJTJGZW5fVVMlMkZpJTJGc2NyJTJGcGl4ZWwuZ2lmJTIyJTIwd2lkdGglM0QlMjIxJTIyJTIwaGVpZ2h0JTNEJTIyMSUyMiUzRSUwQSUzQyUyRmZvcm0lM0UlMEE=[/vc_raw_html][/vc_column][/mk_page_section][vc_row][vc_column width=&#8221;1/3&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;1/3&#8243;][mk_button style=&#8221;three-dimension&#8221; corner_style=&#8221;full_rounded&#8221; size=&#8221;large&#8221; bg_color=&#8221;#0080c6&#8243; txt_color=&#8221;#dddddd&#8221; url=&#8221;mailto:gedaliagenin@gmail.com&#8221; target=&#8221;_blank&#8221; align=&#8221;center&#8221;]Click Here to Contact Gedalia by email or 678-357-3443[/mk_button][/vc_column][vc_column width=&#8221;1/3&#8243;][mk_padding_divider size=&#8221;5&#8243;][/vc_column][/vc_row]</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Services What to Expect Each session will last 60 minutes. It is recommended that a client questionnaire and consult form be filled out prior to your session. (See below) Your first session can include a tongue and pulse evaluation based on Ayurveda. During your healing session (fully clothed) you may experience insights, see colors, feel [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/11055"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=11055"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 3,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/11055/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 12530,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/11055/revisions/12530"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=11055"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 10483,
+    "date": "2017-09-30T09:29:53",
+    "date_gmt": "2017-09-30T13:29:53",
+    "guid": {
+      "rendered": "http://gedaliahealingarts.com/?page_id=10483"
+    },
+    "modified": "2019-01-19T19:42:25",
+    "modified_gmt": "2019-01-20T00:42:25",
+    "slug": "about",
+    "status": "publish",
+    "type": "page",
+    "link": "http://api.baronwilson.io/about/",
+    "title": {
+      "rendered": "About"
+    },
+    "content": {
+      "rendered": "<p>[vc_row][vc_column width=&#8221;1/2&#8243;][mk_padding_divider size=&#8221;80&#8243;][mk_image src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2017/07/GooglePickerAPI_Genin-marma-1.jpg&#8221; image_width=&#8221;350&#8243; image_height=&#8221;200&#8243; crop=&#8221;false&#8221; hover=&#8221;false&#8221;][/vc_column][vc_column width=&#8221;1/2&#8243;][vc_column_text]</p>\n<p style=\"text-align: left;\"><span style=\"font-family: raleway; font-size: 14pt;\"></span><span style=\"font-size: 14pt; font-family: raleway;\">Gedalia is a Naturopath, Mind/body healer, teacher, writer, and artist.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">There’s a bridge between mind and body and that is emotional wellness. For more than 15 years she has&nbsp;helped women uncover new pathways to health and vitality by drawing on a wealth of holistic&nbsp;gems: Ayurveda, meditation, breathwork, essential oils, gemstones, Marma,&nbsp;sound healing, nutritional advice, herbs, yoga postures, and even&nbsp;creativity.&nbsp;</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">Gedalia&#8217;s approach is unique, individualized,&nbsp; highly skilled and&nbsp;intuitive.&nbsp;Rather than medicate or over supplement, Gedalia aims to unblock and reenergize the flow of energy in the body to clear the pathways for optimal health.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">&nbsp;Her energy sessions serve as a diagnostic and assessment space for recommendations that follow as well as a deep and restorative experience&nbsp;for the client. Even those who have faced lifelong emotional pain or suffering leave her sessions feeling renewed.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">Gedalia&#8217;s book ”&nbsp;<a href=\"https://www.amazon.com/Enough-Drugs-Woman-Heal-Naturally/dp/0692811613/ref=sr_1_2?ie=UTF8&amp;qid=1512947734&amp;sr=8-2&amp;keywords=enough+drugs\" target=\"_blank\" data-saferedirecturl=\"https://www.google.com/url?q=https://www.amazon.com/Enough-Drugs-Woman-Heal-Naturally/dp/0692811613/ref%3Dsr_1_2?ie%3DUTF8%26qid%3D1512947734%26sr%3D8-2%26keywords%3Denough%2Bdrugs&amp;source=gmail&amp;ust=1538844591854000&amp;usg=AFQjCNEWn0aYTTTGTDJCwV1XrpR7R51HUA\">Enough Drugs I am a Woman and Can Heal Naturally</a>– a practical guide to feeling your best”- offers a clear-eyed&nbsp;picture of holistic tools that empower women to take back their health on all levels; body, mind, and spirit.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">Gedalia shares her compassion, wisdom and highly intuitive skills with her women clients.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">When she began meditating in 1990 she was drawn to the healing arts and painting. Through discovering her creativity and natural gifts the pain and grief she had suffered began to transform and she began to see and experience the world from a new lens. She now awakens women to their own innate gifts by supporting them to pay attention to their own self-care and joy.</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\">Gedalia&nbsp; holds a&nbsp;</span>PhD<span style=\"font-size: 14pt; font-family: raleway;\">&nbsp;in Traditional Naturopathy, a four-year certificate in hands-on&nbsp;healing and the human energy field as well as an Ayurvedic&nbsp;Certificate from New Mexico and Reiki Master certification.</span>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][mk_divider][mk_padding_divider][/vc_column][/vc_row][vc_row][vc_column width=&#8221;1/2&#8243;][vc_column_text]<span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">Experience&nbsp;</span></span></p>\n<p><span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">• <a href=\"https://centrespringmd.com/\" target=\"_blank\">Centre Spring MD</a>.- Worked with nationally known Integrative doctor <a href=\"https://doctortaz.com/\">Dr. Taz </a>as Ayurvedic Health Specialist, Mind-Body Healer Brookhaven, Georgia. 2010-8/2018</span></span><br />\n<span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">• Created and taught a&nbsp;holistic approach to Grief and Loss class for CE credits. 2015-2017</span></span><br />\n<span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">• Conducted monthly classes on various holistic topics such as seasonal nutrition, essential oils, Ayurveda, chakras, and Marma.<br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Keynote speaker at Sound Healing conference-2015</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Conducted programs for college students using aromatherapy to improve learning. Oglethorpe College 2014</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Guest appearance on the Weather Channel to discuss natural remedies for fall allergies, 2014.</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• A regular&nbsp;</span><span style=\"font-family: raleway;\">contributor to<a href=\"http://everydayayurveda.org/\"> Everyday Ayurveda</a>, The <a href=\"http://atlantajewishtimes.timesofisrael.com/\">The Atlanta Jewish Times</a>,&nbsp;<a href=\"https://www.ayumantra.co/ayurveda-mantra/\">Ayurveda Mantra</a> magazine, <a href=\"https://blog.sivanaspirit.com/\">Sivana East</a>, and <a href=\"https://medium.com/\">Medium.com</a>.&nbsp; See <a href=\"http://gedaliahealingarts.com/press/\" target=\"_blank\">Press</a> page for all Media.</span></span></span></span>[/vc_column_text][/vc_column][vc_column width=&#8221;1/2&#8243;][vc_column_text]<span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">Education &amp; Training</span></span></p>\n<p><span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\">• Ph.D. in Traditional Naturopathy- Natural Health, with over 15 years’ experience in offering energy healing as well as teaching and consulting on women’s health.</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Graduated Honors with B.S. in Natural Health and Doctor of Naturopathy from Clayton College of Natural Health, 2004.</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Completed four-year training program with world-renowned energy healer, teacher, and writer, <a href=\"http://michaelmamas.com\" target=\"_blank\">Dr. Michael Mamas</a>. Studies included 600 hours of hands on healing and mind/body relationship exploration. <a href=\"http://www.mountsoma.org\" target=\"_blank\">www.mountsoma.org</a>. 2000</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Completed Marma Therapy training with Vasant Lad, Ayurveda physician and founder of the <a href=\"http://www.ayurveda.com/\" target=\"_blank\">Ayurvedic Institute</a>, Albuquerque, New Mexico. 2011</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Received an Ayurveda Certificate upon completion of training with Vasant Lad in a clinical setting in Pune, India. 2012</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Reiki Master Certification, 1995</span></span><br />\n<span style=\"font-size: 14pt;\"> <span style=\"font-family: raleway;\">• Student of Siddha Yoga Meditation since 1990.</span></span>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][mk_divider][mk_padding_divider][/vc_column][/vc_row][vc_row visibility=&#8221;visible-dt&#8221;][vc_column width=&#8221;1/4&#8243;][mk_padding_divider size=&#8221;60&#8243;][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_padding_divider size=&#8221;60&#8243;][vc_column_text][URIS id=9696][/vc_column_text][/vc_column][vc_column width=&#8221;1/4&#8243;][vc_column_text]<span style=\"font-family: raleway; font-size: 14pt;\">Artist Bio</span></p>\n<p><span style=\"font-weight: 400; font-family: raleway; font-size: 14pt;\">As I began meditating in 1990 &nbsp;I was naturally drawn to studying and experiencing the healing arts. Painting and using color became a natural expression of what I was feeling inside. I also copied in pastel from famous artists like Wolf Kahn to further understand painting.</span></p>\n<p><span style=\"font-weight: 400; font-family: raleway; font-size: 14pt;\">I realized then that for the many issues I was dealing with in my body, the painting and color had transformed my experience of myself and the world around me. It was this realization and the practice of art that healed my body and heart. This outpouring of energy in the form of creativity continues to be a part of my daily life.</span></p>\n<p><span style=\"font-weight: 400; font-family: raleway; font-size: 14pt;\">I share these paintings with you with an intention of inspiring the creator within you.</span></p>\n<p>[/vc_column_text][/vc_column][/vc_row][vc_row visibility=&#8221;hidden-dt&#8221;][vc_column width=&#8221;1/4&#8243;][mk_padding_divider size=&#8221;60&#8243;][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_padding_divider size=&#8221;60&#8243;][vc_column_text visibility=&#8221;hidden-dt&#8221;][URIS id=10595][/vc_column_text][/vc_column][vc_column width=&#8221;1/4&#8243;][vc_column_text]</p>\n<p style=\"text-align: center;\">Associate Artist at <a href=\"http://www.artistsatelier.com/gedalia-genin\" target=\"_blank\">Artists Atelier Gallery and Studio&nbsp;</a></p>\n<p>[/vc_column_text][vc_column_text]<span style=\"font-family: raleway; font-size: 14pt;\">Artist Bio</span></p>\n<p><span style=\"font-weight: 400; font-family: raleway; font-size: 14pt;\">As I began meditating in 1990 &nbsp;I was naturally drawn to studying and experiencing the healing arts. Painting and using color became a natural expression of what I was feeling inside. I also copied in pastel from famous artists like Wolf Kahn to further understand painting.</span></p>\n<p><span style=\"font-weight: 400; font-family: raleway; font-size: 14pt;\">I realized then that for the many issues I was dealing with in my body, the painting and color had transformed my experience of myself and the world around me. It was this realization and the practice of art that healed my body and heart. This outpouring of energy in the form of creativity continues to be a part of my daily life.</span></p>\n<p><span style=\"font-weight: 400; font-family: raleway; font-size: 14pt;\">I share these paintings with you with an intention of inspiring the creator within you.</span></p>\n<p>[/vc_column_text][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_padding_divider size=&#8221;60&#8243;][/vc_column][/vc_row][vc_row][vc_column width=&#8221;1/3&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;1/3&#8243;][mk_button style=&#8221;three-dimension&#8221; corner_style=&#8221;full_rounded&#8221; size=&#8221;large&#8221; bg_color=&#8221;#0080c6&#8243; txt_color=&#8221;#dddddd&#8221; url=&#8221;mailto:gedaliagenin@gmail.com&#8221; target=&#8221;_blank&#8221; align=&#8221;center&#8221;]Click Here to Contact Gedalia by email or 678-357-3443[/mk_button][/vc_column][vc_column width=&#8221;1/3&#8243;][mk_padding_divider size=&#8221;5&#8243;][/vc_column][/vc_row]</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>[vc_row][vc_column width=&#8221;1/2&#8243;][mk_padding_divider size=&#8221;80&#8243;][mk_image src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2017/07/GooglePickerAPI_Genin-marma-1.jpg&#8221; image_width=&#8221;350&#8243; image_height=&#8221;200&#8243; crop=&#8221;false&#8221; hover=&#8221;false&#8221;][/vc_column][vc_column width=&#8221;1/2&#8243;][vc_column_text] Gedalia is a Naturopath, Mind/body healer, teacher, writer, and artist. There’s a bridge between mind and body and that is emotional wellness. For more than 15 years she has&nbsp;helped women uncover new pathways to health and vitality by drawing on a wealth of holistic&nbsp;gems: Ayurveda, meditation, [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/10483"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=10483"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/10483/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 12525,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/10483/revisions/12525"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=10483"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 8310,
+    "date": "2016-12-30T09:56:26",
+    "date_gmt": "2016-12-30T14:56:26",
+    "guid": {
+      "rendered": "http://gedaliahealingarts.com/?page_id=8310"
+    },
+    "modified": "2019-01-19T19:43:11",
+    "modified_gmt": "2019-01-20T00:43:11",
+    "slug": "media",
+    "status": "publish",
+    "type": "page",
+    "link": "http://api.baronwilson.io/media/",
+    "title": {
+      "rendered": "Media"
+    },
+    "content": {
+      "rendered": "<p>[vc_row][vc_column][mk_padding_divider size=&#8221;80&#8243;][vc_column_text][/vc_column_text][mk_divider divider_width=&#8221;one_half&#8221;][/vc_column][/vc_row][vc_row][vc_column][vc_column_text]</p>\n<p style=\"text-align: center;\"><span style=\"font-size: 14pt;\"><span style=\"font-family: raleway;\"><span style=\"color: #000000;\">Listen</span></span><span style=\"font-family: raleway;\"><span style=\"color: #000000;\"> <a href=\"http://media.artistfirst.com/ArtistFirst_Doug_Dahlgren_2018-03-09.mp3\" target=\"_blank\">HERE</a> to Gedalia&#8217;s Radio Interview by Artist first Radio Network</span></span></span></p>\n<h4 style=\"text-align: center;\"><span style=\"font-family: raleway;\">&nbsp;</span></h4>\n<p>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column width=&#8221;1/3&#8243;][/vc_column][vc_column width=&#8221;1/3&#8243;][mk_padding_divider size=&#8221;20&#8243;][vc_column_text]</p>\n<p style=\"text-align: center;\"><span style=\"font-family: raleway; font-size: 14pt;\"><span style=\"color: #000000;\">Watch Gedalia&#8217;s story &#8211; &#8220;Art and Healing&#8221; broadcast on Atlanta Interfaith Healing Television! </span></span></p>\n<h3 style=\"text-align: center;\"></h3>\n<p>[/vc_column_text][vc_video link=&#8221;https://youtu.be/LgsCLKwhQ2o&#8221;][mk_padding_divider size=&#8221;62&#8243;][/vc_column][vc_column width=&#8221;1/3&#8243;][/vc_column][/vc_row][vc_row][vc_column][mk_fancy_title font_family=&#8221;none&#8221;]</p>\n<p style=\"text-align: center;\"><span style=\"text-decoration: underline; color: #000000; font-size: 18pt;\">Recently Published Articles</span></p>\n<p>[/mk_fancy_title][mk_padding_divider size=&#8221;80&#8243;][/vc_column][/vc_row][vc_row][vc_column][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2018/08/Sivana-logo@2x-e1534257411863.png&#8221; media_width=&#8221;2600&#8243; media_height=&#8221;4914&#8243; crop=&#8221;false&#8221; align=&#8221;center&#8221; visibility=&#8221;hidden-sm&#8221;][/mk_image_box][/vc_column][/vc_row][vc_row][vc_column][vc_column_text]<span style=\"font-size: 14pt; font-family: raleway;\">Click on the title to read Gedalia&#8217;s articles published on the Sivana East Blog</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"https://blog.sivanaspirit.com/hh-components-of-an-ayurvedic-lifestyle/\" target=\"_blank\">Three Components Of An Ayurvedic Lifestyle</a></span></p>\n<p>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2018/08/Mediumlogo.jpg&#8221; media_width=&#8221;2600&#8243; media_height=&#8221;4914&#8243; crop=&#8221;false&#8221; image_link=&#8221;url&#8221; visibility=&#8221;hidden-sm&#8221;][/mk_image_box][/vc_column][/vc_row][vc_row][vc_column][vc_column_text]<span style=\"font-size: 14pt; font-family: raleway;\">Click on the title to read Gedalia&#8217;s articles published on Medium.com</span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"https://medium.com/@gedaliagenin/how-i-found-god-in-a-ponzi-scheme-d3e80ef940fa/\" target=\"_blank\">How I Found God In A Ponzi Scheme</a></span></p>\n<p>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][mk_padding_divider][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2017/03/AM-Logo.png&#8221; crop=&#8221;false&#8221; image_link=&#8221;url&#8221; visibility=&#8221;hidden-sm&#8221;][/mk_image_box][/vc_column][/vc_row][vc_row][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;3/4&#8243;][vc_column_text visibility=&#8221;hidden-sm&#8221;]</p>\n<p><a href=\"http://gedaliahealingarts.com/wp-content/uploads/2018/05/Marma-Chikitsa.pdf\">http://gedaliahealingarts.com/wp-content/uploads/2018/05/Marma-Chikitsa.pdf</a></p>\n<p>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2016/12/Can-you-hear-your-inner-voice-1140&#215;445.jpg&#8221; media_width=&#8221;1000&#8243; media_height=&#8221;850&#8243; crop=&#8221;false&#8221; image_link=&#8221;url&#8221; url=&#8221;https://www.ayumantra.co/articles/can-you-hear-your-inner-voice/&#8221; target=&#8221;_blank&#8221; align=&#8221;center&#8221;][/mk_image_box][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2017/12/The-Power-of-Time-1-1140&#215;445.jpg&#8221; media_width=&#8221;1000&#8243; media_height=&#8221;850&#8243; crop=&#8221;false&#8221; image_link=&#8221;url&#8221; url=&#8221;https://www.ayumantra.co/articles/the-power-of-time/&#8221; target=&#8221;_blank&#8221; align=&#8221;center&#8221;][/mk_image_box][/vc_column][/vc_row][vc_row][vc_column][mk_padding_divider][/vc_column][/vc_row][vc_row][vc_column][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2016/12/conscious-life-journal-logo.png&#8221; crop=&#8221;false&#8221; image_link=&#8221;url&#8221; visibility=&#8221;hidden-sm&#8221;][/mk_image_box][/vc_column][/vc_row][vc_row][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;3/4&#8243;][vc_column_text visibility=&#8221;hidden-sm&#8221;]</p>\n<p><a href=\"http://gedaliahealingarts.com/wp-content/uploads/2018/05/Chakra-article-Conscious-Life-Journal.pdf\">http://gedaliahealingarts.com/wp-content/uploads/2018/05/Chakra-article-Conscious-Life-Journal.pdf</a></p>\n<p>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2017/02/simply-buckheadv2.png&#8221; crop=&#8221;false&#8221; image_link=&#8221;url&#8221; visibility=&#8221;hidden-sm&#8221;][/mk_image_box][/vc_column][/vc_row][vc_row][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;3/4&#8243;][vc_column_text visibility=&#8221;hidden-sm&#8221;]</p>\n<p><a href=\"http://gedaliahealingarts.com/wp-content/uploads/2012/06/MarmaSimplyBuckhead.pdf\">http://gedaliahealingarts.com/wp-content/uploads/2012/06/MarmaSimplyBuckhead.pdf</a></p>\n<p>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2017/01/logo_AtlantaJewishTimes_01.gif&#8221; media_width=&#8221;2600&#8243; media_height=&#8221;5000&#8243; crop=&#8221;false&#8221; image_link=&#8221;url&#8221;][/mk_image_box][vc_column_text]<span style=\"font-size: 14pt; font-family: raleway;\">Click on the title to read Gedalia&#8217;s articles published in Atlanta Jewish Times</span></p>\n<p style=\"text-align: left;\"><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"http://atlantajewishtimes.com/?s=Gedaliah+genin\" target=\"_blank\">&nbsp;Suppressed Emotions Emerge in Ill Health</a></span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"http://atlantajewishtimes.com/2016/11/holiday-survival-starts-finding-time/\" target=\"_blank\">Holiday Survival Time Starts by Finding Time For You</a></span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"http://atlantajewishtimes.timesofisrael.com/ask-tough\" target=\"_blank\">Ask Tough Questions</a></span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"http://atlantajewishtimes.timesofisrael.com/finding-the-healing-in-painting-singing-dancing/\" target=\"_blank\">Finding the Healing in Painting, Singing, Dancing</a></span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"http://atlantajewishtimes.timesofisrael.com/5-tips-for-a-happy-healthy-winter/\">5 Tips for a Happy, Healthy Winter</a></span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"http://atlantajewishtimes.timesofisrael.com/5-tips-for-a-healthy-immune-system/\">5 Tips for a Healthy Immune System</a></span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"http://atlantajewishtimes.timesofisrael.com/find-the-calm-within/\">Find the Calm Within</a></span></p>\n<p><span style=\"font-size: 14pt; font-family: raleway;\"><a href=\"https://atlantajewishtimes.timesofisrael.com/balanced-pitta/\">Balanced Pitta</a></span></p>\n<h1 class=\"headline\"><span style=\"font-size: 14pt; font-family: raleway;\">&nbsp;</span></h1>\n<p>&nbsp;</p>\n<h1 class=\"headline\" style=\"margin: 15px 0px 0px; padding: 0px; border: 0px currentColor; width: 635px; color: #2b2b2b; text-transform: none; line-height: 48.4px; text-indent: 0px; letter-spacing: normal; clear: both; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 4.4em; font-style: normal; font-weight: normal; word-spacing: 0px; vertical-align: baseline; float: left; white-space: normal; orphans: 2; widows: 2; font-stretch: inherit; background-color: #f7f5f0; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;\"><a href=\"http://atlantajewishtimes.timesofisrael.com/5-tips-for-a-happy-healthy-winter/\">&nbsp;</a></h1>\n<p>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2017/01/everyday.jpg&#8221; media_width=&#8221;2600&#8243; media_height=&#8221;2040&#8243; crop=&#8221;false&#8221; image_link=&#8221;url&#8221;][/mk_image_box][/vc_column][/vc_row][vc_row][vc_column][vc_column_text]<span style=\"font-family: raleway; font-size: 14pt;\">Click on the title to read Gedalia&#8217;s articles published in Everyday Ayurveda</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/all/9-potential-benefits-marma-chikitsa\">Nine Potential Benefits of Marma Chakitsa</a></span></p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/live/living-long-with-laughter\">Living Long with Laughter</a></span></p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://Dear%20friends, It's &lt;span style=&quot;color: #ff00ff;&quot;&gt;Spring&lt;/span&gt; and we talked about detoxing the mind in a previous blog. You've probably flung open your windows, cleaned out some clutter and began planting new plants! Here are some easy tips to &lt;span style=&quot;color: #339966;&quot;&gt;detox your body :&lt;/span&gt; &lt;ol&gt; &lt;li&gt;Increase aerobic exercise- walk, bike , swim, dance , bounce- all these increase fat burning where the toxins are stored.&lt;/li&gt; &lt;li&gt;Increase your water intake- swish the water first in your mouth to increase digestive juices.&lt;/li&gt; &lt;li&gt;Drink cumin, coriander, fennel tea to support digestion and elimination-  recipe in this article  I've written./&lt;a href=&quot;http://everydayayurveda.org/center-yourself-in-just-10-minutes/&quot;&gt;http://everydayayurveda.org/center-yourself-in-just-10-minutes/&lt;/a&gt;&lt;/li&gt; &lt;li&gt;Increase dark leafy veggies like kale, and spinach cooking them with cumin, coriander, tumeric. see Spring grocery list &lt;a href=&quot;http://gedaliahealingarts.com/wp-content/uploads/2016/03/Spring-Grocery-List-final-with-c-1.docx&quot; rel=&quot;&quot;&gt;Spring Grocery List final with (c)-1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;Finally, eat lightly using light proteins such as lentils, split mung beans and soups to transition from the heavy eating of winter to the bright light energy of Spring. &lt;span style=&quot;color: #993300;&quot;&gt;See recipe below for quick lentil stew.&lt;/span&gt;&lt;/li&gt; &lt;li&gt;And  &lt;span style=&quot;color: #ff0000;&quot;&gt;Hold the Barbeque Sauce&lt;/span&gt;!!!  Meat is difficult to digest in Spring,but do add some black pepper and chili peppers to kick start those stored toxins to get out of your house- your most precious one your &lt;span style=&quot;color: #0000ff;&quot;&gt;BODY.&lt;/span&gt;&lt;/li&gt; &lt;/ol&gt; &lt;img class=&quot;aligncenter size-full wp-image-6614&quot; src=&quot;http://gedaliahealingarts.com/wp-content/uploads/2015/11/Spring.jpg&quot; alt=&quot;Spring&quot; width=&quot;339&quot; height=&quot;481&quot; /&gt; Acrylic painting by Gedalia                    Entitled &quot; Spring&quot; ( sold) &amp;nbsp; &lt;span style=&quot;color: #333300;&quot;&gt;&lt;span style=&quot;color: #993300;&quot;&gt;Recipe for lentil stew&lt;/span&gt;-&lt;/span&gt;  takes about 30 minutes- 40 min-can use over rice, quinoa, barley- I made this last night and the rice went into the rice cooker with a&quot;kombu&quot; stick for extra minerals. Lentils-mixed red, black and green ( found at cosco- organic) about 3/4 cup First sauteed ghee and olive oil in large saucepan with garlic, fresh ginger, scallions ( the white part)- tsp of cumin, coriander- chopped fresh fennel bulb- two carrots, celery- used half sweet potato and a handful of frozen corn and peas- then add lentils- then chicken stock or veggie stock about three to four cups- cover and simmer about thirty min- about halfway thru added a few tbsps of tomato sauce ( whatever I had)- salt and pepper, chili flakes and braggs liquid aminos. You can use any veggies you like or have. At end added a handful of arugula. Served it with a Mint chutney I had made the day before- fresh mint ground with lime juice- that's it. &lt;span style=&quot;color: #ff9900;&quot;&gt;Savor this time to lighten up evey way you can! &lt;span style=&quot;color: #800080;&quot;&gt;Let nature be your guide!&lt;/span&gt;&lt;/span&gt; &lt;span style=&quot;color: #ff9900;&quot;&gt;kindly,&lt;/span&gt; Gedalia Genin Ayurvedic Health Specialist &quot;transforming women's emotional health using natural modalities&quot; &amp;nbsp;\">How to Use Essential Oils in Your Ayurvedic Life</a></span></p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/live/was-that-a-coincidence-or-are-you-in-sync-with-yourself\">Was that a coincidence, or are you in sync?</a></span></p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/live/5-steps-to-attract-what-you-want-in-life\">5 Steps to Attract What You Want in Life</a></span></p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/live/4-tips-for-watching-your-winter-weight\">4 Tips for Watching Your Winter Weight</a></span></p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/simple-powerful-ayurveda-women/\">Simple Powerful Ayurveda for Women</a></span></p>\n<p class=\"headline\"><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/springcleanthemindandbody/\">Spring Clean the Mind and Body</a></span></p>\n<p class=\"headline\"><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/center-yourself-in-just-10-minutes/\">Center Yourself in Just Ten Minutes&nbsp;</a></span></p>\n<p class=\"headline\"><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/sustainable-self-care/\">Sustainable Self Care</a></span></p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/mindful-food-combining-a-simple-ayurvedic-approach-to-eating/\">Discover the Food Combining Secrets of Ayurveda and Radiate Health</a></span></p>\n<p><span style=\"font-size: 14pt;\"><a href=\"http://everydayayurveda.org/overcoming-grief/\">Overcoming Grief with Ayurveda</a></span>[/vc_column_text][/vc_column][/vc_row][vc_row][vc_column width=&#8221;1/3&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;1/3&#8243;][mk_button style=&#8221;three-dimension&#8221; corner_style=&#8221;full_rounded&#8221; size=&#8221;large&#8221; bg_color=&#8221;#0080c6&#8243; txt_color=&#8221;#dddddd&#8221; url=&#8221;mailto:gedaliagenin@gmail.com&#8221; target=&#8221;_blank&#8221; align=&#8221;center&#8221;]Click Here to Contact Gedalia by email or 678-357-3443[/mk_button][/vc_column][vc_column width=&#8221;1/3&#8243;][mk_padding_divider size=&#8221;5&#8243;][/vc_column][/vc_row]</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>[vc_row][vc_column][mk_padding_divider size=&#8221;80&#8243;][vc_column_text][/vc_column_text][mk_divider divider_width=&#8221;one_half&#8221;][/vc_column][/vc_row][vc_row][vc_column][vc_column_text] Listen HERE to Gedalia&#8217;s Radio Interview by Artist first Radio Network &nbsp; [/vc_column_text][/vc_column][/vc_row][vc_row][vc_column width=&#8221;1/3&#8243;][/vc_column][vc_column width=&#8221;1/3&#8243;][mk_padding_divider size=&#8221;20&#8243;][vc_column_text] Watch Gedalia&#8217;s story &#8211; &#8220;Art and Healing&#8221; broadcast on Atlanta Interfaith Healing Television! [/vc_column_text][vc_video link=&#8221;https://youtu.be/LgsCLKwhQ2o&#8221;][mk_padding_divider size=&#8221;62&#8243;][/vc_column][vc_column width=&#8221;1/3&#8243;][/vc_column][/vc_row][vc_row][vc_column][mk_fancy_title font_family=&#8221;none&#8221;] Recently Published Articles [/mk_fancy_title][mk_padding_divider size=&#8221;80&#8243;][/vc_column][/vc_row][vc_row][vc_column][mk_image_box src=&#8221;http://gedaliahealingarts.com/wp-content/uploads/2018/08/Sivana-logo@2x-e1534257411863.png&#8221; media_width=&#8221;2600&#8243; media_height=&#8221;4914&#8243; crop=&#8221;false&#8221; align=&#8221;center&#8221; visibility=&#8221;hidden-sm&#8221;][/mk_image_box][/vc_column][/vc_row][vc_row][vc_column][vc_column_text]Click on the title to read Gedalia&#8217;s articles [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/8310"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=8310"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/8310/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 12527,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/8310/revisions/12527"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=8310"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1004,
+    "date": "2011-12-13T19:45:36",
+    "date_gmt": "2011-12-14T00:45:36",
+    "guid": {
+      "rendered": "http://gedaliahealingarts.com/?page_id=1004"
+    },
+    "modified": "2019-01-19T19:44:22",
+    "modified_gmt": "2019-01-20T00:44:22",
+    "slug": "testimonials",
+    "status": "publish",
+    "type": "page",
+    "link": "http://api.baronwilson.io/testimonials/",
+    "title": {
+      "rendered": "Testimonials"
+    },
+    "content": {
+      "rendered": "",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 0,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/1004"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=1004"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/1004/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 12531,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/1004/revisions/12531"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=1004"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "date": "2011-12-10T18:23:04",
+    "date_gmt": "2011-12-10T23:23:04",
+    "guid": {
+      "rendered": "http://gedaliahealingarts.com/?page_id=13"
+    },
+    "modified": "2019-01-19T19:44:38",
+    "modified_gmt": "2019-01-20T00:44:38",
+    "slug": "blog",
+    "status": "publish",
+    "type": "page",
+    "link": "http://api.baronwilson.io/blog/",
+    "title": {
+      "rendered": "Blog"
+    },
+    "content": {
+      "rendered": "<p>[mk_page_section][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][mk_fancy_title font_family=&#8221;none&#8221;]</p>\n<h4 style=\"text-align: center;\">Gedalia&#8217;s Holistic Tips</h4>\n<h4 style=\"text-align: center;\"></h4>\n<p>[/mk_fancy_title][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_fancy_title font_family=&#8221;none&#8221;]</p>\n<h4 style=\"text-align: center;\"></h4>\n<h4 style=\"text-align: center;\"><span style=\"color: #800000;\"><a style=\"color: #800000;\" href=\"http://gedaliahealingarts.com/sign-up-for-my-blogs/\" target=\"_blank\">Sign up</a></span>&nbsp;here</h4>\n<p>[/mk_fancy_title][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_social_networks facebook=&#8221;https://www.facebook.com/GedaliaHealingArts&#8221; instagram=&#8221;https://www.instagram.com/gedaliahdoc/&#8221; pinterest=&#8221;https://www.pinterest.com/gedaliahdoc/&#8221; linkedin=&#8221;https://www.linkedin.com/in/gedalia-genin-79280361/&#8221;][/vc_column][/mk_page_section][vc_row][vc_column][mk_blog cropping=&#8221;false&#8221; excerpt_length=&#8221;400&#8243; item_id=&#8221;1453277307-569f407b87f94&#8243;][/vc_column][/vc_row]</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>[mk_page_section][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][mk_fancy_title font_family=&#8221;none&#8221;] Gedalia&#8217;s Holistic Tips [/mk_fancy_title][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_fancy_title font_family=&#8221;none&#8221;] Sign up&nbsp;here [/mk_fancy_title][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_padding_divider][/vc_column][vc_column width=&#8221;1/4&#8243;][mk_social_networks facebook=&#8221;https://www.facebook.com/GedaliaHealingArts&#8221; instagram=&#8221;https://www.instagram.com/gedaliahdoc/&#8221; pinterest=&#8221;https://www.pinterest.com/gedaliahdoc/&#8221; linkedin=&#8221;https://www.linkedin.com/in/gedalia-genin-79280361/&#8221;][/vc_column][/mk_page_section][vc_row][vc_column][mk_blog cropping=&#8221;false&#8221; excerpt_length=&#8221;400&#8243; item_id=&#8221;1453277307-569f407b87f94&#8243;][/vc_column][/vc_row]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "parent": 0,
+    "menu_order": 3,
+    "comment_status": "closed",
+    "ping_status": "closed",
+    "template": "",
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/13"
+        }
+      ],
+      "collection": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages"
+        }
+      ],
+      "about": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/types/page"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=13"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/13/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 12532,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/pages/13/revisions/12532"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=13"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

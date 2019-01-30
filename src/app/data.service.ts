@@ -8,6 +8,8 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 })
 export class DataService implements OnInit, OnDestroy {
 
+  DEBUG: boolean = false;
+
   // Observable string sources
   private configSource = new Subject<Object>();
   private pagesSource  = new Subject<any[]>();
@@ -105,7 +107,8 @@ export class DataService implements OnInit, OnDestroy {
   }
 
   pageIsStored(page: string): boolean {
-    return this.pageMap.hasOwnProperty(page) && this.pageMap[page].length;
+    console.log("DataService: "+page+" pageIsStored = ", this.pageMap.hasOwnProperty(page));
+    return this.pageMap.hasOwnProperty(page);
   }
 
   storePage(page: string, pageArray: Array<any>): void {
@@ -126,12 +129,15 @@ export class DataService implements OnInit, OnDestroy {
   }
 
   getHome(page: string): void {
+
+    let thisUrl = this.DEBUG ? "/assets/"+page+".json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page;
+
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
       this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
-      this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+      this.getArray(thisUrl).subscribe(data => {
         console.log("DataService: api call returned for " + page + " page: ", data);
         this.storePage(page, data);
         this.notifyPage(page);
@@ -141,12 +147,15 @@ export class DataService implements OnInit, OnDestroy {
 
 
   getPage(page: string): void {
+
+    let thisUrl = this.DEBUG ? "/assets/"+page+".json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page;
+
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
       this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
-      this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+      this.getArray(thisUrl).subscribe(data => {
         console.log("DataService: api call returned for " + page + " page: ", data);
 
         if(data.length){
@@ -161,12 +170,17 @@ export class DataService implements OnInit, OnDestroy {
   }
 
   getPost(page: string): void {
+
+    let thisUrl = this.DEBUG ? "/assets/"+page+".json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']+this.config['apiUrls']['param']['slug']+page;
+
+
+
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " post already exists - using: ", this.getStoredPage(page));
       this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
-      this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']+this.config['apiUrls']['param']['slug']+page).subscribe(data => {
+      this.getArray(thisUrl).subscribe(data => {
         console.log("DataService: api call returned for " + page + " post: ", data);
         this.storePage(page, data);
         this.notifyPage(page);
@@ -175,7 +189,10 @@ export class DataService implements OnInit, OnDestroy {
   }
 
   getMenu(): void {
-    this.getJson(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu']).subscribe(data => {
+
+    let thisUrl = this.DEBUG ? "/assets/menu.json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu'];
+
+    this.getJson(thisUrl).subscribe(data => {
       console.log("DataService: menu loaded - ", data);
       this.menu = data;
       this.menuSource.next(data);
@@ -183,18 +200,33 @@ export class DataService implements OnInit, OnDestroy {
   }
 
   getPages(): void {
-    this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages']).subscribe(data => {
+
+    let thisUrl = this.DEBUG ? "/assets/pages.json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages'];
+
+    this.getArray(thisUrl).subscribe(data => {
+      this.addToPageMap(data);
       console.log("DataService: api call for all pages - ", data);
       this.pagesSource.next(data);
     });
   }
 
   getPosts(): void {
-    if(Object.keys(this.config).length){
-      this.getArray(this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']).subscribe(data => {
-        console.log("DataService: api call for all posts - ", data);
-        this.postsSource.next(data);
-      });
+
+    let thisUrl = this.DEBUG ? "/assets/posts.json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts'];
+    
+    this.getArray(thisUrl).subscribe(data => {
+      this.addToPageMap(data);
+      console.log("DataService: api call for all posts - ", data);
+      this.postsSource.next(data);
+    });
+    
+  }
+
+  addToPageMap(pages: Array<any>): void {
+    for (let page of pages) {
+      this.storePage(page['slug'], page);
     }
+
+    console.log("DataService: current pageMap: ", this.pageMap);
   }
 }

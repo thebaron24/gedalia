@@ -1,0 +1,25 @@
+<section class="container-content">
+	<div
+		*ngIf="posts?.length; else elseBlockForGrid"
+		fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="space-around center stretch"
+		>
+		<div fxFlex *ngFor="let post of posts">
+			<mat-card fxFlex>
+				<mat-card-header>
+				    <!-- <div mat-card-avatar></div> -->
+				    <mat-card-title>{{post.title.rendered}}</mat-card-title>
+				    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+				 </mat-card-header>
+				 <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+				<mat-card-content>
+		    		<p [innerHTML]="post.excerpt.rendered"></p>
+		  		</mat-card-content>
+		  		<mat-card-actions>
+				    <button mat-button routerLink="/{{post.slug}}">READ MORE</button>
+				    <!-- <button mat-button>SHARE</button> -->
+				</mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+	<ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
+</section>
