@@ -9,9 +9,9 @@
 <section class="container-content">
 	<div
 		*ngIf="posts?.length; else elseBlockForGrid"
-		fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10px grid"
+		fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10px grid" fxLayoutAlign="start stretch"
 		>
-		<div fxFlex *ngFor="let post of posts">
+		<div fxFlex="1 0 25%" *ngFor="let post of posts">
 			<mat-card fxFlex>
 				<mat-card-header>
 				    <!-- <div mat-card-avatar></div> -->

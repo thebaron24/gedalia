@@ -224,7 +224,7 @@ export class DataService implements OnInit, OnDestroy {
 
   addToPageMap(pages: Array<any>): void {
     for (let page of pages) {
-      this.storePage(page['slug'], page);
+      this.storePage(page['slug'], new Array(page));
     }
 
     console.log("DataService: current pageMap: ", this.pageMap);
