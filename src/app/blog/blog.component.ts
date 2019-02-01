@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { DataService } from '../data.service';
 import { SafeHtmlPipe } from '../safe-html.pipe';
+import { PageEvent } from '@angular/material';
 
 @Component({
   selector: 'app-blog',
@@ -11,8 +12,11 @@ import { SafeHtmlPipe } from '../safe-html.pipe';
 export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	page: any[];
-  posts: any[];
+  posts: any[] = [];
 	subscriptions: any = {};
+  totalPosts: number = 0;
+  pageIndex: number = 1;
+  pageEvent: PageEvent;
 
   constructor(private dataService: DataService,
 							private router: Router) {
@@ -28,6 +32,11 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     this.subscriptions.posts = this.dataService.posts$.subscribe(posts => {
       console.log("BlogComponent: posts received - ", posts);
       if(posts.length) this.posts = posts;
+    });
+
+    this.subscriptions.totalPosts = this.dataService.totalPosts$.subscribe(totalPosts => {
+      console.log("BlogComponent: totalPosts received - ", totalPosts);
+      if(totalPosts) this.totalPosts = totalPosts;
     });
   }
 
@@ -46,7 +55,14 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 		console.log("BlogComponent: OnDestroy firing");
 		this.subscriptions.page.unsubscribe();
     this.subscriptions.posts.unsubscribe();
+    this.subscriptions.totalPosts.unsubscribe();
 	}
+
+  getPostsPagination(event: PageEvent) {
+    console.log("BlogComponent: PageEvent", event);
+    this.posts = [];
+    this.dataService.getPosts("&page=" + (event.pageIndex+1));
+  }
 
   getImage(item: Object){
 

@@ -30,4 +30,5 @@
 		</div>
 	</div>
 	<ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
+	<mat-paginator [length]="totalPosts" [pageSize]="posts.length || 10" (page)="pageEvent = getPostsPagination($event)"></mat-paginator>
 </section>

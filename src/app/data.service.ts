@@ -17,6 +17,7 @@ export class DataService implements OnInit, OnDestroy {
   private pageSource  = new Subject<any[]>();
   private postsSource  = new Subject<any[]>();
   private menuSource  = new Subject<Object>();
+  private totalPostsSource  = new Subject<number>();
  
   // Observable string streams
   config$ = this.configSource.asObservable();
@@ -25,12 +26,15 @@ export class DataService implements OnInit, OnDestroy {
   page$  = this.pageSource.asObservable();
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
+  totalPosts$  = this.totalPostsSource.asObservable();
 
   config: Object = {};
   menu: Object = {};
   pageMap: Object = {};
   currentPage: Array<any>;
   subscriptions: any = {};
+
+  headers;
 
   constructor(private http: HttpClient, private router: Router) {
     console.log("DataService: constructor firing");
@@ -173,8 +177,6 @@ export class DataService implements OnInit, OnDestroy {
 
     let thisUrl = this.DEBUG ? "/assets/"+page+".json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts']+this.config['apiUrls']['param']['slug']+page;
 
-
-
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " post already exists - using: ", this.getStoredPage(page));
       this.currentPage = this.getStoredPage(page);
@@ -223,6 +225,14 @@ export class DataService implements OnInit, OnDestroy {
     }
     
     this.getArray(thisUrl).subscribe(response => {
+
+      const keys = response.headers.keys();
+
+      this.headers = keys.map(key =>
+        `${key}: ${response.headers.get(key)}`);
+
+      this.totalPostsSource.next(Number(response.headers.get('X-WP-Total')));
+
       this.addToPageMap(response.body);
       console.log("DataService: api call for all posts - ", response.body);
       this.postsSource.next(response.body);
