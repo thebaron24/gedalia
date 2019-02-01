@@ -1,5 +1,5 @@
 import { Injectable, OnInit, OnDestroy  } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, Subject }    from 'rxjs';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 
@@ -90,19 +90,19 @@ export class DataService implements OnInit, OnDestroy {
     this.subscriptions.routerEvents.unsubscribe();
   }
 
-  getJson(url): Observable<any> {
-  	return this.http.get(url);
+  getJson(url): Observable<HttpResponse<any>> {
+  	return this.http.get(url, { observe: 'response' });
 	}
 
-	getArray(url): Observable<Array<any>> {
-  	return this.http.get<any[]>(url);
+	getArray(url): Observable<HttpResponse<Array<any>>> {
+  	return this.http.get<any[]>(url, { observe: 'response' });
 	}
 
   getConfig(): void {
-    this.getJson("/assets/config.json").subscribe(data => {
-      console.log("DataService: config loaded - ", data);
-      this.config = data;
-      this.configSource.next(data);
+    this.getJson("/assets/config.json").subscribe(response => {
+      console.log("DataService: config loaded - ", response.body);
+      this.config = response.body;
+      this.configSource.next(response.body);
     });
   }
 
@@ -137,9 +137,9 @@ export class DataService implements OnInit, OnDestroy {
       this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
-      this.getArray(thisUrl).subscribe(data => {
-        console.log("DataService: api call returned for " + page + " page: ", data);
-        this.storePage(page, data);
+      this.getArray(thisUrl).subscribe(response => {
+        console.log("DataService: api call returned for " + page + " page: ", response.body);
+        this.storePage(page, response.body);
         this.notifyPage(page);
       });
     }
@@ -155,11 +155,11 @@ export class DataService implements OnInit, OnDestroy {
       this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
-      this.getArray(thisUrl).subscribe(data => {
-        console.log("DataService: api call returned for " + page + " page: ", data);
+      this.getArray(thisUrl).subscribe(response => {
+        console.log("DataService: api call returned for " + page + " page: ", response.body);
 
-        if(data.length){
-          this.storePage(page, data);
+        if(response.body.length){
+          this.storePage(page, response.body);
           this.notifyPage(page);
         } else {
           this.getPost(page);
@@ -180,9 +180,9 @@ export class DataService implements OnInit, OnDestroy {
       this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
-      this.getArray(thisUrl).subscribe(data => {
-        console.log("DataService: api call returned for " + page + " post: ", data);
-        this.storePage(page, data);
+      this.getArray(thisUrl).subscribe(response => {
+        console.log("DataService: api call returned for " + page + " post: ", response.body);
+        this.storePage(page, response.body);
         this.notifyPage(page);
       });
     }
@@ -192,10 +192,10 @@ export class DataService implements OnInit, OnDestroy {
 
     let thisUrl = this.DEBUG ? "/assets/menu.json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['menu'];
 
-    this.getJson(thisUrl).subscribe(data => {
-      console.log("DataService: menu loaded - ", data);
-      this.menu = data;
-      this.menuSource.next(data);
+    this.getJson(thisUrl).subscribe(response => {
+      console.log("DataService: menu loaded - ", response.body);
+      this.menu = response.body;
+      this.menuSource.next(response.body);
     });
   }
 
@@ -203,10 +203,10 @@ export class DataService implements OnInit, OnDestroy {
 
     let thisUrl = this.DEBUG ? "/assets/pages.json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['pages'];
 
-    this.getArray(thisUrl).subscribe(data => {
-      this.addToPageMap(data);
-      console.log("DataService: api call for all pages - ", data);
-      this.pagesSource.next(data);
+    this.getArray(thisUrl).subscribe(response => {
+      this.addToPageMap(response.body);
+      console.log("DataService: api call for all pages - ", response.body);
+      this.pagesSource.next(response.body);
     });
   }
 
@@ -214,10 +214,10 @@ export class DataService implements OnInit, OnDestroy {
 
     let thisUrl = this.DEBUG ? "/assets/posts.json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts'];
     
-    this.getArray(thisUrl).subscribe(data => {
-      this.addToPageMap(data);
-      console.log("DataService: api call for all posts - ", data);
-      this.postsSource.next(data);
+    this.getArray(thisUrl).subscribe(response => {
+      this.addToPageMap(response.body);
+      console.log("DataService: api call for all posts - ", response.body);
+      this.postsSource.next(response.body);
     });
     
   }
