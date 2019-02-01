@@ -58,10 +58,12 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     this.subscriptions.totalPosts.unsubscribe();
 	}
 
-  getPostsPagination(event: PageEvent) {
+  getPostsPagination(event: PageEvent): PageEvent {
     console.log("BlogComponent: PageEvent", event);
     this.posts = [];
     this.dataService.getPosts("&page=" + (event.pageIndex+1));
+
+    return this.pageEvent;
   }
 
   getImage(item: Object){
