@@ -50,10 +50,9 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
   getImage(item: Object){
 
-    console.log(item);
     let srcUrl = "/assets/placeholder-image.png"
 
-    if(item['_embedded']['wp:featuredmedia'] && item['_embedded']['wp:featuredmedia'].length){
+    if(item['_embedded']['wp:featuredmedia'] && item['_embedded']['wp:featuredmedia'].length && item['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url']){
       srcUrl = item['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url'];
     }
     return srcUrl;

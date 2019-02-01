@@ -210,9 +210,17 @@ export class DataService implements OnInit, OnDestroy {
     });
   }
 
-  getPosts(): void {
+  getPosts(params: string): void {
 
-    let thisUrl = this.DEBUG ? "/assets/posts.json" : this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts'];
+    let thisUrl: string;
+
+    if(this.DEBUG){
+      thisUrl = "/assets/posts.json";
+    } else {
+      thisUrl = this.config['apiUrls']['apidomain'] + this.config['apiUrls']['posts'];
+
+      thisUrl += params ? params : "&page=1";
+    }
     
     this.getArray(thisUrl).subscribe(response => {
       this.addToPageMap(response.body);
