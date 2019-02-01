@@ -6,13 +6,15 @@
 	</div>
 </div>
 <ng-template #elseBlock><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
-<section class="container-content">
-	<mat-form-field class="example-form-field">
-  <input matInput type="text" placeholder="Search Blog Posts" [(ngModel)]="searchValue" (keyup)="searchSource.next($event.target.value)">
-  <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
+<section class="container-content" *ngIf="posts?.length || searchValue">
+	<mat-card>
+		<mat-form-field>
+		  <input matInput type="text" placeholder="Search Blog Posts" [(ngModel)]="searchValue" (keyup)="searchSource.next($event.target.value)">
+		  <button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
+		    <mat-icon>close</mat-icon>
+		  </button>
+		</mat-form-field>
+	</mat-card>
 </section>
 <section class="container-content">
 	<div
