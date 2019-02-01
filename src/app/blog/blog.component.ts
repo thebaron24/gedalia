@@ -3,6 +3,8 @@ import { Router, NavigationStart } from '@angular/router';
 import { DataService } from '../data.service';
 import { SafeHtmlPipe } from '../safe-html.pipe';
 import { PageEvent } from '@angular/material';
+import { Observable, Subject }    from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-blog',
@@ -17,6 +19,9 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
   totalPosts: number = 0;
   pageIndex: number = 1;
   pageEvent: PageEvent;
+  searchSource  = new Subject<string>();
+  searchTerm$ = this.searchSource.asObservable();
+  searchValue = '';
 
   constructor(private dataService: DataService,
 							private router: Router) {
@@ -38,6 +43,12 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
       console.log("BlogComponent: totalPosts received - ", totalPosts);
       if(totalPosts) this.totalPosts = totalPosts;
     });
+
+    this.subscriptions.search = this.searchTerm$.pipe(debounceTime(400),distinctUntilChanged()).subscribe(searchTerms => {
+      this.posts = [];
+      this.searchValue = searchTerms;
+      this.dataService.getPosts(this.searchValue ? "&search=" + this.searchValue : "&page=1");
+    });
   }
 
   ngOnInit(): void {
@@ -51,17 +62,32 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 		console.log("BlogComponent: AfterViewInit firing");
 	}
 
+  // search(terms: Observable<string>) {
+  //   return terms.debounceTime(400)
+  //     .distinctUntilChanged()
+  //     .switchMap(term => {
+  //       this.dataService.getPosts("&search=" + term)
+  //     });
+  // }
+
 	ngOnDestroy(): void {
 		console.log("BlogComponent: OnDestroy firing");
 		this.subscriptions.page.unsubscribe();
     this.subscriptions.posts.unsubscribe();
     this.subscriptions.totalPosts.unsubscribe();
+    this.subscriptions.search.unsubscribe();
 	}
+
+  clearSearch() {
+    this.searchValue='';
+    this.posts = [];
+    this.dataService.getPosts("&page=1");
+  }
 
   getPostsPagination(event: PageEvent): PageEvent {
     console.log("BlogComponent: PageEvent", event);
     this.posts = [];
-    this.dataService.getPosts("&page=" + (event.pageIndex+1));
+    this.dataService.getPosts(this.searchValue ? "&search=" + this.searchValue + "&page=" + (event.pageIndex+1) : "&page=" + (event.pageIndex+1));
 
     return this.pageEvent;
   }
