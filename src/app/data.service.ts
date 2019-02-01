@@ -210,7 +210,7 @@ export class DataService implements OnInit, OnDestroy {
     });
   }
 
-  getPosts(params: string): void {
+  getPosts(params?: string): void {
 
     let thisUrl: string;
 
