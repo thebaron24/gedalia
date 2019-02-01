@@ -48,4 +48,15 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     this.subscriptions.posts.unsubscribe();
 	}
 
+  getImage(item: Object){
+
+    console.log(item);
+    let srcUrl = "/assets/placeholder-image.png"
+
+    if(item['_embedded']['wp:featuredmedia'] && item['_embedded']['wp:featuredmedia'].length){
+      srcUrl = item['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url'];
+    }
+    return srcUrl;
+  }
+
 }

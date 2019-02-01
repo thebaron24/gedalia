@@ -3,10 +3,11 @@
 		"domain": "http://www.baronwilson.io",
 		"apidomain": "http://api.baronwilson.io",
 		"menu": "/wp-json/wp-api-menus/v2/menus/105",
-		"pages": "/wp-json/wp/v2/pages",
-		"posts": "/wp-json/wp/v2/posts",
+		"pages": "/wp-json/wp/v2/pages?_embed",
+		"posts": "/wp-json/wp/v2/posts?_embed",
+		"image": "/wp-json/wp/v2/media?_embed",
 		"param": {
-			"slug": "?slug="
+			"slug": "&slug="
 		}
 	}
 }
