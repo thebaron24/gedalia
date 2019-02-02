@@ -18,6 +18,8 @@ export class DataService implements OnInit, OnDestroy {
   private postsSource  = new Subject<any[]>();
   private menuSource  = new Subject<Object>();
   private totalPostsSource  = new Subject<number>();
+  private testimonialsSource  = new Subject<any[]>();
+  private totalTestimonialsSource  = new Subject<number>();
  
   // Observable string streams
   config$ = this.configSource.asObservable();
@@ -27,14 +29,14 @@ export class DataService implements OnInit, OnDestroy {
   posts$  = this.postsSource.asObservable();
   menu$  = this.menuSource.asObservable();
   totalPosts$  = this.totalPostsSource.asObservable();
+  testimonials$  = this.testimonialsSource.asObservable();
+  totalTestimonials$  = this.totalTestimonialsSource.asObservable();
 
   config: Object = {};
   menu: Object = {};
   pageMap: Object = {};
   currentPage: Array<any>;
   subscriptions: any = {};
-
-  headers;
 
   constructor(private http: HttpClient, private router: Router) {
     console.log("DataService: constructor firing");
@@ -65,6 +67,9 @@ export class DataService implements OnInit, OnDestroy {
         } else if(val.url === '/blog') {
           this.getPosts();
           this.getPage(val.url.replace('/',''));
+        } else if(val.url === '/testimonials') {
+          this.getTestimonials();
+          this.getPage(val.url.replace('/',''));
         } else {
           this.getPage(val.url.replace('/',''));
         }
@@ -75,6 +80,7 @@ export class DataService implements OnInit, OnDestroy {
       //here we know the config is set - safe to initialize
       this.getMenu();
       this.getPosts();
+      this.getTestimonials();
       //special case for home page
       if(this.router.url === '/' || this.router.url === '/home'){
         this.getHome('home');
@@ -228,14 +234,36 @@ export class DataService implements OnInit, OnDestroy {
 
       const keys = response.headers.keys();
 
-      this.headers = keys.map(key =>
-        `${key}: ${response.headers.get(key)}`);
-
       this.totalPostsSource.next(Number(response.headers.get('X-WP-Total')));
 
       this.addToPageMap(response.body);
       console.log("DataService: api call for all posts - ", response.body);
       this.postsSource.next(response.body);
+    });
+    
+  }
+
+  getTestimonials(params?: string): void {
+
+    let thisUrl: string;
+
+    if(this.DEBUG){
+      thisUrl = "/assets/testimonials.json";
+    } else {
+      thisUrl = this.config['apiUrls']['apidomain'] + this.config['apiUrls']['testimonials'];
+
+      thisUrl += params ? params : "&page=1";
+    }
+    
+    this.getArray(thisUrl).subscribe(response => {
+
+      const keys = response.headers.keys();
+
+      this.totalTestimonialsSource.next(Number(response.headers.get('X-WP-Total')));
+
+      //this.addToPageMap(response.body);
+      console.log("DataService: api call for all testimonials - ", response.body);
+      this.testimonialsSource.next(response.body);
     });
     
   }

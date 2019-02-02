@@ -11,7 +11,7 @@
 	<div id="content" class="container-content">
 		<div *ngFor="let item of page">
 			<!-- <div [innerHTML]="item.content.rendered"></div> -->
-			<mat-card [innerHTML]="item.content.rendered | safeHtml"></mat-card>
+			<mat-card [innerHTML]="item.content.rendered"></mat-card>
 		</div>
 	</div>
 </div>

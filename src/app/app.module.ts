@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PageComponent } from './page/page.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { BlogComponent } from './blog/blog.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BlogComponent } from './blog/blog.component';
     PageNotFoundComponent,
     PageComponent,
     SafeHtmlPipe,
-    BlogComponent
+    BlogComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

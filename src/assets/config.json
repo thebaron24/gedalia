@@ -6,6 +6,7 @@
 		"pages": "/wp-json/wp/v2/pages?_embed",
 		"posts": "/wp-json/wp/v2/posts?_embed",
 		"image": "/wp-json/wp/v2/media?_embed",
+		"testimonials": "/wp-json/wp/v2/wpcr3_review?_embed",
 		"param": {
 			"slug": "&slug="
 		}
