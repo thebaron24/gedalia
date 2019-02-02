@@ -1,5 +1,3 @@
 <mat-nav-list *ngIf="menu" class="side-menu">
-	<mat-list-item *ngFor="let link of menu.items">
-		<a mat-button color="primary" routerLink="/{{link.object_slug}}" routerLinkActive="active">{{link.title}}</a>
-	</mat-list-item>
+	<a mat-list-item *ngFor="let link of menu.items" color="primary" routerLink="/{{link.object_slug}}" routerLinkActive="active">{{link.title}}</a>
 </mat-nav-list>
