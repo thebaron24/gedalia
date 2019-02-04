@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { SeoService } from '../seo.service';
 import { Router, NavigationStart } from '@angular/router';
 import { SafeHtmlPipe } from '../safe-html.pipe';
 
@@ -14,12 +15,13 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
   subscriptions: any = {};
 
   constructor(private dataService: DataService,
+              private seoService: SeoService,
   						private router: Router) {
     console.log("PageComponent: Constructor firing");
 
     this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("PageComponent: page received - ", page);
-      if(page && page.length) this.page = page;
+      if(page && page.length) this.page = page, this.seoService.handleSeo(page);
       else if(page && page.length === 0) this.router.navigateByUrl('/404');
       else this.page = [];
     });

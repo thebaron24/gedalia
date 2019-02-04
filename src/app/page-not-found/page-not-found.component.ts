@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { SeoService } from '../seo.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,7 +8,7 @@ import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  constructor() {
+  constructor(private seoService: SeoService) {
   	console.log("PageNotFoundComponent: constructor firing");
   }
 

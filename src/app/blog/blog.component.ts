@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { DataService } from '../data.service';
+import { SeoService } from '../seo.service';
 import { SafeHtmlPipe } from '../safe-html.pipe';
 import { PageEvent } from '@angular/material';
 import { Observable, Subject }    from 'rxjs';
@@ -24,12 +25,13 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
   searchValue = '';
 
   constructor(private dataService: DataService,
+              private seoService: SeoService,
 							private router: Router) {
   	console.log("BlogComponent: Constructor firing");
 
     this.subscriptions.page = this.dataService.page$.subscribe(page => {
       console.log("BlogComponent: page received - ", page);
-      if(page && page.length) this.page = page;
+      if(page && page.length) this.page = page, this.seoService.handleSeo(page);
       else this.page = [];
       //else this.router.navigateByUrl('/404');
     });

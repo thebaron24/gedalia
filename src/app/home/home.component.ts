@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, Renderer2, ElementRef } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { DataService } from '../data.service';
+import { SeoService } from '../seo.service';
 import { SafeHtmlPipe } from '../safe-html.pipe';
 
 @Component({
@@ -15,13 +16,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 	public context: CanvasRenderingContext2D;
 
 	constructor(private dataService: DataService,
+							private seoService: SeoService,
 							private router: Router,
 							private renderer: Renderer2) {
 		console.log("HomeComponent: Constructor firing");
 
 		this.subscriptions.home = this.dataService.home$.subscribe(page => {
 			console.log("HomeComponent: page received - ", page)
-			this.page = page;
+			this.page = page, this.seoService.handleSeo(page);
 		});
 	}
 

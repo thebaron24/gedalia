@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -34,7 +34,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [Title, Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
