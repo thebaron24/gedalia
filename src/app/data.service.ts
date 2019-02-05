@@ -1,4 +1,5 @@
-import { Injectable, OnInit, OnDestroy  } from '@angular/core';
+import { Injectable, OnInit, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, Subject }    from 'rxjs';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
