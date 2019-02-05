@@ -35,11 +35,9 @@ app.set('views', DIST_FOLDER);
 // Example Express Rest API endpoints
 // app.get('/api/**', (req, res) => { });
 // Server static files from /browser
-const intervalId = setInterval(() => {}, 100);
-
 app.get('*.*', express.static(DIST_FOLDER, {
   maxAge: '1y'
-})).subscribe(() => clearInterval(intervalId));
+}));
 
 // All regular routes use the Universal engine
 app.get('*', (req, res) => {
