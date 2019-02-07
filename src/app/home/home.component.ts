@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngAfterViewInit(): void {
 		console.log("HomeComponent: AfterViewInit firing");
-		this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
-		this.renderer.addClass(this.myCanvas.nativeElement, 'my-class');
+		//this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
+		//this.renderer.addClass(this.myCanvas.nativeElement, 'my-class');
 	}
 
 	ngOnDestroy(): void {
