@@ -3,7 +3,12 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, Subject, forkJoin}    from 'rxjs';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
-import { wrapMacroTask, awaitMacroTasks } from './wrap-macro-task';
+import configJson from '../assets/config.json';
+import menuJson from '../assets/menu.json';
+import pagesJson from '../assets/pages.json';
+import postsJson from '../assets/posts.json';
+import testimonialsJson from '../assets/testimonials.json';
+//import { AsyncApiCallHelperService } from './async-api-call-helper.service';
 
 declare const Zone: any;
 
@@ -14,7 +19,7 @@ export class DataService implements OnInit, OnDestroy {
 
   DEBUG: boolean = false;
 
-  // Observable string sources
+  // Observable sources
   private configSource = new Subject<Object>();
   private pagesSource  = new Subject<any[]>();
   private homeSource  = new Subject<any[]>();
@@ -25,7 +30,7 @@ export class DataService implements OnInit, OnDestroy {
   private testimonialsSource  = new Subject<any[]>();
   private totalTestimonialsSource  = new Subject<number>();
 
-  // Observable string streams
+  // Observable streams
   config$ = this.configSource.asObservable();
   pages$  = this.pagesSource.asObservable();
   home$  = this.homeSource.asObservable();
@@ -36,16 +41,13 @@ export class DataService implements OnInit, OnDestroy {
   testimonials$  = this.testimonialsSource.asObservable();
   totalTestimonials$  = this.totalTestimonialsSource.asObservable();
 
-  config: Object = {};
-  menu: Object = {};
+  config: Object = configJson;
+  menu: Object = menuJson;
   pageMap: Object = {};
   currentPage: Array<any>;
   subscriptions: any = {};
 
-
-  //serverLock;
-
-  constructor(private http: HttpClient, private router: Router,@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private http: HttpClient, private router: Router,@Inject(PLATFORM_ID) private platformId: Object/*, private asyncHelper: AsyncApiCallHelperService*/) {
     console.log("DataService: constructor firing");
 
     if (isPlatformBrowser(this.platformId)) {
@@ -53,178 +55,52 @@ export class DataService implements OnInit, OnDestroy {
       console.log("DataService: running in browser");
       //get config for initial setup
       this.getConfig().subscribe(response => {
-        console.log("DataService: this.config$.subscribe firing");
-        console.log("DataService: config loaded - ", response.body);
-        this.config = response.body;
-        this.configSource.next(response.body);
-
-
-
-        // forkJoin(
-        //   this.getMenu(),
-        //   this.getPages(),
-        //   this.getPosts(),
-        //   this.getTestimonials()
-        // )
-        // .subscribe( response => { 
-          //   console.log("DataService: forkjoin firing");
-
-          //   console.log(response[0]);
-          //   let menu = response[0];
-          //   console.log("DataService: menu loaded - ", menu.body);
-          //   this.menu = menu.body;
-          //   this.menuSource.next(menu.body);
-
-
-          //   console.log(response[1]);
-          //   let pages = response[1];
-          //   this.addToPageMap(pages.body);
-          //   console.log("DataService: api call for all pages - ", pages.body);
-          //   this.pagesSource.next(pages.body);
-
-          //   console.log(response[2]);
-          //   let posts = response[2];
-          //   const keys = posts.headers.keys();
-          //   this.totalPostsSource.next(Number(posts.headers.get('X-WP-Total')));
-          //   this.addToPageMap(posts.body);
-          //   console.log("DataService: api call for all posts - ", posts.body);
-          //   this.postsSource.next(posts.body);
-
-          //   console.log(response[3]);
-          //   let testimonials = response[3];
-          //   const testimonialsKeys = testimonials.headers.keys();
-          //   this.totalTestimonialsSource.next(Number(testimonials.headers.get('X-WP-Total')));
-          //   //this.addToPageMap(response.body);
-          //   console.log("DataService: api call for all testimonials - ", testimonials.body);
-          //   this.testimonialsSource.next(testimonials.body);
-          // } );
-
-          //here we know the config is set - safe to initialize
-          this.getMenu().subscribe(response => {
-            console.log("DataService: menu loaded - ", response.body);
-            this.menu = response.body;
-            this.menuSource.next(response.body);
-          });
-          this.getPages().subscribe(response => {
-            this.addToPageMap(response.body);
-            console.log("DataService: api call for all pages - ", response.body);
-            this.pagesSource.next(response.body);
-          });
-          this.getPosts().subscribe(response => {
-            const keys = response.headers.keys();
-            this.totalPostsSource.next(Number(response.headers.get('X-WP-Total')));
-            this.addToPageMap(response.body);
-            console.log("DataService: api call for all posts - ", response.body);
-            this.postsSource.next(response.body);
-          });
-          this.getTestimonials().subscribe(response => {
-            const keys = response.headers.keys();
-            this.totalTestimonialsSource.next(Number(response.headers.get('X-WP-Total')));
-            //this.addToPageMap(response.body);
-            console.log("DataService: api call for all testimonials - ", response.body);
-            this.testimonialsSource.next(response.body);
-          });
-
-          //special case for home page
-          if(this.router.url === '/' || this.router.url === '/home'){
-            this.getHome('home');
-          } else {
-            this.getPage(this.router.url.replace('/',''));
-          }
-
-        });
-    }
-    if (isPlatformServer(this.platformId)) {
-      // Server only code.
-      console.log("DataService: running on server");
-
-      //get config for initial setup
-      this.getConfig().subscribe(response => {
-        console.log("DataService: this.config$.subscribe firing");
+        console.log("DataService: this.getConfig().subscribe firing");
         console.log("DataService: config loaded - ", response.body);
         this.config = response.body;
         this.configSource.next(response.body);
 
         //here we know the config is set - safe to initialize
-
-        // forkJoin(
-        //   this.getMenu(),
-        //   this.getPages(),
-        //   this.getPosts(),
-        //   this.getTestimonials()
-        // )
-        // .subscribe( response => { 
-          //   console.log("DataService: forkjoin firing");
-
-          //   console.log(response[0]);
-          //   let menu = response[0];
-          //   console.log("DataService: menu loaded - ", menu.body);
-          //   this.menu = menu.body;
-          //   this.menuSource.next(menu.body);
-
-
-          //   console.log(response[1]);
-          //   let pages = response[1];
-          //   this.addToPageMap(pages.body);
-          //   console.log("DataService: api call for all pages - ", pages.body);
-          //   this.pagesSource.next(pages.body);
-
-          //   console.log(response[2]);
-          //   let posts = response[2];
-          //   const keys = posts.headers.keys();
-          //   this.totalPostsSource.next(Number(posts.headers.get('X-WP-Total')));
-          //   this.addToPageMap(posts.body);
-          //   console.log("DataService: api call for all posts - ", posts.body);
-          //   this.postsSource.next(posts.body);
-
-          //   console.log(response[3]);
-          //   let testimonials = response[3];
-          //   const testimonialsKeys = testimonials.headers.keys();
-          //   this.totalTestimonialsSource.next(Number(testimonials.headers.get('X-WP-Total')));
-          //   //this.addToPageMap(response.body);
-          //   console.log("DataService: api call for all testimonials - ", testimonials.body);
-          //   this.testimonialsSource.next(testimonials.body);
-          // } );
-
-          this.getMenu().subscribe(response => {
-            console.log("DataService: menu loaded - ", response.body);
-            this.menu = response.body;
-            this.menuSource.next(response.body);
-          });
-          this.getPages().subscribe(response => {
-            this.addToPageMap(response.body);
-            console.log("DataService: api call for all pages - ", response.body);
-            this.pagesSource.next(response.body);
-          });
-          this.getPosts().subscribe(response => {
-            const keys = response.headers.keys();
-            this.totalPostsSource.next(Number(response.headers.get('X-WP-Total')));
-            this.addToPageMap(response.body);
-            console.log("DataService: api call for all posts - ", response.body);
-            this.postsSource.next(response.body);
-          });
-          this.getTestimonials().subscribe(response => {
-            const keys = response.headers.keys();
-            this.totalTestimonialsSource.next(Number(response.headers.get('X-WP-Total')));
-            //this.addToPageMap(response.body);
-            console.log("DataService: api call for all testimonials - ", response.body);
-            this.testimonialsSource.next(response.body);
-          });
-
-          //special case for home page
-          if(this.router.url === '/' || this.router.url === '/home'){
-            this.getHome('home');
-          } else {
-            this.getPage(this.router.url.replace('/',''));
-          }
+        forkJoin(
+          this.getMenu(),
+          this.getPages(),
+          this.getPosts(),
+          this.getTestimonials()
+        ).subscribe( response => { 
+          console.log("DataService: forkjoin firing");
+          this.setMenu(response[0]);
+          this.setPages(response[1]);
+          this.setPosts(response[2]);
+          this.setTestimonials(response[3]);
         });
-      //awaitMacroTasks();
+
+        //special case for home page
+        // if(this.router.url === '/' || this.router.url === '/home'){
+        //   this.getHome('home');
+        // } else {
+        //   this.getPage(this.router.url.replace('/',''));
+        // }
+
+      });
     }
 
-    //this.serverLock = setInterval(() => {}, 100);
+    if (isPlatformServer(this.platformId)) {
+      // Server only code.
+      this.addToPageMap(pagesJson);
+      this.addToPageMap(postsJson);
 
+      console.log("DataService: running on server");
+      this.setMenu({"body": menuJson});
+      this.setPages({"body": pagesJson});
+      this.setPosts({"body": postsJson, "total": postsJson.length});
+      this.setTestimonials({"body": testimonialsJson, "total": testimonialsJson.length});
+
+    }
     //get config fot initial setup
-    //this.getConfig();
+    //this.asyncHelper.doTask(this.getConfig()).subscribe(response => {
+    //  console.log("DataService: asyncHelper finished", response);
+    //});
+
 
     //to catch any router events and update component data
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
@@ -248,44 +124,16 @@ export class DataService implements OnInit, OnDestroy {
         if(val.url === '/' || val.url === '/home') {
           this.getHome('home');
         } else if(val.url === '/blog') {
-          this.getPosts().subscribe(response => {
-            const keys = response.headers.keys();
-            this.totalPostsSource.next(Number(response.headers.get('X-WP-Total')));
-            this.addToPageMap(response.body);
-            console.log("DataService: api call for all posts - ", response.body);
-            this.postsSource.next(response.body);
-          });
+          this.getPosts().subscribe(response => {this.setPosts(response)});
           this.getPage(val.url.replace('/',''));
         } else if(val.url === '/testimonials') {
-          this.getTestimonials().subscribe(response => {
-            const keys = response.headers.keys();
-            this.totalTestimonialsSource.next(Number(response.headers.get('X-WP-Total')));
-            //this.addToPageMap(response.body);
-            console.log("DataService: api call for all testimonials - ", response.body);
-            this.testimonialsSource.next(response.body);
-          });;
+          this.getTestimonials().subscribe(response => {this.setTestimonials(response)});
           this.getPage(val.url.replace('/',''));
         } else {
           this.getPage(val.url.replace('/',''));
         }
       }
     });
-
-    this.subscriptions.config = this.config$.subscribe(config => {
-      console.log("DataService: this.config$.subscribe firing");
-      //here we know the config is set - safe to initialize
-      //this.getMenu();
-      //this.getPosts();
-      //this.getTestimonials();
-      //special case for home page
-      //if(this.router.url === '/' || this.router.url === '/home'){
-        //  this.getHome('home');
-        //} else {
-          //  this.getPage(this.router.url.replace('/',''));
-          //}
-     });
-
-    //clearInterval(this.serverLock);
   }
 
   ngOnInit(): void {
@@ -296,6 +144,38 @@ export class DataService implements OnInit, OnDestroy {
     console.log("DataService: OnDestroy firing");
     this.subscriptions.config.unsubscribe();
     this.subscriptions.routerEvents.unsubscribe();
+  }
+
+  setTestimonials(response: any) {
+    let testimonials = response;
+    console.log("DataService: all testimonials loaded - ", testimonials.body);
+    //const testimonialsKeys = testimonials.headers.keys();
+    this.totalTestimonialsSource.next((response['total']) ? response['total'] : Number(testimonials.headers.get('X-WP-Total')));
+    //this.addToPageMap(response.body);
+    this.testimonialsSource.next(testimonials.body);
+  }
+
+  setPosts(response: any) {
+    let posts = response;
+    console.log("DataService: all posts loaded - ", posts.body);
+    //const keys = posts.headers.keys();
+    this.totalPostsSource.next((response['total']) ? response['total'] : Number(posts.headers.get('X-WP-Total')));
+    this.addToPageMap(posts.body);
+    this.postsSource.next(posts.body);
+  }
+
+  setPages(response: any) {
+    let pages = response;
+    console.log("DataService: all pages loaded- ", pages.body);
+    this.addToPageMap(pages.body);
+    this.pagesSource.next(pages.body);
+  }
+
+  setMenu(response: any) {
+    let menu = response;
+    console.log("DataService: menu loaded - ", menu.body);
+    this.menu = menu.body;
+    this.menuSource.next(menu.body);
   }
 
   getJson(url): Observable<HttpResponse<any>> {
@@ -414,6 +294,8 @@ export class DataService implements OnInit, OnDestroy {
 
       thisUrl += params ? params : "&page=1";
     }
+
+    console.log(thisUrl);
     
     return this.getArray(thisUrl);
     
@@ -441,5 +323,19 @@ export class DataService implements OnInit, OnDestroy {
     }
 
     console.log("DataService: current pageMap: ", this.pageMap);
+  }
+
+  filterArray(array: any[], test: string): any[] {
+    let arrayspot = -1;
+
+    if(!array) return [];
+
+    for(let i = 0; i < array.length; i++) {
+      if(array[i] && array[i]['slug'] && array[i]['slug'] === test){
+        arrayspot = i;
+      }
+    }
+
+    return (arrayspot !== -1) ? new Array(array[arrayspot]): [];
   }
 }

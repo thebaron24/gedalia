@@ -47,9 +47,10 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     });
 
     this.subscriptions.search = this.searchTerm$.pipe(debounceTime(400),distinctUntilChanged()).subscribe(searchTerms => {
+      console.log("Searching..");
       this.posts = [];
       this.searchValue = searchTerms;
-      this.dataService.getPosts(this.searchValue ? "&search=" + this.searchValue : "&page=1");
+      this.dataService.getPosts(this.searchValue ? "&search=" + this.searchValue : "&page=1").subscribe(response => this.dataService.setPosts(response));
     });
   }
 
@@ -83,13 +84,13 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
   clearSearch() {
     this.searchValue='';
     this.posts = [];
-    this.dataService.getPosts("&page=1");
+    this.dataService.getPosts("&page=1").subscribe(response => this.dataService.setPosts(response));
   }
 
   getPostsPagination(event: PageEvent): PageEvent {
     console.log("BlogComponent: PageEvent", event);
     this.posts = [];
-    this.dataService.getPosts(this.searchValue ? "&search=" + this.searchValue + "&page=" + (event.pageIndex+1) : "&page=" + (event.pageIndex+1));
+    this.dataService.getPosts(this.searchValue ? "&search=" + this.searchValue + "&page=" + (event.pageIndex+1) : "&page=" + (event.pageIndex+1)).subscribe(response => this.dataService.setPosts(response));
 
     return this.pageEvent;
   }

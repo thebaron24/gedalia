@@ -11,7 +11,7 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build && ng run angular-universal:server:production",
+    "build:client-and-server-bundles": "ng build --prod && ng run angular-universal:server:production",
     "heroku-postbuild": "npm run build:ssr"
   },
   "private": true,
@@ -46,9 +46,9 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.12.2",
     "@angular/language-service": "~7.2.2",
-    "@types/node": "~10.12.18",
     "@types/jasmine": "~3.3.7",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~10.12.18",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",

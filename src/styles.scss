@@ -78,6 +78,41 @@ $gedalia-yellow: (
     )
 );
 
+$md-mcgpalette0: (
+    50 : #ffeeec,
+    100 : #ffd4d0,
+    200 : #ffb7b0,
+    300 : #ff9a90,
+    400 : #ff8579,
+    500 : #ff6f61,
+    600 : #ff6759,
+    700 : #ff5c4f,
+    800 : #ff5245,
+    900 : #ff4033,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffe0de,
+    A700 : #ffc8c4,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $custom-typography: mat-typography-config(
@@ -101,7 +136,7 @@ $custom-typography: mat-typography-config(
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $angular-universal-primary: mat-palette($gedalia-blue);
-$angular-universal-accent: mat-palette($gedalia-yellow);
+$angular-universal-accent: mat-palette($md-mcgpalette0);
 
 // The warn palette is optional (defaults to red).
 $angular-universal-warn: mat-palette($mat-red);
@@ -109,10 +144,6 @@ $angular-universal-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
 $angular-universal-theme: mat-light-theme($angular-universal-primary, $angular-universal-accent, $angular-universal-warn);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($angular-universal-theme);
 
 @include mat-base-typography($custom-typography);
 
@@ -144,7 +175,7 @@ $material-icons-font-family: 'Material Icons' !default;
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  color: mat-color($angular-universal-primary, A700);
+  //color: mat-color($angular-universal-primary, A700);
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -162,7 +193,7 @@ $material-icons-font-family: 'Material Icons' !default;
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  color: mat-color($angular-universal-primary);
+  //color: mat-color($angular-universal-primary);
   src: url(~material-design-icons/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
   src: local('Material Icons'),
     local('MaterialIcons-Regular'),
@@ -171,24 +202,97 @@ $material-icons-font-family: 'Material Icons' !default;
     url(~material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+@include angular-material-theme($angular-universal-theme);
+
+@mixin app-component-accent($theme: $angular-universal-theme, $primary: map-get($angular-universal-theme, primary), $accent: map-get($angular-universal-theme, accent), $warn: map-get($angular-universal-theme, warn),  $background: map-get($angular-universal-theme, background),  $foreground: map-get($angular-universal-theme, foreground)) {
+  background: mat-color($accent, default);
+  color: mat-color($accent, default-contrast);
+  // .material-icons {
+  //   color: mat-color($accent, default-contrast);
+  // }
+  @content;
+}
+
+@mixin app-component-primary($theme: $angular-universal-theme, $primary: map-get($angular-universal-theme, primary), $accent: map-get($angular-universal-theme, accent), $warn: map-get($angular-universal-theme, warn),  $background: map-get($angular-universal-theme, background),  $foreground: map-get($angular-universal-theme, foreground)) {
+  background: mat-color($primary, default);
+  color: mat-color($primary, default-contrast);
+  // .material-icons {
+  //   color: mat-color($accent, default-contrast);
+  // }
+  @content;
+}
+
+@mixin app-component-gradient($theme: $angular-universal-theme, $primary: map-get($angular-universal-theme, primary), $accent: map-get($angular-universal-theme, accent), $warn: map-get($angular-universal-theme, warn),  $background: map-get($angular-universal-theme, background),  $foreground: map-get($angular-universal-theme, foreground)) {
+  background: linear-gradient(-45deg, mat-color($accent, 50), mat-color($accent, 900), mat-color($primary, 50), mat-color($primary, 900));
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  @content;
+}
+
+//@include app-component-theme($angular-universal-theme);
+
 html, body, app-root { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-toolbar {
+  @include app-component-primary();
+  @include mat-elevation(6);
+  z-index: 2;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.example-fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
 .logo {
-	color: mat-color($angular-universal-primary);
-	text-decoration: none;
+  @include app-component-primary();
+  text-decoration: none;
 }
 
 .jumbotron {
-	// Use mat-color to extract individual colors a palette.
-	background-color: mat-color($angular-universal-accent);
-	border-color: mat-color($angular-universal-accent);
-	width:100%;
-	min-height: 50vh;
-	text-align: center;
-	padding-bottom: 30px;
-	color: #fff;
-
+  // Use mat-color to extract individual colors a palette.
+  @include app-component-accent();
+  @include app-component-gradient();
+  width:100%;
+  min-height: 50vh;
+  text-align: center;
+  padding-bottom: 30px;
 
   position: relative;
   canvas {
@@ -199,14 +303,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     left: 0;
     z-index: -9999;
   }
-}
 
-.gradient-backgorund {
-  background: linear-gradient(-45deg, mat-color($angular-universal-accent, 50), mat-color($angular-universal-accent, 900), mat-color($angular-universal-primary, 50), mat-color($angular-universal-primary, 900));
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
 }
 
 .responsive-images img {
@@ -216,7 +313,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container-content {
 	max-width: 1800px;
-	padding:20px;
+	padding:10px;
 	margin: 0 auto;
 }
 
@@ -224,9 +321,6 @@ canvas {
   padding:0;
   margin:0;
 }
-
-
-
 
 @-webkit-keyframes Gradient {
   0% {

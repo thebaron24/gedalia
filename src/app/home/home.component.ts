@@ -10,10 +10,11 @@ import { SafeHtmlPipe } from '../safe-html.pipe';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+	//page: any[] = pagesJson.filter( item => { if(item.slug === 'home') return item } );
 	page: any[];
 	subscriptions: any = {};
-	@ViewChild('canvas') myCanvas: ElementRef;
-	public context: CanvasRenderingContext2D;
+	//@ViewChild('canvas') myCanvas: ElementRef;
+	//public context: CanvasRenderingContext2D;
 
 	constructor(private dataService: DataService,
 							private seoService: SeoService,
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 		this.subscriptions.home = this.dataService.home$.subscribe(page => {
 			console.log("HomeComponent: page received - ", page)
-			this.page = page, this.seoService.handleSeo(page);
+			this.page = page, this.seoService.handleSeo(this.page);
 		});
 	}
 
@@ -41,5 +42,4 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 		console.log("HomeComponent: OnDestroy firing");
 		this.subscriptions.home.unsubscribe();
 	}
-
 }
