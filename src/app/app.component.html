@@ -21,11 +21,15 @@
   <mat-sidenav-container class="example-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-      <app-side-menu></app-side-menu>           
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav-component">
+
+
+      <app-side-menu></app-side-menu>
+
+
     </mat-sidenav>
     <mat-sidenav-content>
-		<router-outlet></router-outlet>
+		  <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

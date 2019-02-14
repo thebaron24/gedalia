@@ -86,6 +86,7 @@ export class DataService implements OnInit, OnDestroy {
 
     if (isPlatformServer(this.platformId)) {
       // Server only code.
+      this.setConfig({"body": configJson});
       this.addToPageMap(pagesJson);
       this.addToPageMap(postsJson);
 
@@ -144,6 +145,15 @@ export class DataService implements OnInit, OnDestroy {
     console.log("DataService: OnDestroy firing");
     this.subscriptions.config.unsubscribe();
     this.subscriptions.routerEvents.unsubscribe();
+  }
+
+  setConfig(response: any) {
+    let config = response;
+    console.log("DataService: config set - ", config.body);
+    //const testimonialsKeys = testimonials.headers.keys();
+    //this.totalTestimonialsSource.next((response['total']) ? response['total'] : Number(config.headers.get('X-WP-Total')));
+    //this.addToPageMap(response.body);
+    this.configSource.next(config.body);
   }
 
   setTestimonials(response: any) {
