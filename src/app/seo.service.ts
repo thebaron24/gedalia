@@ -107,7 +107,7 @@ export class SeoService implements OnInit, OnDestroy {
       return `link[${attr}="${tag[attr]}"]`;
   }
 
-  handleSeo(page: Array<any>){
+  handleSeo(page: Array<any>) {
     console.log("SeoService: handling - ", page[0]);
     console.log("SeoService: config - ", this.config);
   	let pageObject = page[0];
@@ -116,13 +116,13 @@ export class SeoService implements OnInit, OnDestroy {
     console.log((pageObject['slug'] == 'home'), pageObject['slug'], 'http://gedaliahealingarts.com' + '/' + pageObject['slug']);
 
     let conUrl = 'http://gedaliahealingarts.com/' ;
-
     if(pageObject['slug'] !== 'home') { 
       conUrl += pageObject['slug'];
     }
-
     this.removeTag({ rel: 'canonical' });
     this.addTag({ rel: 'canonical', href: conUrl });
+
+    this.metaService.addTag({ name: 'description', content: pageObject['excerpt']['rendered'].replace(/<(?:.|\n)*?>/gm, ' ') })
 
     //this.updateTag( { rel: 'canonical', href: "http://gedaliahealingarts.com" + '/' + (pageObject['slug'] == 'home') ? '' : pageObject['slug'] } );
   }

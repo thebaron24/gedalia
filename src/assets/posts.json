@@ -111,6 +111,369 @@
           "templated": true
         }
       ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "id": 12564,
+          "date": "2019-01-20T00:23:33",
+          "slug": "sunset-pose",
+          "type": "attachment",
+          "link": "http://api.baronwilson.io/home/sunset-pose/",
+          "title": {
+            "rendered": "sunset-pose"
+          },
+          "author": 1,
+          "caption": {
+            "rendered": ""
+          },
+          "alt_text": "",
+          "media_type": "image",
+          "mime_type": "image/jpeg",
+          "media_details": {
+            "width": 1600,
+            "height": 900,
+            "file": "2019/01/sunset-pose.jpg",
+            "sizes": {
+              "thumbnail": {
+                "file": "sunset-pose-150x150.jpg",
+                "width": 150,
+                "height": 150,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/01/sunset-pose-150x150.jpg"
+              },
+              "medium": {
+                "file": "sunset-pose-300x169.jpg",
+                "width": 300,
+                "height": 169,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/01/sunset-pose-300x169.jpg"
+              },
+              "medium_large": {
+                "file": "sunset-pose-768x432.jpg",
+                "width": 768,
+                "height": 432,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/01/sunset-pose-768x432.jpg"
+              },
+              "large": {
+                "file": "sunset-pose-1024x576.jpg",
+                "width": 1024,
+                "height": 576,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/01/sunset-pose-1024x576.jpg"
+              },
+              "post-thumbnail": {
+                "file": "sunset-pose-1568x882.jpg",
+                "width": 1568,
+                "height": 882,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/01/sunset-pose-1568x882.jpg"
+              },
+              "full": {
+                "file": "sunset-pose.jpg",
+                "width": 1600,
+                "height": 900,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/01/sunset-pose.jpg"
+              }
+            },
+            "image_meta": {
+              "aperture": "0",
+              "credit": "",
+              "camera": "",
+              "caption": "",
+              "created_timestamp": "0",
+              "copyright": "",
+              "focal_length": "0",
+              "iso": "0",
+              "shutter_speed": "0",
+              "title": "",
+              "orientation": "0",
+              "keywords": []
+            }
+          },
+          "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/01/sunset-pose.jpg",
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/media/12564"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/media"
+              }
+            ],
+            "about": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "author": [
+              {
+                "embeddable": true,
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=12564"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 3,
+            "link": "http://api.baronwilson.io/category/blog/",
+            "name": "Blog",
+            "slug": "blog",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/3"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=3"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 103,
+            "link": "http://api.baronwilson.io/category/happiness/",
+            "name": "happiness",
+            "slug": "happiness",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/103"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=103"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "link": "http://api.baronwilson.io/category/self-care/",
+            "name": "self care",
+            "slug": "self-care",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/80"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=80"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 31,
+            "link": "http://api.baronwilson.io/category/self-love/",
+            "name": "self-love",
+            "slug": "self-love",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/31"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=31"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        [
+          {
+            "id": 104,
+            "link": "http://api.baronwilson.io/tag/happiness/",
+            "name": "happiness",
+            "slug": "happiness",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags/104"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?tags=104"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 106,
+            "link": "http://api.baronwilson.io/tag/past/",
+            "name": "past",
+            "slug": "past",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags/106"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?tags=106"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ]
+      ]
     }
   },
   {
@@ -120,8 +483,8 @@
     "guid": {
       "rendered": "http://gedaliahealingarts.com/?p=12413"
     },
-    "modified": "2019-02-10T22:13:11",
-    "modified_gmt": "2019-02-11T03:13:11",
+    "modified": "2019-02-13T16:05:15",
+    "modified_gmt": "2019-02-13T21:05:15",
     "slug": "one-great-holiday-self-care-practice",
     "status": "publish",
     "type": "post",
@@ -138,7 +501,7 @@
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 12681,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -196,6 +559,12 @@
           "href": "http://api.baronwilson.io/wp-json/wp/v2/posts/12413/revisions/12624"
         }
       ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "http://api.baronwilson.io/wp-json/wp/v2/media/12681"
+        }
+      ],
       "wp:attachment": [
         {
           "href": "http://api.baronwilson.io/wp-json/wp/v2/media?parent=12413"
@@ -219,6 +588,405 @@
           "href": "https://api.w.org/{rel}",
           "templated": true
         }
+      ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "id": 12681,
+          "date": "2019-02-13T16:04:25",
+          "slug": "img_1777-e1543460416634",
+          "type": "attachment",
+          "link": "http://api.baronwilson.io/img_1777-e1543460416634/",
+          "title": {
+            "rendered": "IMG_1777-e1543460416634"
+          },
+          "author": 1,
+          "caption": {
+            "rendered": ""
+          },
+          "alt_text": "",
+          "media_type": "image",
+          "mime_type": "image/jpeg",
+          "media_details": {
+            "width": 3024,
+            "height": 3024,
+            "file": "2019/02/IMG_1777-e1543460416634.jpg",
+            "sizes": {
+              "thumbnail": {
+                "file": "IMG_1777-e1543460416634-150x150.jpg",
+                "width": 150,
+                "height": 150,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/02/IMG_1777-e1543460416634-150x150.jpg"
+              },
+              "medium": {
+                "file": "IMG_1777-e1543460416634-300x300.jpg",
+                "width": 300,
+                "height": 300,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/02/IMG_1777-e1543460416634-300x300.jpg"
+              },
+              "medium_large": {
+                "file": "IMG_1777-e1543460416634-768x768.jpg",
+                "width": 768,
+                "height": 768,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/02/IMG_1777-e1543460416634-768x768.jpg"
+              },
+              "large": {
+                "file": "IMG_1777-e1543460416634-1024x1024.jpg",
+                "width": 1024,
+                "height": 1024,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/02/IMG_1777-e1543460416634-1024x1024.jpg"
+              },
+              "post-thumbnail": {
+                "file": "IMG_1777-e1543460416634-1568x1568.jpg",
+                "width": 1568,
+                "height": 1568,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/02/IMG_1777-e1543460416634-1568x1568.jpg"
+              },
+              "full": {
+                "file": "IMG_1777-e1543460416634.jpg",
+                "width": 3024,
+                "height": 3024,
+                "mime_type": "image/jpeg",
+                "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/02/IMG_1777-e1543460416634.jpg"
+              }
+            },
+            "image_meta": {
+              "aperture": "0",
+              "credit": "",
+              "camera": "",
+              "caption": "",
+              "created_timestamp": "0",
+              "copyright": "",
+              "focal_length": "0",
+              "iso": "0",
+              "shutter_speed": "0",
+              "title": "",
+              "orientation": "0",
+              "keywords": []
+            }
+          },
+          "source_url": "http://api.baronwilson.io/wp-content/uploads/2019/02/IMG_1777-e1543460416634.jpg",
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/media/12681"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/media"
+              }
+            ],
+            "about": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/types/attachment"
+              }
+            ],
+            "author": [
+              {
+                "embeddable": true,
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "replies": [
+              {
+                "embeddable": true,
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/comments?post=12681"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 75,
+            "link": "http://api.baronwilson.io/category/ayurveda/",
+            "name": "Ayurveda",
+            "slug": "ayurveda",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/75"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=75"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "link": "http://api.baronwilson.io/category/blog/",
+            "name": "Blog",
+            "slug": "blog",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/3"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=3"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 65,
+            "link": "http://api.baronwilson.io/category/health/",
+            "name": "health",
+            "slug": "health",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/65"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=65"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "link": "http://api.baronwilson.io/category/self-care/",
+            "name": "self care",
+            "slug": "self-care",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/80"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=80"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 31,
+            "link": "http://api.baronwilson.io/category/self-love/",
+            "name": "self-love",
+            "slug": "self-love",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/31"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=31"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        [
+          {
+            "id": 101,
+            "link": "http://api.baronwilson.io/tag/digestive/",
+            "name": "digestive",
+            "slug": "digestive",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags/101"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?tags=101"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 102,
+            "link": "http://api.baronwilson.io/tag/tea/",
+            "name": "tea",
+            "slug": "tea",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags/102"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?tags=102"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ]
       ]
     }
   },
@@ -327,6 +1095,256 @@
           "templated": true
         }
       ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 64,
+            "link": "http://api.baronwilson.io/category/energy/",
+            "name": "energy",
+            "slug": "energy",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/64"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=64"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 65,
+            "link": "http://api.baronwilson.io/category/health/",
+            "name": "health",
+            "slug": "health",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/65"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=65"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 9,
+            "link": "http://api.baronwilson.io/category/holistic-healing/",
+            "name": "Holistic Healing",
+            "slug": "holistic-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/9"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=9"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 100,
+            "link": "http://api.baronwilson.io/category/neem-honey/",
+            "name": "neem honey",
+            "slug": "neem-honey",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/100"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=100"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 55,
+            "link": "http://api.baronwilson.io/category/nutrition/",
+            "name": "Nutrition",
+            "slug": "nutrition",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/55"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=55"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "link": "http://api.baronwilson.io/category/self-care/",
+            "name": "self care",
+            "slug": "self-care",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/80"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=80"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        []
+      ]
     }
   },
   {
@@ -430,6 +1448,148 @@
           "href": "https://api.w.org/{rel}",
           "templated": true
         }
+      ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 75,
+            "link": "http://api.baronwilson.io/category/ayurveda/",
+            "name": "Ayurveda",
+            "slug": "ayurveda",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/75"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=75"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "link": "http://api.baronwilson.io/category/blog/",
+            "name": "Blog",
+            "slug": "blog",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/3"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=3"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 64,
+            "link": "http://api.baronwilson.io/category/energy/",
+            "name": "energy",
+            "slug": "energy",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/64"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=64"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        []
       ]
     }
   },
@@ -542,6 +1702,401 @@
           "href": "https://api.w.org/{rel}",
           "templated": true
         }
+      ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 75,
+            "link": "http://api.baronwilson.io/category/ayurveda/",
+            "name": "Ayurveda",
+            "slug": "ayurveda",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/75"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=75"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "link": "http://api.baronwilson.io/category/blog/",
+            "name": "Blog",
+            "slug": "blog",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/3"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=3"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 64,
+            "link": "http://api.baronwilson.io/category/energy/",
+            "name": "energy",
+            "slug": "energy",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/64"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=64"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 65,
+            "link": "http://api.baronwilson.io/category/health/",
+            "name": "health",
+            "slug": "health",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/65"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=65"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 9,
+            "link": "http://api.baronwilson.io/category/holistic-healing/",
+            "name": "Holistic Healing",
+            "slug": "holistic-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/9"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=9"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "link": "http://api.baronwilson.io/category/self-care/",
+            "name": "self care",
+            "slug": "self-care",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/80"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=80"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 31,
+            "link": "http://api.baronwilson.io/category/self-love/",
+            "name": "self-love",
+            "slug": "self-love",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/31"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=31"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 70,
+            "link": "http://api.baronwilson.io/category/spirituality/",
+            "name": "spirituality",
+            "slug": "spirituality",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/70"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=70"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 42,
+            "link": "http://api.baronwilson.io/category/vibrational-healing/",
+            "name": "Vibrational Healing",
+            "slug": "vibrational-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/42"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=42"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        [
+          {
+            "id": 25,
+            "link": "http://api.baronwilson.io/tag/essential-oils/",
+            "name": "essential oils",
+            "slug": "essential-oils",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags/25"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?tags=25"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ]
       ]
     }
   },
@@ -656,6 +2211,437 @@
           "templated": true
         }
       ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 75,
+            "link": "http://api.baronwilson.io/category/ayurveda/",
+            "name": "Ayurveda",
+            "slug": "ayurveda",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/75"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=75"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "link": "http://api.baronwilson.io/category/blog/",
+            "name": "Blog",
+            "slug": "blog",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/3"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=3"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 64,
+            "link": "http://api.baronwilson.io/category/energy/",
+            "name": "energy",
+            "slug": "energy",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/64"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=64"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 65,
+            "link": "http://api.baronwilson.io/category/health/",
+            "name": "health",
+            "slug": "health",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/65"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=65"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 9,
+            "link": "http://api.baronwilson.io/category/holistic-healing/",
+            "name": "Holistic Healing",
+            "slug": "holistic-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/9"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=9"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 63,
+            "link": "http://api.baronwilson.io/category/meditation/",
+            "name": "Meditation",
+            "slug": "meditation",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/63"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=63"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 55,
+            "link": "http://api.baronwilson.io/category/nutrition/",
+            "name": "Nutrition",
+            "slug": "nutrition",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/55"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=55"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "link": "http://api.baronwilson.io/category/self-care/",
+            "name": "self care",
+            "slug": "self-care",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/80"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=80"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 31,
+            "link": "http://api.baronwilson.io/category/self-love/",
+            "name": "self-love",
+            "slug": "self-love",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/31"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=31"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 42,
+            "link": "http://api.baronwilson.io/category/vibrational-healing/",
+            "name": "Vibrational Healing",
+            "slug": "vibrational-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/42"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=42"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        [
+          {
+            "id": 107,
+            "link": "http://api.baronwilson.io/tag/immune/",
+            "name": "immune",
+            "slug": "immune",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags/107"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?tags=107"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ]
+      ]
     }
   },
   {
@@ -769,6 +2755,400 @@
           "templated": true
         }
       ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 75,
+            "link": "http://api.baronwilson.io/category/ayurveda/",
+            "name": "Ayurveda",
+            "slug": "ayurveda",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/75"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=75"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "link": "http://api.baronwilson.io/category/blog/",
+            "name": "Blog",
+            "slug": "blog",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/3"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=3"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 15,
+            "link": "http://api.baronwilson.io/category/creativity/",
+            "name": "Creativity",
+            "slug": "creativity",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/15"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=15"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 64,
+            "link": "http://api.baronwilson.io/category/energy/",
+            "name": "energy",
+            "slug": "energy",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/64"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=64"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 94,
+            "link": "http://api.baronwilson.io/category/ghee/",
+            "name": "ghee",
+            "slug": "ghee",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/94"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=94"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 65,
+            "link": "http://api.baronwilson.io/category/health/",
+            "name": "health",
+            "slug": "health",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/65"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=65"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 9,
+            "link": "http://api.baronwilson.io/category/holistic-healing/",
+            "name": "Holistic Healing",
+            "slug": "holistic-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/9"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=9"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 76,
+            "link": "http://api.baronwilson.io/category/mind/",
+            "name": "mind",
+            "slug": "mind",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/76"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=76"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 62,
+            "link": "http://api.baronwilson.io/category/nature/",
+            "name": "Nature",
+            "slug": "nature",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/62"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=62"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 55,
+            "link": "http://api.baronwilson.io/category/nutrition/",
+            "name": "Nutrition",
+            "slug": "nutrition",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/55"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=55"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        []
+      ]
     }
   },
   {
@@ -879,6 +3259,329 @@
           "templated": true
         }
       ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 75,
+            "link": "http://api.baronwilson.io/category/ayurveda/",
+            "name": "Ayurveda",
+            "slug": "ayurveda",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/75"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=75"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 64,
+            "link": "http://api.baronwilson.io/category/energy/",
+            "name": "energy",
+            "slug": "energy",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/64"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=64"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 9,
+            "link": "http://api.baronwilson.io/category/holistic-healing/",
+            "name": "Holistic Healing",
+            "slug": "holistic-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/9"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=9"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 55,
+            "link": "http://api.baronwilson.io/category/nutrition/",
+            "name": "Nutrition",
+            "slug": "nutrition",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/55"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=55"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "link": "http://api.baronwilson.io/category/self-care/",
+            "name": "self care",
+            "slug": "self-care",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/80"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=80"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 31,
+            "link": "http://api.baronwilson.io/category/self-love/",
+            "name": "self-love",
+            "slug": "self-love",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/31"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=31"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        [
+          {
+            "id": 98,
+            "link": "http://api.baronwilson.io/tag/squash/",
+            "name": "squash",
+            "slug": "squash",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags/98"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?tags=98"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 99,
+            "link": "http://api.baronwilson.io/tag/winter/",
+            "name": "winter",
+            "slug": "winter",
+            "taxonomy": "post_tag",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags/99"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/tags"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/post_tag"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?tags=99"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ]
+      ]
     }
   },
   {
@@ -987,6 +3690,328 @@
           "href": "https://api.w.org/{rel}",
           "templated": true
         }
+      ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 75,
+            "link": "http://api.baronwilson.io/category/ayurveda/",
+            "name": "Ayurveda",
+            "slug": "ayurveda",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/75"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=75"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 64,
+            "link": "http://api.baronwilson.io/category/energy/",
+            "name": "energy",
+            "slug": "energy",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/64"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=64"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 65,
+            "link": "http://api.baronwilson.io/category/health/",
+            "name": "health",
+            "slug": "health",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/65"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=65"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 63,
+            "link": "http://api.baronwilson.io/category/meditation/",
+            "name": "Meditation",
+            "slug": "meditation",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/63"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=63"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "link": "http://api.baronwilson.io/category/self-care/",
+            "name": "self care",
+            "slug": "self-care",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/80"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=80"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 31,
+            "link": "http://api.baronwilson.io/category/self-love/",
+            "name": "self-love",
+            "slug": "self-love",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/31"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=31"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 70,
+            "link": "http://api.baronwilson.io/category/spirituality/",
+            "name": "spirituality",
+            "slug": "spirituality",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/70"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=70"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 42,
+            "link": "http://api.baronwilson.io/category/vibrational-healing/",
+            "name": "Vibrational Healing",
+            "slug": "vibrational-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/42"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=42"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        []
       ]
     }
   },
@@ -1097,6 +4122,364 @@
           "href": "https://api.w.org/{rel}",
           "templated": true
         }
+      ]
+    },
+    "_embedded": {
+      "author": [
+        {
+          "id": 1,
+          "name": "baron",
+          "url": "",
+          "description": "",
+          "link": "http://api.baronwilson.io/author/baron/",
+          "slug": "baron",
+          "avatar_urls": {
+            "24": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=24&d=mm&r=g",
+            "48": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=48&d=mm&r=g",
+            "96": "http://0.gravatar.com/avatar/6aab06a3df75bfd65a3b5b172dcb0f04?s=96&d=mm&r=g"
+          },
+          "_links": {
+            "self": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users/1"
+              }
+            ],
+            "collection": [
+              {
+                "href": "http://api.baronwilson.io/wp-json/wp/v2/users"
+              }
+            ]
+          }
+        }
+      ],
+      "wp:term": [
+        [
+          {
+            "id": 75,
+            "link": "http://api.baronwilson.io/category/ayurveda/",
+            "name": "Ayurveda",
+            "slug": "ayurveda",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/75"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=75"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 3,
+            "link": "http://api.baronwilson.io/category/blog/",
+            "name": "Blog",
+            "slug": "blog",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/3"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=3"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 65,
+            "link": "http://api.baronwilson.io/category/health/",
+            "name": "health",
+            "slug": "health",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/65"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=65"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 9,
+            "link": "http://api.baronwilson.io/category/holistic-healing/",
+            "name": "Holistic Healing",
+            "slug": "holistic-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/9"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=9"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 55,
+            "link": "http://api.baronwilson.io/category/nutrition/",
+            "name": "Nutrition",
+            "slug": "nutrition",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/55"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=55"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "link": "http://api.baronwilson.io/category/self-care/",
+            "name": "self care",
+            "slug": "self-care",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/80"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=80"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 31,
+            "link": "http://api.baronwilson.io/category/self-love/",
+            "name": "self-love",
+            "slug": "self-love",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/31"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=31"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 70,
+            "link": "http://api.baronwilson.io/category/spirituality/",
+            "name": "spirituality",
+            "slug": "spirituality",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/70"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=70"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 42,
+            "link": "http://api.baronwilson.io/category/vibrational-healing/",
+            "name": "Vibrational Healing",
+            "slug": "vibrational-healing",
+            "taxonomy": "category",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories/42"
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/categories"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/taxonomies/category"
+                }
+              ],
+              "wp:post_type": [
+                {
+                  "href": "http://api.baronwilson.io/wp-json/wp/v2/posts?categories=42"
+                }
+              ],
+              "curies": [
+                {
+                  "name": "wp",
+                  "href": "https://api.w.org/{rel}",
+                  "templated": true
+                }
+              ]
+            }
+          }
+        ],
+        []
       ]
     }
   }

@@ -19,7 +19,7 @@
 <section class="container-content">
 	<div
 	*ngIf="posts?.length; else elseBlockForGrid"
-	fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10px grid" fxLayoutAlign="start stretch"
+	fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="start stretch"
 	>
 		<div fxFlex="1 0 25%" *ngFor="let post of posts">
 			<mat-card fxFlex>
@@ -38,7 +38,7 @@
 				</mat-card-actions>
 			</mat-card>
 		</div>
-		<div fxFlex="1 0 25%">
+		<div fxFlex="1 0 100%">
 			<mat-card fxFlex>
 				<mat-card-content>
 					<mat-paginator [length]="totalPosts" [pageSize]="posts.length || 10" (page)="pageEvent = getPostsPagination($event)"></mat-paginator>
