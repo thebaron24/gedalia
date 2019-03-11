@@ -8,9 +8,6 @@ import menuJson from '../assets/menu.json';
 import pagesJson from '../assets/pages.json';
 import postsJson from '../assets/posts.json';
 import testimonialsJson from '../assets/testimonials.json';
-//import { AsyncApiCallHelperService } from './async-api-call-helper.service';
-
-declare const Zone: any;
 
 @Injectable({
   providedIn: 'root'
@@ -44,10 +41,9 @@ export class DataService implements OnInit, OnDestroy {
   config: Object = configJson;
   menu: Object = menuJson;
   pageMap: Object = {};
-  currentPage: Array<any>;
   subscriptions: any = {};
 
-  constructor(private http: HttpClient, private router: Router,@Inject(PLATFORM_ID) private platformId: Object/*, private asyncHelper: AsyncApiCallHelperService*/) {
+  constructor(private http: HttpClient, private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {
     console.log("DataService: constructor firing");
 
     if (isPlatformBrowser(this.platformId)) {
@@ -74,13 +70,6 @@ export class DataService implements OnInit, OnDestroy {
           this.setTestimonials(response[3]);
         });
 
-        //special case for home page
-        // if(this.router.url === '/' || this.router.url === '/home'){
-        //   this.getHome('home');
-        // } else {
-        //   this.getPage(this.router.url.replace('/',''));
-        // }
-
       });
     }
 
@@ -97,10 +86,6 @@ export class DataService implements OnInit, OnDestroy {
       this.setTestimonials({"body": testimonialsJson, "total": testimonialsJson.length});
 
     }
-    //get config fot initial setup
-    //this.asyncHelper.doTask(this.getConfig()).subscribe(response => {
-    //  console.log("DataService: asyncHelper finished", response);
-    //});
 
 
     //to catch any router events and update component data
@@ -109,13 +94,6 @@ export class DataService implements OnInit, OnDestroy {
       //to reset the loading bar so the user knows something is loading
       if(val instanceof NavigationStart) {
         console.log("PageComponent: router event NavigationStart - ", val);
-
-        //special case for home page
-        if(val.url === '/' || val.url === '/home') {
-          //this.homeSource.next([]);
-        } else {
-          //this.pageSource.next(undefined);
-        }
       }
 
 
@@ -150,25 +128,19 @@ export class DataService implements OnInit, OnDestroy {
   setConfig(response: any) {
     let config = response;
     console.log("DataService: config set - ", config.body);
-    //const testimonialsKeys = testimonials.headers.keys();
-    //this.totalTestimonialsSource.next((response['total']) ? response['total'] : Number(config.headers.get('X-WP-Total')));
-    //this.addToPageMap(response.body);
     this.configSource.next(config.body);
   }
 
   setTestimonials(response: any) {
     let testimonials = response;
     console.log("DataService: all testimonials loaded - ", testimonials.body);
-    //const testimonialsKeys = testimonials.headers.keys();
     this.totalTestimonialsSource.next((response['total']) ? response['total'] : Number(testimonials.headers.get('X-WP-Total')));
-    //this.addToPageMap(response.body);
     this.testimonialsSource.next(testimonials.body);
   }
 
   setPosts(response: any) {
     let posts = response;
     console.log("DataService: all posts loaded - ", posts.body);
-    //const keys = posts.headers.keys();
     this.totalPostsSource.next((response['total']) ? response['total'] : Number(posts.headers.get('X-WP-Total')));
     this.addToPageMap(posts.body);
     this.postsSource.next(posts.body);
@@ -206,7 +178,6 @@ export class DataService implements OnInit, OnDestroy {
   }
 
   storePage(page: string, pageArray: Array<any>): void {
-    this.currentPage = pageArray;
     this.pageMap[page] = pageArray;
   }
 
@@ -228,7 +199,6 @@ export class DataService implements OnInit, OnDestroy {
 
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
-      this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
       this.getArray(thisUrl).subscribe(response => {
@@ -246,7 +216,6 @@ export class DataService implements OnInit, OnDestroy {
 
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " page already exists - using: ", this.pageMap[page]);
-      this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
       this.getArray(thisUrl).subscribe(response => {
@@ -268,7 +237,6 @@ export class DataService implements OnInit, OnDestroy {
 
     if(this.pageIsStored(page)){
       console.log("DataService: " + page + " post already exists - using: ", this.getStoredPage(page));
-      this.currentPage = this.getStoredPage(page);
       this.notifyPage(page);
     } else {
       this.getArray(thisUrl).subscribe(response => {

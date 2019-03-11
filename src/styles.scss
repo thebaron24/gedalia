@@ -46,16 +46,16 @@ $gedalia-blue: (
 );
 
 $gedalia-yellow: (
-    50 : #fefcf6,
-    100 : #fcf9e9,
-    200 : #faf5da,
-    300 : #f8f0cb,
-    400 : #f7edbf,
-    500 : #f5eab4,
-    600 : #f4e7ad,
-    700 : #f2e4a4,
-    800 : #f0e19c,
-    900 : #eedb8c,
+    50 : #fefefa,
+    100 : #fefcf3,
+    200 : #fdfaeb,
+    300 : #fcf7e2,
+    400 : #fbf6dc,
+    500 : #faf4d6,
+    600 : #f9f3d1,
+    700 : #f9f1cc,
+    800 : #f8efc6,
+    900 : #f6ecbc,
     A100 : #ffffff,
     A200 : #ffffff,
     A400 : #ffffff,
@@ -78,21 +78,56 @@ $gedalia-yellow: (
     )
 );
 
-$md-mcgpalette0: (
-    50 : #ffeeec,
-    100 : #ffd4d0,
-    200 : #ffb7b0,
-    300 : #ff9a90,
-    400 : #ff8579,
-    500 : #ff6f61,
-    600 : #ff6759,
-    700 : #ff5c4f,
-    800 : #ff5245,
-    900 : #ff4033,
-    A100 : #ffffff,
-    A200 : #ffffff,
-    A400 : #ffe0de,
-    A700 : #ffc8c4,
+/* For use in src/lib/core/theming/_palette.scss */
+$gedalia-blue2: (
+    50 : #e0f2f9,
+    100 : #b3def1,
+    200 : #80c9e7,
+    300 : #4db3dd,
+    400 : #26a2d6,
+    500 : #0092cf,
+    600 : #008aca,
+    700 : #007fc3,
+    800 : #0075bd,
+    900 : #0063b2,
+    A100 : #dbedff,
+    A200 : #a8d3ff,
+    A400 : #75b9ff,
+    A700 : #5cacff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$gedalia-green: (
+    50 : #f3f9ec,
+    100 : #e2f0ce,
+    200 : #cfe6ae,
+    300 : #bbdc8e,
+    400 : #add575,
+    500 : #9ecd5d,
+    600 : #96c855,
+    700 : #8cc14b,
+    800 : #82ba41,
+    900 : #70ae30,
+    A100 : #f9fff4,
+    A200 : #dfffc1,
+    A400 : #c5ff8e,
+    A700 : #b8ff74,
     contrast: (
         50 : #000000,
         100 : #000000,
@@ -103,7 +138,7 @@ $md-mcgpalette0: (
         600 : #000000,
         700 : #000000,
         800 : #000000,
-        900 : #ffffff,
+        900 : #000000,
         A100 : #000000,
         A200 : #000000,
         A400 : #000000,
@@ -135,8 +170,8 @@ $custom-typography: mat-typography-config(
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angular-universal-primary: mat-palette($gedalia-blue);
-$angular-universal-accent: mat-palette($md-mcgpalette0);
+$angular-universal-primary: mat-palette($gedalia-blue2);
+$angular-universal-accent: mat-palette($gedalia-green);
 
 // The warn palette is optional (defaults to red).
 $angular-universal-warn: mat-palette($mat-red);
