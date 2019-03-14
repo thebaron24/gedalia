@@ -1,0 +1,25 @@
+<ng-container *ngIf="{
+	pages: pagesStoreService.pages$ | async
+	} as data; else elseBlock">
+	<div id="content" class="container-content">
+		<div fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="start stretch">
+			<div  fxFlex="1 0 100%">
+				<mat-card fxFlex *ngFor="let item of data.pages.items | postFilter:getCurrentUrl()">
+					<mat-card-header>
+						<mat-card-title>{{item.title.rendered}}</mat-card-title>
+					</mat-card-header>
+					<img mat-card-image *ngIf="getImage(item)" src="{{getImage(item)}}" alt="{{item.title.rendered}}">
+					<mat-card-content>
+						<p [innerHTML]="item.content.rendered" class="responsive-images"></p>
+					</mat-card-content>
+				</mat-card>
+
+			</div>
+		</div>
+	</div>
+</ng-container>
+<ng-template #elseBlock>
+	<mat-card fxFlex>
+		<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+	</mat-card>
+</ng-template>

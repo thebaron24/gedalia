@@ -2,13 +2,10 @@
 	"apiUrls": {
 		"domain": "http://gedaliahealingarts.com",
 		"apidomain": "http://api.baronwilson.io",
-		"menu": "/wp-json/wp-api-menus/v2/menus/105",
+		"menus": "/wp-json/wp-api-menus/v2/menus/",
 		"pages": "/wp-json/wp/v2/pages?_embed",
 		"posts": "/wp-json/wp/v2/posts?_embed",
 		"image": "/wp-json/wp/v2/media?_embed",
-		"testimonials": "/wp-json/wp/v2/wpcr3_review?_embed",
-		"param": {
-			"slug": "&slug="
-		}
+		"testimonials": "/wp-json/wp/v2/wpcr3_review?_embed"
 	}
 }

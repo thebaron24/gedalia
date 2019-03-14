@@ -6,6 +6,21 @@ import { DOCUMENT } from '@angular/platform-browser';
 
 import { DataService } from './data.service';
 
+declare type LinkDefinition = {
+  charset?: string;
+  crossorigin?: string;
+  href?: string;
+  hreflang?: string;
+  media?: string;
+  rel?: string;
+  rev?: string;
+  sizes?: string;
+  target?: string;
+  type?: string;
+  } & {
+  [prop: string]: string;
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,46 +28,35 @@ export class SeoService implements OnInit, OnDestroy {
 
 	subscriptions: any = {};
   renderer: any;
-  config: Object;
 
-  constructor(private titleService: Title,
-  						private metaService: Meta,
-              private dataService: DataService,
-              private rendererFactory: RendererFactory2,
-              @Inject(DOCUMENT) private document) {
-  	console.log("SeoService: constructor firing");
+  constructor(
+    private titleService: Title,
+  	private metaService: Meta,
+    private dataService: DataService,
+    private rendererFactory: RendererFactory2,
+    @Inject(DOCUMENT) private document) {
 
-    this.renderer = this.rendererFactory.createRenderer(this.document, {
-      id: '-1',
-      encapsulation: ViewEncapsulation.None,
-      styles: [],
-      data: {}
-    });
-
-    this.subscriptions.config = this.dataService.config$.subscribe(config => {
-      console.log("SeoService: config received - ", config);
-      this.config = config;
-    });
-
+      this.renderer = this.rendererFactory.createRenderer(this.document, {
+        id: '-1',
+        encapsulation: ViewEncapsulation.None,
+        styles: [],
+        data: {}
+      });
   }
 
-  ngOnInit(): void {
-    console.log("SeoService: OnInit firing");
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
-    console.log("SeoService: OnDestroy firing");
-    this.subscriptions.config.unsubscribe();
-    this.subscriptions.routerEvents.unsubscribe();
+    Object.keys(this.subscriptions).forEach(key => this.subscriptions[key].unsubscribe());
   }
 
-  updateTag (tag: LinkDefinition) {
+  updateTag(tag: LinkDefinition) {
     this.removeTag(tag);
     this.addTag(tag);
   }
 
    /**
-   * Rimuove il link esistente con lo stesso atrtributo rel
+   * Remove link with attribute rel
    */
   removeTag(tag: LinkDefinition) {
     console.log("SeoService: attempting to remove tag ", tag);
@@ -107,15 +111,13 @@ export class SeoService implements OnInit, OnDestroy {
       return `link[${attr}="${tag[attr]}"]`;
   }
 
-  handleSeo(page: Array<any>) {
-    console.log("SeoService: handling - ", page[0]);
-    console.log("SeoService: config - ", this.config);
+  handleSeo(page: Array<any>, config: object) {
   	let pageObject = page[0];
   	this.setTitle(pageObject['title']['rendered']);
 
-    console.log((pageObject['slug'] == 'home'), pageObject['slug'], 'http://gedaliahealingarts.com' + '/' + pageObject['slug']);
+    console.log((pageObject['slug'] == 'home'), pageObject['slug'], config['apiUrls']['domain'] + '/' + pageObject['slug']);
 
-    let conUrl = 'http://gedaliahealingarts.com/' ;
+    let conUrl = config['apiUrls']['domain'] ;
     if(pageObject['slug'] !== 'home') { 
       conUrl += pageObject['slug'];
     }

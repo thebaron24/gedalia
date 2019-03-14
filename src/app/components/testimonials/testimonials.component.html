@@ -1,0 +1,45 @@
+<ng-container *ngIf="{
+	pages: pagesStoreService.pages$ | async,
+	testimonials: testimonialsStoreService.testimonials$ | async
+	} as data; else elseBlock">
+
+	<mat-nav-list *ngFor="let menu of data.menus.items">
+		<a mat-list-item *ngFor="let link of menu.items" color="primary" routerLink="/{{link.object_slug}}" routerLinkActive="active">{{link.title}}</a>
+	</mat-nav-list>
+
+	<div class="container-content" *ngFor="let item of data.pages.items | postFilter:'testimonials'">
+		<!-- <div [innerHTML]="item.content.rendered"></div> -->
+		<mat-card [innerHTML]="item.content.rendered"></mat-card>
+	</div>
+
+	<section class="container-content">
+		<div
+		*ngIf="data.testimonials; else elseBlockForGrid"
+		fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10px grid" fxLayoutAlign="start stretch"
+		>
+			<div fxFlex="1 0 100%" *ngFor="let post of data.testimonials.items">
+				<mat-card fxFlex>
+					<mat-card-header>
+						<!-- <div mat-card-avatar></div> -->
+						<mat-card-title>{{post.title.rendered}}</mat-card-title>
+						<mat-card-subtitle>{{post.date | date}}</mat-card-subtitle>
+					</mat-card-header>
+					<!-- <img mat-card-image src="{{getImage(post)}}" alt="Photo of a Shiba Inu"> -->
+					<mat-card-content>
+						<p [innerHTML]="post.content.rendered"></p>
+					</mat-card-content>
+					<!-- <mat-card-actions>
+						<button color="primary" mat-button routerLink="/{{post.slug}}">READ MORE</button>
+						<button mat-button>SHARE</button>
+					</mat-card-actions> -->
+				</mat-card>
+			</div>
+		</div>
+		<ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
+		<mat-paginator [length]="data.testimonials.total" [pageSize]="data.testimonials.items.length || 10" (page)="pageEvent = getTestimonialsPagination($event)"></mat-paginator>
+	</section>
+	
+</ng-container>
+<ng-template #elseBlock>
+	<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>

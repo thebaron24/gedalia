@@ -1,0 +1,12 @@
+<ng-container *ngIf="{
+	menus: menusStoreService.menus$ | async
+	} as data; else elseBlock">
+
+	<mat-nav-list *ngFor="let menu of data.menus.items">
+		<a mat-list-item *ngFor="let link of menu.items" color="primary" routerLink="/{{link.object_slug}}" routerLinkActive="active">{{link.title}}</a>
+	</mat-nav-list>
+	
+</ng-container>
+<ng-template #elseBlock>
+	<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>

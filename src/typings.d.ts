@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+
 declare module "*.json" {
     const value: any;
     export default value;

@@ -3,17 +3,19 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
-import { MaterialModule } from './material.module';
+import { AppRoutingModule } from './modules/app-routing.module';
+import { MaterialModule } from './modules/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { SideMenuComponent } from './side-menu/side-menu.component';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PageComponent } from './page/page.component';
-import { SafeHtmlPipe } from './safe-html.pipe';
-import { BlogComponent } from './blog/blog.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PageComponent } from './components/page/page.component';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { BlogComponent } from './components/blog/blog.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { PostFilterPipe } from './pipes/post-filter.pipe';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     PageComponent,
     SafeHtmlPipe,
     BlogComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    PostFilterPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

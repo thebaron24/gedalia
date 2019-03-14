@@ -1,0 +1,77 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Testimonials } from '../models/testimonials.model';
+import * as _ from 'lodash';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TestimonialsStoreService {
+
+  
+  // - We set the initial state in BehaviorSubject's constructor
+  // - Nobody outside the Store should have access to the BehaviorSubject 
+  //   because it has the write rights
+  // - Writing to state should be handled by specialized Store methods (ex: addTodo, removeTodo, etc)
+  // - Create one BehaviorSubject per store entity, for example if you have TodoGroups
+  //   create a new BehaviorSubject for it, as well as the observable$, and getters/setters
+  private readonly _testimonials = new BehaviorSubject<Testimonials>({
+    total: 0,
+    loaded: 0,
+    items: []
+  });
+
+  // Expose the observable$ part of the _testimonials subject (read only stream)
+  readonly testimonials$ = this._testimonials.asObservable();
+
+
+  // we'll compose the testimonials$ observable with map operator to create a stream of specific
+  readonly homeWordpress$ = this.testimonials$.pipe(
+    map(todos => this.testimonials.items.filter(todo => todo.slug === 'home'))
+  )
+
+  // the getter will return the last value emitted in _todos subject
+  get testimonials(): Testimonials {
+    return this._testimonials.getValue();
+  }
+
+  // assigning a value to this.todos will push it onto the observable 
+  // and down to all of its subsribers (ex: this.todos = [])
+  set testimonials(val: Testimonials) {
+    this._testimonials.next(val);
+  }
+
+  addTestimonial(testimonial: object, total: number) {
+    // we assaign a new copy of todos by adding a new todo to it 
+    // with automatically assigned ID ( don't do this at home, use uuid() )
+    this.testimonials.total = total;
+    this.testimonials.loaded++;
+    this.testimonials.items = [
+    	...this.testimonials.items,
+    	testimonial
+    ];
+    this.testimonials = {...this.testimonials};
+  }
+
+  addTestimonials(testimonials: any[], total: number) {
+    // we assaign a new copy of todos by adding a new todo to it 
+    // with automatically assigned ID ( don't do this at home, use uuid() )
+    this.testimonials.total = total;
+    this.testimonials.items  = _.union(this.testimonials.items, testimonials);
+    this.testimonials.loaded = this.testimonials.items.length;
+    this.testimonials = {...this.testimonials};
+  }
+
+  removeTestimonial(slug: string, total: number) {
+    this.testimonials.total = total;
+    this.testimonials.loaded--;
+    this.testimonials.items = this.testimonials.items.filter(testimonial => testimonial.slug !== slug);
+    let reduced = this.testimonials.items.filter(testimonial => testimonial.slug !== slug);
+    if(reduced.length < this.testimonials.items.length){
+      this.testimonials.loaded--;
+      this.testimonials.items = reduced;
+    }
+  }
+
+}

@@ -1,0 +1,58 @@
+<ng-container *ngIf="{
+	pages: pagesStoreService.pages$ | async,
+	posts: postsStoreService.posts$ | async
+	} as data; else elseBlock">
+
+	<div class="container-content" *ngFor="let item of data.pages.items | postFilter:'blog'">
+		<mat-card [innerHTML]="item.content.rendered"></mat-card>
+	</div>
+
+
+
+	<!-- -->
+
+	<section class="container-content" *ngIf="data.posts">
+		<mat-card>
+			<mat-form-field>
+				<input matInput type="text" placeholder="Search Blog Posts" [(ngModel)]="searchValue" (keyup)="searchSource.next($event.target.value)">
+				<button mat-button *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
+					<mat-icon>close</mat-icon>
+				</button>
+			</mat-form-field>
+		</mat-card>
+	</section>
+	<section class="container-content">
+		<div
+		*ngIf="data.posts.items.length; else elseBlockForGrid"
+		fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="start stretch"
+		>
+			<div fxFlex="1 0 25%" *ngFor="let post of data.posts.items">
+				<mat-card fxFlex>
+					<mat-card-header>
+						<!-- <div mat-card-avatar></div> -->
+						<mat-card-title>{{post.title.rendered}}</mat-card-title>
+						<!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+					</mat-card-header>
+					<img mat-card-image src="{{getImage(post)}}" alt="Photo of a Shiba Inu">
+					<mat-card-content>
+						<p [innerHTML]="post.excerpt.rendered"></p>
+					</mat-card-content>
+					<mat-card-actions>
+						<button color="accent" mat-button routerLink="/{{post.slug}}">READ MORE</button>
+						<!-- <button mat-button>SHARE</button> -->
+					</mat-card-actions>
+				</mat-card>
+			</div>
+			<div fxFlex="1 0 100%">
+				<mat-card fxFlex>
+					<mat-card-content>
+						<mat-paginator [length]="data.posts.total" [pageSize]="data.posts.items.length || 10" (page)="pageEvent = getPostsPagination($event)"></mat-paginator>
+					</mat-card-content>
+				</mat-card>
+			</div>
+		</div>
+		<ng-template #elseBlockForGrid><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
+	</section>
+	
+</ng-container>
+<ng-template #elseBlock><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
