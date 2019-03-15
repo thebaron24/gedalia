@@ -62,24 +62,24 @@ export class DataService implements OnInit, OnDestroy {
       this.getApiPosts('testimonials');
     //});
     //to catch any router events and update component data
-    // this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
-    //   //to reset the loading bar so the user knows something is loading
-    //   if(val instanceof NavigationStart) {
-    //     console.log("PageComponent: router event NavigationStart - ", val);
-    //   }
-    //   if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
-    //     console.log("DataService: router event NavigationEnd - ", val);
+    this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
+      //to reset the loading bar so the user knows something is loading
+      if(val instanceof NavigationStart) {
+        console.log("PageComponent: router event NavigationStart - ", val);
+      }
+      if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
+        console.log("DataService: router event NavigationEnd - ", val);
 
-    //   }
-    // });
+
+        this.getApiPosts('pages', ['&slug=' + val.url.replace('/', '')])
+        this.getApiPosts('posts', ['&slug=' + val.url.replace('/', '')])
+      }
+    });
   }
 
-  ngOnInit(): void {
-    console.log("DataService: OnInit firing");
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
-    console.log("DataService: OnDestroy firing");
     Object.keys(this.subscriptions).forEach(key => this.subscriptions[key].unsubscribe());
   }
 
@@ -99,7 +99,6 @@ export class DataService implements OnInit, OnDestroy {
 
   setConfig(response: any) {
     let config = response;
-    console.log("DataService: config set - ", config.body);
     this.configSource.next(config.body);
   }
 
@@ -119,7 +118,6 @@ export class DataService implements OnInit, OnDestroy {
     let thisUrl = this.config['apiUrls']['apidomain'] + this.config['apiUrls'][postType];
 
     _.forEach(params, function(value) {
-      console.log(value);
       thisUrl += value;
     });
 
@@ -134,13 +132,10 @@ export class DataService implements OnInit, OnDestroy {
       //special case for menus
       if(postType === 'menus'){
         let arrayOfAllMenus = response.body;
-        console.log(arrayOfAllMenus);
 
-        if(arrayOfAllMenus) {
+        if(arrayOfAllMenus.length) {
           for (let menu of arrayOfAllMenus) {
-            console.log(menu['meta']['links']['self']);
             this.getJson(menu['meta']['links']['self']).subscribe( response => {
-              console.log(response);
               this.menusStoreService.addMenu(response.body, state.total);
             });
           }

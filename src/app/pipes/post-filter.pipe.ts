@@ -19,9 +19,6 @@ export class PostFilterPipe implements PipeTransform {
         arrayspot = i;
       }
     }
-    console.log(arrayspot);
-    console.log(array, test);
-    console.log(new Array(array[arrayspot]));
     return (arrayspot !== -1) ? new Array(array[arrayspot]): [];
   }
 

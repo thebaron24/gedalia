@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { PagesStoreService } from '../../services/pages-store.service';
+import { PostsStoreService } from '../../services/posts-store.service';
 import { Router, NavigationStart } from '@angular/router';
 import { PostFilterPipe } from '../../pipes/post-filter.pipe';
 
@@ -13,7 +14,9 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   subscriptions: any = {};
 
-  constructor(public dataService: DataService, private router: Router, public pagesStoreService: PagesStoreService) {}
+  constructor(public dataService: DataService, private router: Router, public pagesStoreService: PagesStoreService,
+              public postsStoreService: PostsStoreService
+    ) {}
 
   ngOnInit(): void {}
 

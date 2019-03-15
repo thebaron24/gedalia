@@ -39,7 +39,7 @@ export class MenusStoreService {
   // assigning a value to this.todos will push it onto the observable 
   // and down to all of its subsribers (ex: this.todos = [])
   set menus(val: Menus) {
-    this._menus.next(val);console.log(this.menus);
+    this._menus.next(val);
   }
 
   addMenu(menu: object, total: number) {

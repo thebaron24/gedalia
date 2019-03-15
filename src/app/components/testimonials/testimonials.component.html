@@ -3,10 +3,6 @@
 	testimonials: testimonialsStoreService.testimonials$ | async
 	} as data; else elseBlock">
 
-	<mat-nav-list *ngFor="let menu of data.menus.items">
-		<a mat-list-item *ngFor="let link of menu.items" color="primary" routerLink="/{{link.object_slug}}" routerLinkActive="active">{{link.title}}</a>
-	</mat-nav-list>
-
 	<div class="container-content" *ngFor="let item of data.pages.items | postFilter:'testimonials'">
 		<!-- <div [innerHTML]="item.content.rendered"></div> -->
 		<mat-card [innerHTML]="item.content.rendered"></mat-card>
