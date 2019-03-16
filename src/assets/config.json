@@ -1,7 +1,7 @@
 {
 	"apiUrls": {
-		"domain": "http://gedaliahealingarts.com",
-		"apidomain": "http://api.baronwilson.io",
+		"domain": "http://www.gedaliahealingarts.com",
+		"apidomain": "http://www.blog.gedaliahealingarts.com",
 		"menus": "/wp-json/wp-api-menus/v2/menus/",
 		"pages": "/wp-json/wp/v2/pages?_embed",
 		"posts": "/wp-json/wp/v2/posts?_embed",
