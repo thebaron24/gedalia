@@ -14,18 +14,14 @@ export class AppComponent implements OnInit, OnDestroy {
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-    console.log("AppComponent: constructor firing");
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-  ngOnInit(): void {
-    console.log("AppComponent: OnInit firing");
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
-    console.log("AppComponent: constructor firing");
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 

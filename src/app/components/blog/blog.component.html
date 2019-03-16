@@ -46,7 +46,7 @@
 			<div fxFlex="1 0 100%">
 				<mat-card fxFlex>
 					<mat-card-content>
-						<mat-paginator [length]="data.posts.total" [pageSize]="data.posts.items.length || 10" (page)="pageEvent = getPostsPagination($event)"></mat-paginator>
+						<mat-paginator [length]="data.posts.total" [pageSize]="data.posts.items.length" (page)="pageEvent = getPostsPagination($event)"></mat-paginator>
 					</mat-card-content>
 				</mat-card>
 			</div>
