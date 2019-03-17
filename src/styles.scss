@@ -171,7 +171,7 @@ $custom-typography: mat-typography-config(
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $angular-universal-primary: mat-palette($gedalia-blue2);
-$angular-universal-accent: mat-palette($gedalia-green);
+$angular-universal-accent: mat-palette($gedalia-yellow);
 
 // The warn palette is optional (defaults to red).
 $angular-universal-warn: mat-palette($mat-red);
@@ -352,7 +352,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .container-content {
-	max-width: 1800px;
+	max-width: 1200px;
 	padding:10px;
 	margin: 0 auto;
 }
