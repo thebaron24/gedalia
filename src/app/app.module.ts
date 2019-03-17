@@ -16,6 +16,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { PostFilterPipe } from './pipes/post-filter.pipe';
 import { environment } from '../environments/environment';
+import { ProgressOverlayComponent } from './components/progress-overlay/progress-overlay.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +28,10 @@ import { environment } from '../environments/environment';
     SafeHtmlPipe,
     BlogComponent,
     TestimonialsComponent,
-    PostFilterPipe
+    PostFilterPipe,
+    ProgressOverlayComponent
   ],
+  entryComponents: [ProgressOverlayComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserTransferStateModule,

@@ -40,6 +40,7 @@ export class TestimonialsStoreService {
   // and down to all of its subsribers (ex: this.todos = [])
   set testimonials(val: Testimonials) {
     this._testimonials.next(val);
+    console.log("Testimonials: ", this.testimonials);
   }
 
   addTestimonial(testimonial: object, total: number) {

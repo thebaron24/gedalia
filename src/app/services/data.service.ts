@@ -64,13 +64,11 @@ export class DataService implements OnInit, OnDestroy {
     //to catch any router events and update component data
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
       //to reset the loading bar so the user knows something is loading
-      if(val instanceof NavigationStart) {
-        console.log("PageComponent: router event NavigationStart - ", val);
-      }
+      // if(val instanceof NavigationStart) {
+      //   console.log("PageComponent: router event NavigationStart - ", val);
+      // }
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         console.log("DataService: router event NavigationEnd - ", val);
-
-
         this.getApiPosts('pages', ['&slug=' + val.url.replace('/', '')])
         this.getApiPosts('posts', ['&slug=' + val.url.replace('/', '')])
       }

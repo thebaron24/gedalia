@@ -7,6 +7,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
+import {OverlayModule} from '@angular/cdk/overlay';
+import {ComponentPortal} from '@angular/cdk/portal';
 import {A11yModule} from '@angular/cdk/a11y';
 import {
   MatAutocompleteModule,
@@ -90,7 +92,8 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    ScrollingModule
+    ScrollingModule,
+    OverlayModule
   ],
   exports: [
     FlexLayoutModule,
@@ -134,6 +137,7 @@ import {
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    OverlayModule
   ]
 })
 export class MaterialModule { }

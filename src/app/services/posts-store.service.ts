@@ -39,7 +39,7 @@ export class PostsStoreService {
   // and down to all of its subsribers (ex: this.todos = [])
   set posts(val: Posts) {
     this._posts.next(val);
-    console.log(this.posts);
+    console.log("Posts: ", val);
   }
 
   addPost(post: object, total: number) {
