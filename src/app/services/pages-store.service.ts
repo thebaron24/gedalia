@@ -27,7 +27,7 @@ export class PagesStoreService {
 
 
   // we'll compose the pages$ observable with map operator to create a stream of only home pages
-  readonly homePages$ = this.pages$.pipe(
+  readonly currentPage$ = this.pages$.pipe(
     map(pages => this.pages.items.filter(page => page.slug === 'home'))
   )
 

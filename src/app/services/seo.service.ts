@@ -1,10 +1,15 @@
 import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { Observable, Subject, forkJoin}    from 'rxjs';
 import { Optional, RendererFactory2, ViewEncapsulation, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
-
 import { DataService } from './data.service';
+import { PagesStoreService } from './pages-store.service';
+import { PostsStoreService } from './posts-store.service';
+
+import configJson from '../../assets/config.json';
 
 declare type LinkDefinition = {
   charset?: string;
@@ -28,11 +33,16 @@ export class SeoService implements OnInit, OnDestroy {
 
 	subscriptions: any = {};
   renderer: any;
+  route;
+  config = configJson;
 
   constructor(
     private titleService: Title,
   	private metaService: Meta,
+    private router: Router,
     private dataService: DataService,
+    private pagesStoreService: PagesStoreService,
+    private postsStoreService: PostsStoreService,
     private rendererFactory: RendererFactory2,
     @Inject(DOCUMENT) private document) {
 
@@ -41,6 +51,32 @@ export class SeoService implements OnInit, OnDestroy {
         encapsulation: ViewEncapsulation.None,
         styles: [],
         data: {}
+      });
+
+      this.subscriptions.config = this.dataService.config$.subscribe((config) => {
+         this.config = config;
+      });
+
+      this.subscriptions.router = this.router.events.subscribe((routerEventResponse) => {
+        if(routerEventResponse instanceof NavigationEnd) {
+          this.route = (routerEventResponse.url === '/') ? 'home' : routerEventResponse.url.replace('/', '');
+        }
+      });
+
+      this.subscriptions.pages = this.pagesStoreService.pages$.subscribe(pages => {
+        pages.items.filter(page => {
+          if( page.slug === this.route ) {
+            this.handle(page, this.config);
+          }
+        })
+      });
+
+      this.subscriptions.posts = this.postsStoreService.posts$.subscribe(posts => {
+        posts.items.filter(post => {
+          if( post.slug === this.route ) {
+            this.handle(post, this.config);
+          }
+        })
       });
   }
 
@@ -111,15 +147,15 @@ export class SeoService implements OnInit, OnDestroy {
       return `link[${attr}="${tag[attr]}"]`;
   }
 
-  handleSeo(page: Array<any>, config: object) {
-  	let pageObject = page[0];
+  handle(page: object, config: object) {
+  	let pageObject = page;
   	this.setTitle(pageObject['title']['rendered']);
 
     console.log((pageObject['slug'] == 'home'), pageObject['slug'], config['apiUrls']['domain'] + '/' + pageObject['slug']);
 
     let conUrl = config['apiUrls']['domain'] ;
     if(pageObject['slug'] !== 'home') { 
-      conUrl += pageObject['slug'];
+      conUrl += '/' + pageObject['slug'];
     }
     this.removeTag({ rel: 'canonical' });
     this.addTag({ rel: 'canonical', href: conUrl });

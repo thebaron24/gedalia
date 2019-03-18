@@ -1,8 +1,9 @@
 import { Inject, Injectable, OnInit, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable, Subject, forkJoin}    from 'rxjs';
+import { Observable, BehaviorSubject, forkJoin}    from 'rxjs';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import { map } from 'rxjs/operators';
 import { Pages } from '../models/pages.model';
 import { Posts } from '../models/posts.model';
 import { Menus } from '../models/menus.model';
@@ -27,7 +28,7 @@ import testimonialsJson from '../../assets/testimonials.json';
 export class DataService implements OnInit, OnDestroy {
 
   // Observable sources
-  private configSource = new Subject<Object>();
+  private configSource = new BehaviorSubject<any>(configJson);
 
   // Observable streams
   config$ = this.configSource.asObservable();
@@ -61,14 +62,10 @@ export class DataService implements OnInit, OnDestroy {
       this.getApiPosts('posts');
       this.getApiPosts('testimonials');
     //});
-    //to catch any router events and update component data
+
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
-      //to reset the loading bar so the user knows something is loading
-      // if(val instanceof NavigationStart) {
-      //   console.log("PageComponent: router event NavigationStart - ", val);
-      // }
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
-        console.log("DataService: router event NavigationEnd - ", val);
+        //console.log("DataService: router event NavigationEnd - ", val);
         this.getApiPosts('pages', ['&slug=' + val.url.replace('/', '')])
         this.getApiPosts('posts', ['&slug=' + val.url.replace('/', '')])
       }
