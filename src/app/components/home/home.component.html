@@ -1,23 +1,20 @@
+<div class="jumbotron">
+	<div class="container-content">
+		<img width="300" alt="Gedalia Energy Healer And Ayurvedic Health Specialist" src="/assets/Gedalia-logo-simple-clear-bg.png">
+		<!-- <h1 class="mat-display-2">{{item.title.rendered}}</h1> -->
+		<!-- <h3 class="mat-headline">Return to vibrant health and inner peace</h3> -->
+		<div>
+			<button class="mat-elevation-z8" routerLink="/blog" mat-raised-button style="margin-right:10px;">Read My Blog</button><button class="mat-elevation-z8" routerLink="/services" mat-raised-button color="primary">Get Started</button>
+		</div>
+	</div>
+</div>
 <ng-container *ngIf="{
 	pages: pagesStoreService.pages$ | async
 	} as data">
-	<div *ngIf="data; else elseBlock">
-		<section *ngFor="let item of data.pages.items | postFilter:'home'">
-			<div class="jumbotron">
-				<div class="container-content">
-					<img width="300" alt="{{item.title.rendered}}" src="/assets/Gedalia-logo-simple-clear-bg.png">
-					<h1 class="mat-display-2">{{item.title.rendered}}</h1>
-					<!-- <h3 class="mat-headline">Return to vibrant health and inner peace</h3> -->
-					<button class="mat-elevation-z8" routerLink="/blog" mat-raised-button style="margin-right:10px;">Read My Blog</button><button class="mat-elevation-z8" routerLink="/services" mat-raised-button color="primary">Get Started</button>
-				</div>
-			</div>
-			<article id="content" class="container-content">
-				<div>
-					<!-- <div [innerHTML]="item.content.rendered"></div> -->
-					<mat-card [innerHTML]="item.content.rendered"></mat-card>
-				</div>
-			</article>
-		</section>
-	</div>
-	<ng-template #elseBlock><mat-progress-bar mode="indeterminate"></mat-progress-bar></ng-template>
+	<article *ngFor="let item of data.pages.items | postFilter:'home'" id="content" class="container-content">
+		<div>
+			<!-- <div [innerHTML]="item.content.rendered"></div> -->
+			<mat-card [innerHTML]="item.content.rendered"></mat-card>
+		</div>
+	</article>
 </ng-container>

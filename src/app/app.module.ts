@@ -17,6 +17,7 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
 import { PostFilterPipe } from './pipes/post-filter.pipe';
 import { environment } from '../environments/environment';
 import { ProgressOverlayComponent } from './components/progress-overlay/progress-overlay.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProgressOverlayComponent } from './components/progress-overlay/progress
     BlogComponent,
     TestimonialsComponent,
     PostFilterPipe,
-    ProgressOverlayComponent
+    ProgressOverlayComponent,
+    FooterComponent
   ],
   entryComponents: [ProgressOverlayComponent],
   imports: [

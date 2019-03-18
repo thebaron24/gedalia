@@ -330,7 +330,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   @include app-component-accent();
   @include app-component-gradient();
   width:100%;
-  min-height: 50vh;
+  min-height: 30vh;
   text-align: center;
   padding-bottom: 30px;
 
