@@ -5,7 +5,7 @@
 
 	<div class="container-content" *ngFor="let item of data.pages.items | postFilter:'testimonials'">
 		<!-- <div [innerHTML]="item.content.rendered"></div> -->
-		<mat-card [innerHTML]="item.content.rendered"></mat-card>
+		<mat-card [innerHTML]="item.content.rendered | safeHtml"></mat-card>
 	</div>
 
 	<section class="container-content">

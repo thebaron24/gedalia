@@ -5,6 +5,7 @@ import { PagesStoreService } from '../../services/pages-store.service';
 import { PostsStoreService } from '../../services/posts-store.service';
 import { Pages } from '../../models/pages.model';
 import { Posts } from '../../models/posts.model';
+import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 import { PostFilterPipe } from '../../pipes/post-filter.pipe';
 import { PageEvent } from '@angular/material';
 import { Observable, Subject } from 'rxjs';

@@ -3,6 +3,7 @@ import { DataService } from '../../services/data.service';
 import { SeoService } from '../../services/seo.service';
 import { PagesStoreService } from '../../services/pages-store.service';
 import { PostFilterPipe } from '../../pipes/post-filter.pipe';
+import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 
 @Component({
   selector: 'app-home',

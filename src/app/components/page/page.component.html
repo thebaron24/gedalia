@@ -11,7 +11,7 @@
 					</mat-card-header>
 					<img mat-card-image *ngIf="getImage(item)" src="{{getImage(item)}}" alt="{{item.title.rendered}}">
 					<mat-card-content>
-						<p [innerHTML]="item.content.rendered" class="responsive-images"></p>
+						<p [innerHTML]="item.content.rendered | safeHtml" class="responsive-images"></p>
 					</mat-card-content>
 				</mat-card>
 				<mat-card fxFlex *ngFor="let item of data.posts.items | postFilter:getCurrentUrl()">

@@ -7,6 +7,8 @@ import { Pages } from '../../models/pages.model';
 import { Testimonials } from '../../models/testimonials.model';
 import { PageEvent } from '@angular/material';
 import { Observable, Subject }    from 'rxjs';
+import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
+import { PostFilterPipe } from '../../pipes/post-filter.pipe';
 
 @Component({
   selector: 'app-testimonials',

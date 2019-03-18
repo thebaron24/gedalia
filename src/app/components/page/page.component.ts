@@ -4,6 +4,7 @@ import { PagesStoreService } from '../../services/pages-store.service';
 import { PostsStoreService } from '../../services/posts-store.service';
 import { Router, NavigationStart } from '@angular/router';
 import { PostFilterPipe } from '../../pipes/post-filter.pipe';
+import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 
 @Component({
   selector: 'app-page',
