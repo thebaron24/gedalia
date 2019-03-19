@@ -56,6 +56,14 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
     return this.pageEvent;
   }
 
+  getPageImage(item: Object){
+    let srcUrl = ""
+    if(item && item['_embedded'] && item['_embedded']['wp:featuredmedia'] && item['_embedded']['wp:featuredmedia'].length && item['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url']){
+      srcUrl = item['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['full']['source_url'];
+    }
+    return srcUrl;
+  }
+
   getImage(item: Object){
 
     let srcUrl = "/assets/placeholder-image.png"

@@ -12,9 +12,12 @@
 	pages: pagesStoreService.pages$ | async
 	} as data">
 	<article *ngFor="let item of data.pages.items | postFilter:'home'" id="content" class="container-content">
-		<div>
-			<!-- <div [innerHTML]="item.content.rendered"></div> -->
-			<mat-card [innerHTML]="item.content.rendered | safeHtml"></mat-card>
-		</div>
+		<mat-card fxFlex>
+			<mat-card-header>
+				<mat-card-title><h1>{{item.title.rendered}}</h1></mat-card-title>
+			</mat-card-header>
+			<img mat-card-image *ngIf="getImage(item)" src="{{getImage(item)}}" alt="{{item.title.rendered}}">
+			<mat-card-content [innerHTML]="item.content.rendered | safeHtml" class="responsive-images"></mat-card-content>
+		</mat-card>
 	</article>
 </ng-container>

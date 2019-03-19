@@ -4,7 +4,13 @@
 	} as data; else elseBlock">
 
 	<div class="container-content" *ngFor="let item of data.pages.items | postFilter:'blog'">
-		<mat-card [innerHTML]="item.content.rendered"></mat-card>
+		<mat-card fxFlex *ngFor="let item of data.pages.items | postFilter:'blog'">
+			<mat-card-header>
+				<mat-card-title><h1>{{item.title.rendered}}</h1></mat-card-title>
+			</mat-card-header>
+			<img mat-card-image *ngIf="getPageImage(item)" src="{{getPageImage(item)}}" alt="{{item.title.rendered}}">
+			<mat-card-content [innerHTML]="item.content.rendered | safeHtml" class="responsive-images"></mat-card-content>
+		</mat-card>
 	</div>
 
 

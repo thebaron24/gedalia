@@ -95,7 +95,6 @@ export class SeoService implements OnInit, OnDestroy {
    * Remove link with attribute rel
    */
   removeTag(tag: LinkDefinition) {
-    console.log("SeoService: attempting to remove tag ", tag);
     try {
 
         const selector = this._parseSelector(tag);
@@ -118,7 +117,6 @@ export class SeoService implements OnInit, OnDestroy {
    * Inietta il link ocme ultimo child del tag <head>
    */
   addTag(tag: LinkDefinition) {
-      console.log("SeoService: attempting to add tag ", tag);
       try {
 
             const link = this.renderer.createElement('link');
@@ -150,8 +148,6 @@ export class SeoService implements OnInit, OnDestroy {
   handle(page: object, config: object) {
   	let pageObject = page;
   	this.setTitle(pageObject['title']['rendered']);
-
-    console.log((pageObject['slug'] == 'home'), pageObject['slug'], config['apiUrls']['domain'] + '/' + pageObject['slug']);
 
     let conUrl = config['apiUrls']['domain'] ;
     if(pageObject['slug'] !== 'home') { 
