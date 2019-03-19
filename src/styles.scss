@@ -46,16 +46,16 @@ $gedalia-blue: (
 );
 
 $gedalia-yellow: (
-    50 : #fefefa,
-    100 : #fefcf3,
-    200 : #fdfaeb,
-    300 : #fcf7e2,
-    400 : #fbf6dc,
-    500 : #faf4d6,
-    600 : #f9f3d1,
-    700 : #f9f1cc,
-    800 : #f8efc6,
-    900 : #f6ecbc,
+    50 : #fefdf9,
+    100 : #fdfbf1,
+    200 : #fcf9e8,
+    300 : #fbf6df,
+    400 : #faf4d8,
+    500 : #f9f2d1,
+    600 : #f8f0cc,
+    700 : #f7eec6,
+    800 : #f6ecc0,
+    900 : #f5e8b5,
     A100 : #ffffff,
     A200 : #ffffff,
     A400 : #ffffff,
@@ -151,27 +151,27 @@ $gedalia-green: (
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $custom-typography: mat-typography-config(
-    $font-family:   'Lato, sans-serif',
+    $font-family:   'Raleway, sans-serif',
     $display-4:     mat-typography-level(112px, 112px, 300),
     $display-3:     mat-typography-level(56px, 56px, 400),
     $display-2:     mat-typography-level(45px, 48px, 400),
     $display-1:     mat-typography-level(34px, 40px, 400),
     $headline:      mat-typography-level(24px, 32px, 400),
     $title:         mat-typography-level(20px, 32px, 500),
-    $subheading-2:  mat-typography-level(16px, 28px, 400),
-    $subheading-1:  mat-typography-level(16px, 24px, 400),
-    $body-2:        mat-typography-level(16px, 24px, 500),
-    $body-1:        mat-typography-level(16px, 20px, 400),
-    $caption:       mat-typography-level(12px, 20px, 400),
-    $button:        mat-typography-level(16px, 16px, 500),
+    $subheading-2:  mat-typography-level(18px, 28px, 400),
+    $subheading-1:  mat-typography-level(18px, 24px, 400),
+    $body-2:        mat-typography-level(18px, 24px, 500),
+    $body-1:        mat-typography-level(18px, 20px, 400),
+    $caption:       mat-typography-level(18px, 20px, 400),
+    $button:        mat-typography-level(18px, 16px, 500),
     $input:         mat-typography-level(inherit, 1.125, 400)
 );
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angular-universal-primary: mat-palette($gedalia-blue2);
-$angular-universal-accent: mat-palette($gedalia-yellow);
+$angular-universal-primary: mat-palette($gedalia-yellow);
+$angular-universal-accent: mat-palette($gedalia-blue2);
 
 // The warn palette is optional (defaults to red).
 $angular-universal-warn: mat-palette($mat-red);
@@ -269,7 +269,7 @@ $material-icons-font-family: 'Material Icons' !default;
 //@include app-component-theme($angular-universal-theme);
 
 html, body, app-root { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
 
 .example-container {
   display: flex;
@@ -333,6 +333,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   min-height: 30vh;
   text-align: center;
   padding-bottom: 30px;
+
+  button {
+    min-width: 150px;
+    margin: 10px;
+  }
 
   position: relative;
   canvas {
