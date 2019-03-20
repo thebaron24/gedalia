@@ -1,16 +1,16 @@
 {
-  "ID": 105,
+  "ID": 104,
   "name": "Primary",
   "slug": "primary",
   "description": "",
   "count": 6,
   "items": [
     {
-      "id": 12462,
+      "id": 12469,
       "order": 1,
       "parent": 0,
       "title": "Home",
-      "url": "http://api.baronwilson.io/",
+      "url": "http://blog.gedaliahealingarts.com/",
       "attr": "",
       "target": "",
       "classes": "",
@@ -23,11 +23,11 @@
       "type_label": "Page"
     },
     {
-      "id": 12521,
+      "id": 12468,
       "order": 2,
       "parent": 0,
-      "title": "About",
-      "url": "http://api.baronwilson.io/about/",
+      "title": "About Gedalia",
+      "url": "http://blog.gedaliahealingarts.com/about/",
       "attr": "",
       "target": "",
       "classes": "",
@@ -40,28 +40,11 @@
       "type_label": "Page"
     },
     {
-      "id": 12524,
+      "id": 12471,
       "order": 3,
       "parent": 0,
-      "title": "Blog",
-      "url": "http://api.baronwilson.io/blog/",
-      "attr": "",
-      "target": "",
-      "classes": "",
-      "xfn": "",
-      "description": "",
-      "object_id": 13,
-      "object": "page",
-      "object_slug": "blog",
-      "type": "post_type",
-      "type_label": "Page"
-    },
-    {
-      "id": 12520,
-      "order": 4,
-      "parent": 0,
       "title": "Services",
-      "url": "http://api.baronwilson.io/services/",
+      "url": "http://blog.gedaliahealingarts.com/services/",
       "attr": "",
       "target": "",
       "classes": "",
@@ -74,11 +57,28 @@
       "type_label": "Page"
     },
     {
-      "id": 12522,
+      "id": 12473,
+      "order": 4,
+      "parent": 0,
+      "title": "Blog",
+      "url": "http://blog.gedaliahealingarts.com/blog/",
+      "attr": "",
+      "target": "",
+      "classes": "",
+      "xfn": "",
+      "description": "",
+      "object_id": 13,
+      "object": "page",
+      "object_slug": "blog",
+      "type": "post_type",
+      "type_label": "Page"
+    },
+    {
+      "id": 12470,
       "order": 5,
       "parent": 0,
       "title": "Media",
-      "url": "http://api.baronwilson.io/media/",
+      "url": "http://blog.gedaliahealingarts.com/media/",
       "attr": "",
       "target": "",
       "classes": "",
@@ -91,11 +91,11 @@
       "type_label": "Page"
     },
     {
-      "id": 12523,
+      "id": 12472,
       "order": 6,
       "parent": 0,
       "title": "Testimonials",
-      "url": "http://api.baronwilson.io/testimonials/",
+      "url": "http://blog.gedaliahealingarts.com/testimonials/",
       "attr": "",
       "target": "",
       "classes": "",
@@ -110,8 +110,8 @@
   ],
   "meta": {
     "links": {
-      "collection": "http://api.baronwilson.io/wp-json/wp/v2/menus/",
-      "self": "http://api.baronwilson.io/wp-json/wp/v2/menus/105"
+      "collection": "http://blog.gedaliahealingarts.com/wp-json/wp/v2/menus/",
+      "self": "http://blog.gedaliahealingarts.com/wp-json/wp/v2/menus/104"
     }
   }
 }

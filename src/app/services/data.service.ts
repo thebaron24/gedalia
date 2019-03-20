@@ -16,11 +16,11 @@ import { MenusStoreService } from './menus-store.service';
 import * as _ from 'lodash';
 
 import configJson from '../../assets/config.json';
-import menuJson from '../../assets/menu.json';
-import menusJson from '../../assets/menus.json';
-import pagesJson from '../../assets/pages.json';
-import postsJson from '../../assets/posts.json';
-import testimonialsJson from '../../assets/testimonials.json';
+// import menuJson from '../../assets/menu.json';
+// import menusJson from '../../assets/menus.json';
+// import pagesJson from '../../assets/pages.json';
+// import postsJson from '../../assets/posts.json';
+// import testimonialsJson from '../../assets/testimonials.json';
 
 @Injectable({
   providedIn: 'root'
