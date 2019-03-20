@@ -19,6 +19,8 @@ import { environment } from '../environments/environment';
 import { ProgressOverlayComponent } from './components/progress-overlay/progress-overlay.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+import { TransferHttpCacheModule } from '@nguniversal/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,7 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserTransferStateModule,
+    TransferHttpCacheModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
