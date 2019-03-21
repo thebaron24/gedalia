@@ -46,7 +46,7 @@ export class TestimonialsStoreService {
   addTestimonial(testimonial: object, total: number) {
     // we assaign a new copy of testimonials by adding a new testimonial to it 
     // with no duplicate ids
-    this.testimonials.total = total;
+    this.testimonials.total = total ? total : this.testimonials.total;
 
     this.testimonials.items = _.unionBy(this.testimonials.items, [testimonial],'id');
     this.testimonials.loaded = this.testimonials.items.length;
@@ -57,7 +57,7 @@ export class TestimonialsStoreService {
   addTestimonials(testimonials: any[], total: number) {
     // we assaign a new copy of testimonials by adding a new testimonial array to it 
     // with no duplicate ids
-    this.testimonials.total = total;
+    this.testimonials.total = total ? total : this.testimonials.total;
 
     this.testimonials.items  = _.unionBy(this.testimonials.items, testimonials, 'id');
     this.testimonials.loaded = this.testimonials.items.length;

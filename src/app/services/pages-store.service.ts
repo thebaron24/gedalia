@@ -46,7 +46,7 @@ export class PagesStoreService {
   addPage(page: object, total: number) {
     // we assaign a new copy of pages by adding a new page to it 
     // with no duplicate ids
-    this.pages.total = total;
+    this.pages.total = total ? total : this.pages.total;
 
     this.pages.items = _.unionBy(this.pages.items, [page],'id');
     this.pages.loaded = this.pages.items.length;
@@ -57,7 +57,7 @@ export class PagesStoreService {
   addPages(pages: any[], total: number) {
     // we assaign a new copy of pages by adding a new page array to it 
     // with no duplicate ids
-    this.pages.total = total;
+    this.pages.total = total ? total : this.pages.total;
 
     this.pages.items  = _.unionBy(this.pages.items, pages, 'id');
     this.pages.loaded = this.pages.items.length;

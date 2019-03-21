@@ -49,28 +49,16 @@ export class DataService implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       // Client only code.
       console.log("DataService: running in browser");
-      this.getApiPosts('menus');
-      this.getApiPosts('pages');
-      this.getApiPosts('posts');
-      this.getApiPosts('testimonials');
     }
     if (isPlatformServer(this.platformId)) {
       // Server only code.
       console.log("DataService: running on server");
-      // this.setConfig({"body": configJson});
-      this.getApiPosts('menus');
-      this.getApiPosts('pages');
-      this.getApiPosts('posts');
-      this.getApiPosts('testimonials');
     }
-    // this.getConfig().subscribe(response => {
-    //   console.log("DataService: this.getConfig().subscribe firing");
-      // this.setConfig({"body": configJson});
-      // this.getApiPosts('menus');
-      // this.getApiPosts('pages');
-      // this.getApiPosts('posts');
-      // this.getApiPosts('testimonials');
-    //});
+
+    this.getApiPosts('menus');
+    this.getApiPosts('pages');
+    this.getApiPosts('posts');
+    this.getApiPosts('testimonials');
 
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
@@ -126,36 +114,30 @@ export class DataService implements OnInit, OnDestroy {
     });
 
     let page;
-
     let post;
-    //if (isPlatformBrowser(this.platformId)) {
-      // Client only code.
-      console.log("DataService: running in browser");
-      if(postType === 'pages'){
-        let i = params.findIndex(param => param.indexOf("slug") != -1);
-        if(i !== -1) {
-          let slug = params[i].split('=')[1];
-          page = this.pagesStoreService.pages.items.find(page => page.slug === slug);
-        }
+    let slug;
+
+    if(postType === 'pages'){
+      let i = params.findIndex(param => param.indexOf("slug") != -1);
+      if(i !== -1) {
+        slug = params[i].split('=')[1];
+        page = this.pagesStoreService.pages.items.find(page => page.slug === slug);
       }
-      if(postType === 'posts'){
-        let i = params.findIndex(param => param.indexOf("slug") != -1);
-        if(i !== -1) {
-          let slug = params[i].split('=')[1];
-          post = this.postsStoreService.posts.items.find(post => post.slug === slug);
-        }
+    }
+    if(postType === 'posts'){
+      let i = params.findIndex(param => param.indexOf("slug") != -1);
+      if(i !== -1) {
+        slug = params[i].split('=')[1];
+        post = this.postsStoreService.posts.items.find(post => post.slug === slug);
       }
-    //}
-    // if (isPlatformServer(this.platformId)) {
-    //   // Server only code.
-    //   console.log("DataService: running on server");
-    // }
+    }
+
 
     // if( (postType === 'pages' && !page) || (postType === 'posts' && !post) || postType === 'menus' || postType === 'testimonials')
     this.getArray(thisUrl).subscribe( response => { 
 
       let state: Pages | Posts | Menus | Testimonials = {
-        total: Number(response.headers.get('X-WP-Total')),
+        total: slug ? 0 : Number(response.headers.get('X-WP-Total')),
         loaded: 0,
         items: response.body
       }
@@ -174,10 +156,11 @@ export class DataService implements OnInit, OnDestroy {
       } else {
         this.sendToStore(postType, state);
       }
+
     });
   }
 
-
+  //to avoid pollyfills server side
   filterArray(array: any[], test: string): any[] {
     let arrayspot = -1;
 

@@ -46,7 +46,7 @@ export class MenusStoreService {
   addMenu(menu: object, total: number) {
     // we assaign a new copy of menus by adding a new menu to it 
     // with no duplicate ids
-    this.menus.total = total;
+    this.menus.total = total ? total : this.menus.total;
 
     this.menus.items = _.unionBy(this.menus.items, [menu],'id');
     this.menus.loaded = this.menus.items.length;
@@ -57,7 +57,7 @@ export class MenusStoreService {
   addMenus(menus: any[], total: number) {
     // we assaign a new copy of menus by adding a new menu array to it 
     // with no duplicate ids
-    this.menus.total = total;
+    this.menus.total = total ? total : this.menus.total;
 
     this.menus.items  = _.unionBy(this.menus.items, menus, 'id');
     this.menus.loaded = this.menus.items.length;

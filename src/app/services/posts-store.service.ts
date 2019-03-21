@@ -45,7 +45,7 @@ export class PostsStoreService {
   addPost(post: object, total: number) {
     // we assaign a new copy of posts by adding a new post to it 
     // with no duplicate ids
-    this.posts.total = total;
+    this.posts.total = total ? total : this.posts.total;
 
     this.posts.items = _.unionBy(this.posts.items, [post],'id');
     this.posts.loaded = this.posts.items.length;
@@ -56,7 +56,7 @@ export class PostsStoreService {
   addPosts(posts: any[], total: number) {
     // we assaign a new copy of posts by adding a new post array to it 
     // with no duplicate ids
-    this.posts.total = total;
+    this.posts.total = total ? total : this.posts.total;
     
     this.posts.items  = _.unionBy(this.posts.items, posts, 'id');
     this.posts.loaded = this.posts.items.length;
