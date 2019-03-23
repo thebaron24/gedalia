@@ -7,6 +7,7 @@ import { Pages } from '../../models/pages.model';
 import { Posts } from '../../models/posts.model';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 import { PostFilterPipe } from '../../pipes/post-filter.pipe';
+import { SearchFilterPipe } from '../../pipes/search-filter.pipe';
 import { PageEvent } from '@angular/material';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
@@ -48,7 +49,7 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
   clearSearch() {
     this.searchValue='';
-    this.dataService.getApiPosts("posts");
+    //this.dataService.getApiPosts("posts");
   }
 
   getPostsPagination(event: PageEvent): PageEvent {

@@ -3,8 +3,10 @@
 	posts: postsStoreService.posts$ | async
 	} as data; else elseBlock">
 
-	<div class="container-content" *ngFor="let item of data.pages.items | postFilter:'blog'">
-		<mat-card fxFlex *ngFor="let item of data.pages.items | postFilter:'blog'">
+	<!-- Blog Page Section -->
+
+	<div class="container-content" *ngIf="(data.pages.items | postFilter:'blog').length">
+		<mat-card *ngFor="let item of data.pages.items | postFilter:'blog'">
 			<mat-card-header>
 				<mat-card-title><h1>{{item.title.rendered}}</h1></mat-card-title>
 			</mat-card-header>
@@ -13,9 +15,7 @@
 		</mat-card>
 	</div>
 
-
-
-	<!-- -->
+	<!-- Search Section -->
 
 	<section class="container-content" *ngIf="data.posts">
 		<mat-card>
@@ -27,19 +27,22 @@
 			</mat-form-field>
 		</mat-card>
 	</section>
+
+	<!-- Posts List Section -->
+
 	<section class="container-content">
 		<div
 		*ngIf="data.posts.items.length; else elseBlockForGrid"
 		fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutAlign="start stretch"
 		>
-			<div fxFlex="1 0 25%" *ngFor="let post of data.posts.items">
+			<div fxFlex="1 0 25%" *ngFor="let post of data.posts.items | searchFilter:searchValue">
 				<mat-card fxFlex>
 					<mat-card-header>
 						<!-- <div mat-card-avatar></div> -->
 						<mat-card-title>{{post.title.rendered}}</mat-card-title>
 						<!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
 					</mat-card-header>
-					<img mat-card-image src="{{getImage(post)}}" alt="Photo of a Shiba Inu">
+					<img mat-card-image src="{{getImage(post)}}" alt="{{post.title.rendered}}">
 					<mat-card-content>
 						<p [innerHTML]="post.excerpt.rendered"></p>
 					</mat-card-content>

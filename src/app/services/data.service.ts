@@ -12,6 +12,7 @@ import { TestimonialsStoreService } from './testimonials-store.service';
 import { PagesStoreService } from './pages-store.service';
 import { PostsStoreService } from './posts-store.service';
 import { MenusStoreService } from './menus-store.service';
+import { OverlayService } from './overlay.service';
 
 import * as _ from 'lodash';
 
@@ -44,6 +45,7 @@ export class DataService implements OnInit, OnDestroy {
               private pagesStoreService: PagesStoreService,
               private postsStoreService: PostsStoreService,
               private menusStoreService: MenusStoreService,
+              public overlayService: OverlayService,
               @Inject(PLATFORM_ID) private platformId: Object) {
 
     if (isPlatformBrowser(this.platformId)) {
@@ -107,6 +109,8 @@ export class DataService implements OnInit, OnDestroy {
   }
 
   getApiPosts(postType: string = 'pages', params: any[] = []) {
+    //this.overlayService.showGlobalOverlay();
+
     let thisUrl = this.config['apiUrls']['apidomain'] + this.config['apiUrls'][postType];
 
     _.forEach(params, function(value) {
@@ -135,7 +139,7 @@ export class DataService implements OnInit, OnDestroy {
 
     // if( (postType === 'pages' && !page) || (postType === 'posts' && !post) || postType === 'menus' || postType === 'testimonials')
     this.getArray(thisUrl).subscribe( response => { 
-
+      //this.overlayService.hideGlobalOverlay();
       let state: Pages | Posts | Menus | Testimonials = {
         total: slug ? 0 : Number(response.headers.get('X-WP-Total')),
         loaded: 0,

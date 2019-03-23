@@ -11,8 +11,9 @@
 <ng-container *ngIf="{
 	pages: pagesStoreService.pages$ | async
 	} as data">
+
 	<article *ngFor="let item of data.pages.items | postFilter:'home'" id="content" class="container-content">
-		<mat-card fxFlex>
+		<mat-card>
 			<mat-card-header>
 				<mat-card-title><h1>{{item.title.rendered}}</h1></mat-card-title>
 			</mat-card-header>
@@ -20,4 +21,5 @@
 			<mat-card-content [innerHTML]="item.content.rendered | safeHtml" class="responsive-images"></mat-card-content>
 		</mat-card>
 	</article>
+	
 </ng-container>

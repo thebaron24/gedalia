@@ -20,6 +20,7 @@ import { ProgressOverlayComponent } from './components/progress-overlay/progress
 import { FooterComponent } from './components/footer/footer.component';
 
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
     TestimonialsComponent,
     PostFilterPipe,
     ProgressOverlayComponent,
-    FooterComponent
+    FooterComponent,
+    SearchFilterPipe
   ],
   entryComponents: [ProgressOverlayComponent],
   imports: [

@@ -9,12 +9,48 @@ import { OverlayRef } from '@angular/cdk/overlay';
 })
 export class OverlayService {
 
-  constructor(private overlay: Overlay) { }
+	overlayRef;
+	progressOverlayPortal;
+
+  resource = 0;
+
+  constructor(private overlay: Overlay) {
+  	//this.overlayRef = this.create();
+  }
+
+  create() {
+  	return this.overlay.create({
+	    positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+	    hasBackdrop: true
+	  });
+  }
 
   showGlobalOverlay() {
-    let o = this.overlay.create({
-      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
-      hasBackdrop: true
-    }).attach(new ComponentPortal(ProgressOverlayComponent));
+  	if(this.overlayRef && this.overlayRef.hasAttached)
+  		this.resource++;
+  	else {
+
+  		const overlayRef = this.overlay.create({
+		    positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+		    hasBackdrop: true
+		  })
+
+		  const progressOverlayPortal = new ComponentPortal(ProgressOverlayComponent);
+			overlayRef.attach(progressOverlayPortal);
+
+			this.overlayRef = overlayRef;
+			this.progressOverlayPortal = progressOverlayPortal;
+  	}
+  }
+
+  hideGlobalOverlay() {
+  	if (this.resource) {
+  		this.resource--;
+  	} else if (this.overlayRef && this.overlayRef.hasAttached) {
+			this.overlayRef.detach();
+			//this.overlayRef.dispose(); //closes but never would open again
+			// this.overlayRef.close();
+			console.log("tried to detach");
+  	}
   }
 }
