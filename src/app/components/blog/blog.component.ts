@@ -49,7 +49,7 @@ export class BlogComponent implements OnInit, AfterViewInit, OnDestroy {
 
   clearSearch() {
     this.searchValue='';
-    //this.dataService.getApiPosts("posts");
+    this.dataService.getApiPosts("posts");
   }
 
   getPostsPagination(event: PageEvent): PageEvent {

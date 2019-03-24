@@ -351,6 +351,14 @@ body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
 
 }
 
+.accent-card {
+  @include app-component-accent();
+}
+
+.primary-card {
+  @include app-component-primary();
+}
+
 .responsive-images img {
     max-width: 100%;
     height:auto;
