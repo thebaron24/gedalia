@@ -51,22 +51,26 @@ export class DataService implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       // Client only code.
       console.log("DataService: running in browser");
+      this.getApiPosts('menus');
+      this.getApiPosts('pages');
+      this.getApiPosts('posts');
+      this.getApiPosts('testimonials');
     }
     if (isPlatformServer(this.platformId)) {
       // Server only code.
       console.log("DataService: running on server");
-    }
 
-    this.getApiPosts('menus');
-    this.getApiPosts('pages');
-    this.getApiPosts('posts');
-    this.getApiPosts('testimonials');
+    }
 
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
         //console.log("DataService: router event NavigationEnd - ", val);
-        this.getApiPosts('pages', ['&slug=' + val.url.replace('/', '')])
-        this.getApiPosts('posts', ['&slug=' + val.url.replace('/', '')])
+        if(val.url === '/'){
+          this.getApiPosts('pages', ['&slug=' + 'home']);
+        } else {
+          this.getApiPosts('pages', ['&slug=' + val.url.replace('/', '')]);
+          this.getApiPosts('posts', ['&slug=' + val.url.replace('/', '')]);
+        }
       }
     });
   }
