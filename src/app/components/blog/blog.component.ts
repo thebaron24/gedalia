@@ -8,7 +8,7 @@ import { Posts } from '../../models/posts.model';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 import { PostFilterPipe } from '../../pipes/post-filter.pipe';
 import { SearchFilterPipe } from '../../pipes/search-filter.pipe';
-import { PageEvent } from '@angular/material';
+import { PageEvent } from '@angular/material/paginator';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
