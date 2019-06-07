@@ -4,7 +4,7 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Observable, Subject, forkJoin}    from 'rxjs';
 import { Optional, RendererFactory2, ViewEncapsulation, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from "@angular/common";
 import { DataService } from './data.service';
 import { PagesStoreService } from './pages-store.service';
 import { PostsStoreService } from './posts-store.service';
