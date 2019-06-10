@@ -1,6 +1,6 @@
 import { Inject, Injectable, OnInit, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, forkJoin}    from 'rxjs';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { map } from 'rxjs/operators';
@@ -35,6 +35,15 @@ export class DataService implements OnInit, OnDestroy {
   config$ = this.configSource.asObservable();
 
   config: Object = configJson;
+
+  httpOptions: Object = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Access-Control-Allow-Origin':'*'
+      // 'Authorization': 'my-auth-token'
+    }),
+    observe: 'response'
+  };
 
   //----------------------------------------------
   subscriptions: any = {};
@@ -100,12 +109,12 @@ export class DataService implements OnInit, OnDestroy {
     this.configSource.next(config.body);
   }
 
-  getJson(url): Observable<HttpResponse<any>> {
-  	return this.http.get(url, { observe: 'response' });
+  getJson(url): Observable<any> {
+  	return this.http.get(url, this.httpOptions);
   }
 
-  getArray(url): Observable<HttpResponse<Array<any>>> {
-  	return this.http.get<any[]>(url, { observe: 'response' });
+  getArray(url): Observable<any> {
+  	return this.http.get<any[]>(url, this.httpOptions);
   }
 
   getConfig(): Observable<HttpResponse<any>> {
