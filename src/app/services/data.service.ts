@@ -37,11 +37,11 @@ export class DataService implements OnInit, OnDestroy {
   config: Object = configJson;
 
   httpOptions: Object = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Access-Control-Allow-Origin':'*'
-      // 'Authorization': 'my-auth-token'
-    }),
+    // headers: new HttpHeaders({
+    //   'Content-Type':  'application/json',
+    //   'Access-Control-Allow-Origin':'*'
+    //   // 'Authorization': 'my-auth-token'
+    // }),
     observe: 'response'
   };
 
