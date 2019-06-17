@@ -1,8 +1,5 @@
 @import 'theme.scss';
 
-
-@include angular-material-theme($angular-universal-theme);
-
 .angular-universal-theme {
   $theme: $angular-universal-theme;
   @include angular-material-theme($theme);
