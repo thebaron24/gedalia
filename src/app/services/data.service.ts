@@ -77,8 +77,17 @@ export class DataService implements OnInit, OnDestroy {
         if(val.url === '/'){
           this.getApiPosts('pages', ['&slug=' + 'home']);
         } else {
+
           this.getApiPosts('pages', ['&slug=' + val.url.replace('/', '')]);
           this.getApiPosts('posts', ['&slug=' + val.url.replace('/', '')]);
+
+          // forkJoin(
+          //   this.getApiPosts('pages', ['&slug=' + val.url.replace('/', '')]),
+          //   this.getApiPosts('posts', ['&slug=' + val.url.replace('/', '')])
+          // ).subscribe(([pages, posts]) => {
+          //   console.log(pages);
+          //   console.log(posts);
+          // })
         }
       }
     });
@@ -148,7 +157,9 @@ export class DataService implements OnInit, OnDestroy {
         post = this.postsStoreService.posts.items.find(post => post.slug === slug);
       }
     }
-
+    console.log("postType", postType);
+    console.log("page", page);
+    console.log("post", post);
 
     // if( (postType === 'pages' && !page) || (postType === 'posts' && !post) || postType === 'menus' || postType === 'testimonials')
     this.getArray(thisUrl).subscribe( response => { 
@@ -171,7 +182,12 @@ export class DataService implements OnInit, OnDestroy {
           }
         }
       } else {
-        this.sendToStore(postType, state);
+
+        if(post || page || (response.body && response.body.length)) {
+          this.sendToStore(postType, state);
+        } else {
+          console.log("404");
+        }
       }
 
     });

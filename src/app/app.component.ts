@@ -5,11 +5,13 @@ import { ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  host: { '[class]': 'themeClass'}
 })
 export class AppComponent implements OnInit, OnDestroy {
   logo = 'Gedalia';
   mobileQuery: MediaQueryList;
+  themeClass = 'angular-universal-theme';
 
   private _mobileQueryListener: () => void;
 

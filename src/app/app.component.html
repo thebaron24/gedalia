@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-  <mat-toolbar class="example-toolbar">
+<div class="app-container" [class.is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="app-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <span class="example-app-name"><a class="logo" routerLink="/home">{{ logo }}</a></span>
+    <span class="app-name"><a class="logo" routerLink="/home">{{ logo }}</a></span>
     <!-- This fills the remaining space of the current row -->
-    <span class="example-fill-remaining-space"></span>
+    <span class="flex-fill-remaining-space"></span>
     <span>
       <button mat-icon-button [matMenuTriggerFor]="socialMenu">
         <mat-icon>more_vert</mat-icon>
@@ -18,8 +18,7 @@
       </mat-menu>
     </span>
   </mat-toolbar>
-  <mat-sidenav-container class="example-sidenav-container"
-                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav-component">
       <app-side-menu></app-side-menu>

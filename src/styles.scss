@@ -1,412 +1,80 @@
+@import 'theme.scss';
 
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
-// Plus imports for other components in your app.
-@import '~material-design-icons/iconfont/material-icons.css';
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
-
-
-//http://mcg.mbitson.com awesome custom theme helper
-$gedalia-blue: (
-    50 : #e0f2f9,
-    100 : #b3def1,
-    200 : #80c9e7,
-    300 : #4db3dd,
-    400 : #26a2d6,
-    500 : #0092cf,
-    600 : #008aca,
-    700 : #007fc3,
-    800 : #0075bd,
-    900 : #0063b2,
-    A100 : #dbedff,
-    A200 : #a8d3ff,
-    A400 : #75b9ff,
-    A700 : #5cacff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
-);
-
-$gedalia-yellow: (
-    50 : #fefdf9,
-    100 : #fdfbf1,
-    200 : #fcf9e8,
-    300 : #fbf6df,
-    400 : #faf4d8,
-    500 : #f9f2d1,
-    600 : #f8f0cc,
-    700 : #f7eec6,
-    800 : #f6ecc0,
-    900 : #f5e8b5,
-    A100 : #ffffff,
-    A200 : #ffffff,
-    A400 : #ffffff,
-    A700 : #ffffff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #000000,
-        700 : #000000,
-        800 : #000000,
-        900 : #000000,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
-);
-
-/* For use in src/lib/core/theming/_palette.scss */
-$gedalia-blue2: (
-    50 : #e0f2f9,
-    100 : #b3def1,
-    200 : #80c9e7,
-    300 : #4db3dd,
-    400 : #26a2d6,
-    500 : #0092cf,
-    600 : #008aca,
-    700 : #007fc3,
-    800 : #0075bd,
-    900 : #0063b2,
-    A100 : #dbedff,
-    A200 : #a8d3ff,
-    A400 : #75b9ff,
-    A700 : #5cacff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
-);
-
-/* For use in src/lib/core/theming/_palette.scss */
-$gedalia-green: (
-    50 : #f3f9ec,
-    100 : #e2f0ce,
-    200 : #cfe6ae,
-    300 : #bbdc8e,
-    400 : #add575,
-    500 : #9ecd5d,
-    600 : #96c855,
-    700 : #8cc14b,
-    800 : #82ba41,
-    900 : #70ae30,
-    A100 : #f9fff4,
-    A200 : #dfffc1,
-    A400 : #c5ff8e,
-    A700 : #b8ff74,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #000000,
-        600 : #000000,
-        700 : #000000,
-        800 : #000000,
-        900 : #000000,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
-);
-
-
-
-// Define a custom typography config that overrides the font-family as well as the
-// `headlines` and `body-1` levels.
-$custom-typography: mat-typography-config(
-    $font-family:   'Raleway, sans-serif',
-    $display-4:     mat-typography-level(112px, 112px, 300),
-    $display-3:     mat-typography-level(56px, 56px, 400),
-    $display-2:     mat-typography-level(45px, 48px, 400),
-    $display-1:     mat-typography-level(34px, 40px, 400),
-    $headline:      mat-typography-level(24px, 32px, 400),
-    $title:         mat-typography-level(20px, 32px, 500),
-    $subheading-2:  mat-typography-level(18px, 28px, 400),
-    $subheading-1:  mat-typography-level(18px, 24px, 400),
-    $body-2:        mat-typography-level(18px, 24px, 500),
-    $body-1:        mat-typography-level(18px, 20px, 400),
-    $caption:       mat-typography-level(18px, 20px, 400),
-    $button:        mat-typography-level(18px, 16px, 500),
-    $input:         mat-typography-level(inherit, 1.125, 400)
-);
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$angular-universal-primary: mat-palette($gedalia-yellow);
-$angular-universal-accent: mat-palette($gedalia-blue2);
-
-// The warn palette is optional (defaults to red).
-$angular-universal-warn: mat-palette($mat-red);
-
-// Create the theme object (a Sass map containing all of the palettes).
-$angular-universal-theme: mat-light-theme($angular-universal-primary, $angular-universal-accent, $angular-universal-warn);
-
-
-@include mat-base-typography($custom-typography);
-
-// Override typography for a specific Angular Material components.
-@include mat-checkbox-typography($custom-typography);
-
-// Override typography for all Angular Material, including mat-base-typography and all components.
-@include angular-material-typography($custom-typography);
-
-@include mat-core($custom-typography);
-
-/* You can add global styles to this file, and also import other style files */
-
-$material-icons-codepoints: () !default; /* Sass map of icon names and codepoints */
-$material-icons-font-path: '' !default;
-$material-icons-font-name: 'MaterialIcons-Regular' !default;
-$material-icons-font-size: 24px !default;
-$material-icons-font-family: 'Material Icons' !default;
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  //color: mat-color($angular-universal-primary, A700);
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  //color: mat-color($angular-universal-primary);
-  src: url(~material-design-icons/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(~material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
-    url(~material-design-icons/iconfont/MaterialIcons-Regular.woff) format('woff'),
-    url(~material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
-}
 
 @include angular-material-theme($angular-universal-theme);
 
-@mixin app-component-accent($theme: $angular-universal-theme, $primary: map-get($angular-universal-theme, primary), $accent: map-get($angular-universal-theme, accent), $warn: map-get($angular-universal-theme, warn),  $background: map-get($angular-universal-theme, background),  $foreground: map-get($angular-universal-theme, foreground)) {
-  background: mat-color($accent, default);
-  color: mat-color($accent, default-contrast);
-  // .material-icons {
-  //   color: mat-color($accent, default-contrast);
-  // }
-  @content;
+.angular-universal-theme {
+  $theme: $angular-universal-theme;
+  @include angular-material-theme($theme);
+  @include mat-grid-mixin($theme);
+  @include mat-toolbar-mixin($theme);
+  @include mat-base-typography($custom-typography);
+  @include mat-checkbox-typography($custom-typography);
+  @include angular-material-typography($custom-typography);
+  @include mat-core($custom-typography);
+
+  height: 100%;
+
+  .app-container {
+    display: flex;
+    flex-direction: column;
+
+    .sidenav-container {
+      /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+         causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+      flex: 1;
+    }
+
+    .is-mobile {
+      .app-toolbar {
+        position: fixed;
+        /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+        z-index: 2;
+      }
+      .sidenav-container {
+        /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+           `<body>` to be our scrolling element for mobile layouts. */
+        flex: 1 0 auto;
+      }
+    }
+
+    .accent-card {
+      @include app-component-accent();
+    }
+
+    .primary-card {
+      @include app-component-primary();
+    }
+
+    .responsive-images img {
+        max-width: 100%;
+        height:auto;
+    }
+
+    .container-content {
+      max-width: 1200px;
+      padding:10px;
+      margin: 0 auto;
+    }
+
+    .jumbotron {
+      // Use mat-color to extract individual colors a palette.
+      @include app-component-accent();
+      @include app-component-gradient();
+      position: relative;
+      width:100%;
+      min-height: 30vh;
+      text-align: center;
+      padding-bottom: 30px;
+
+      button {
+        min-width: 150px;
+        margin: 10px;
+      }
+    }
+
+  }
 }
 
-@mixin app-component-primary($theme: $angular-universal-theme, $primary: map-get($angular-universal-theme, primary), $accent: map-get($angular-universal-theme, accent), $warn: map-get($angular-universal-theme, warn),  $background: map-get($angular-universal-theme, background),  $foreground: map-get($angular-universal-theme, foreground)) {
-  background: mat-color($primary, default);
-  color: mat-color($primary, default-contrast);
-  // .material-icons {
-  //   color: mat-color($accent, default-contrast);
-  // }
-  @content;
-}
-
-@mixin app-component-gradient($theme: $angular-universal-theme, $primary: map-get($angular-universal-theme, primary), $accent: map-get($angular-universal-theme, accent), $warn: map-get($angular-universal-theme, warn),  $background: map-get($angular-universal-theme, background),  $foreground: map-get($angular-universal-theme, foreground)) {
-  background: linear-gradient(-45deg, mat-color($accent, 50), mat-color($accent, 900), mat-color($primary, 50), mat-color($primary, 900));
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
-  @content;
-}
-
-//@include app-component-theme($angular-universal-theme);
-
-html, body, app-root { height: 100%; }
+html, body, { height: 100%; }
 body { margin: 0; font-family: Raleway, "Helvetica Neue", sans-serif; }
-
-.example-container {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.example-toolbar {
-  @include app-component-primary();
-  @include mat-elevation(6);
-  z-index: 2;
-}
-
-.example-is-mobile .example-toolbar {
-  position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-  z-index: 2;
-}
-
-.example-app-name {
-  margin-left: 8px;
-}
-
-.sidenav-component {
-  // @include app-component-accent();
-}
-
-.example-sidenav-container {
-  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-  flex: 1;
-
-}
-
-.example-is-mobile .example-sidenav-container {
-  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-     `<body>` to be our scrolling element for mobile layouts. */
-  flex: 1 0 auto;
-}
-
-.example-fill-remaining-space {
-  /* This fills the remaining space, by using flexbox. 
-     Every toolbar row uses a flexbox row layout. */
-  flex: 1 1 auto;
-}
-
-.logo {
-  @include app-component-primary();
-  text-decoration: none;
-}
-
-.jumbotron {
-  // Use mat-color to extract individual colors a palette.
-  @include app-component-accent();
-  @include app-component-gradient();
-  width:100%;
-  min-height: 30vh;
-  text-align: center;
-  padding-bottom: 30px;
-
-  button {
-    min-width: 150px;
-    margin: 10px;
-  }
-
-  position: relative;
-  canvas {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -9999;
-  }
-
-}
-
-.accent-card {
-  @include app-component-accent();
-}
-
-.primary-card {
-  @include app-component-primary();
-}
-
-.responsive-images img {
-    max-width: 100%;
-    height:auto;
-}
-
-.container-content {
-	max-width: 1200px;
-	padding:10px;
-	margin: 0 auto;
-}
-
-canvas {
-  padding:0;
-  margin:0;
-}
-
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
