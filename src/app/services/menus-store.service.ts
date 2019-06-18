@@ -40,7 +40,6 @@ export class MenusStoreService {
   // and down to all of its subsribers (ex: this.menus = [])
   set menus(val: Menus) {
     this._menus.next(val);
-    console.log("Menus: ", val)
   }
 
   addMenu(menu: object, total: number) {

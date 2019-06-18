@@ -17,11 +17,6 @@ import { OverlayService } from './overlay.service';
 import * as _ from 'lodash';
 
 import configJson from '../../assets/config.json';
-// import menuJson from '../../assets/menu.json';
-// import menusJson from '../../assets/menus.json';
-// import pagesJson from '../../assets/pages.json';
-// import postsJson from '../../assets/posts.json';
-// import testimonialsJson from '../../assets/testimonials.json';
 
 @Injectable({
   providedIn: 'root'
@@ -37,11 +32,6 @@ export class DataService implements OnInit, OnDestroy {
   config: Object = configJson;
 
   httpOptions: Object = {
-    // headers: new HttpHeaders({
-    //   'Content-Type':  'application/json',
-    //   'Access-Control-Allow-Origin':'*'
-    //   // 'Authorization': 'my-auth-token'
-    // }),
     observe: 'response'
   };
 
@@ -73,7 +63,7 @@ export class DataService implements OnInit, OnDestroy {
 
     this.subscriptions.routerEvents = this.router.events.subscribe((val) => {
       if(val instanceof NavigationEnd && Object.keys(this.config).length > 0) {
-        //console.log("DataService: router event NavigationEnd - ", val);
+        
         if(val.url === '/'){
           this.getApiPosts('pages', ['&slug=' + 'home']);
         } else {
@@ -157,11 +147,7 @@ export class DataService implements OnInit, OnDestroy {
         post = this.postsStoreService.posts.items.find(post => post.slug === slug);
       }
     }
-    console.log("postType", postType);
-    console.log("page", page);
-    console.log("post", post);
 
-    // if( (postType === 'pages' && !page) || (postType === 'posts' && !post) || postType === 'menus' || postType === 'testimonials')
     this.getArray(thisUrl).subscribe( response => { 
       //this.overlayService.hideGlobalOverlay();
       let state: Pages | Posts | Menus | Testimonials = {
@@ -182,12 +168,7 @@ export class DataService implements OnInit, OnDestroy {
           }
         }
       } else {
-
-        if(post || page || (response.body && response.body.length)) {
           this.sendToStore(postType, state);
-        } else {
-          console.log("404");
-        }
       }
 
     });

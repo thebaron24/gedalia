@@ -95,6 +95,12 @@ $angular-universal-theme: mat-light-theme(
 	$angular-universal-warn
 );
 
+$angular-universal-theme-dark: mat-dark-theme(
+  $angular-universal-primary,
+  $angular-universal-accent,
+  $angular-universal-warn
+);
+
 $material-icons-codepoints: () !default; /* Sass map of icon names and codepoints */
 $material-icons-font-path: '' !default;
 $material-icons-font-name: 'MaterialIcons-Regular' !default;
@@ -139,32 +145,91 @@ $material-icons-font-family: 'Material Icons' !default;
     url(~material-design-icons/iconfont/MaterialIcons-Regular.ttf) format('truetype');
 }
 
-@mixin mat-toolbar-mixin($theme) {
+@mixin mat-theme-general-mixin($theme) {
   $primary: map-get(
     $map: $theme,
     $key: primary
   );
 
-  .app-toolbar {
-    background-color: mat-color($primary, 500);
-    color: mat-contrast($primary, 500);
-    @include mat-elevation(6);
-    z-index: 2;
+  .app-container {
+    display: flex;
+    flex-direction: column;
 
-    .app-name {
-        margin-left: 8px;
+    .app-toolbar {
+      background-color: mat-color($primary, 500);
+      color: mat-contrast($primary, 500);
+      @include mat-elevation(6);
+      z-index: 2;
 
-        .logo {
-          text-decoration: none;
-          color: inherit;
+      .app-name {
+          margin-left: 8px;
+
+          .logo {
+            text-decoration: none;
+            color: inherit;
+          }
         }
-      }
 
-      .flex-fill-remaining-space {
-        /* This fills the remaining space, by using flexbox. 
-           Every toolbar row uses a flexbox row layout. */
-        flex: 1 1 auto;
+        .flex-fill-remaining-space {
+          /* This fills the remaining space, by using flexbox. 
+             Every toolbar row uses a flexbox row layout. */
+          flex: 1 1 auto;
+        }
+    }
+
+    .sidenav-container {
+      /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+         causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+      flex: 1;
+    }
+
+    .is-mobile {
+      .app-toolbar {
+        position: fixed;
+        /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+        z-index: 2;
       }
+      .sidenav-container {
+        /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+           `<body>` to be our scrolling element for mobile layouts. */
+        flex: 1 0 auto;
+      }
+    }
+
+    .accent-card {
+      @include app-component-accent();
+    }
+
+    .primary-card {
+      @include app-component-primary();
+    }
+
+    .responsive-images img {
+        max-width: 100%;
+        height:auto;
+    }
+
+    .container-content {
+      max-width: 1200px;
+      padding:10px;
+      margin: 0 auto;
+    }
+
+    .jumbotron {
+      // Use mat-color to extract individual colors a palette.
+      @include app-component-accent();
+      @include app-component-gradient();
+      position: relative;
+      width:100%;
+      min-height: 30vh;
+      text-align: center;
+      padding-bottom: 30px;
+
+      button {
+        min-width: 150px;
+        margin: 10px;
+      }
+    }
   }
 }
 

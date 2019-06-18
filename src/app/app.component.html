@@ -15,6 +15,8 @@
         <a href="https://www.instagram.com/gedaliahealingarts/" target="_blank" mat-menu-item><mat-icon>message</mat-icon> Instagram</a>
         <a href="https://www.pinterest.com/gedaliahdoc/" target="_blank" mat-menu-item><mat-icon>message</mat-icon> Pinterest</a>
         <a href="https://www.linkedin.com/in/gedalia-genin-phd-79280361/" target="_blank" mat-menu-item><mat-icon>message</mat-icon> Linkedin</a>
+        <button mat-menu-item (click)="pickColor('angular-universal-theme-dark')"><mat-icon>format_color_fill</mat-icon> Dark Theme</button>
+        <button mat-menu-item (click)="pickColor('angular-universal-theme')"><mat-icon>format_color_fill</mat-icon> Light Theme</button>
       </mat-menu>
     </span>
   </mat-toolbar>
@@ -24,7 +26,7 @@
       <app-side-menu></app-side-menu>
     </mat-sidenav>
     <mat-sidenav-content>
-		  <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
       <app-footer></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>

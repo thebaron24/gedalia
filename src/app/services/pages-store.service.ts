@@ -40,7 +40,6 @@ export class PagesStoreService {
   // and down to all of its subsribers (ex: this.pages = [])
   set pages(val: Pages) {
     this._pages.next(val);
-    console.log("Pages: ", val);
   }
 
   addPage(page: object, total: number) {
