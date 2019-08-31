@@ -217,8 +217,8 @@ $material-icons-font-family: 'Material Icons' !default;
 
     .jumbotron {
       // Use mat-color to extract individual colors a palette.
-      @include app-component-accent();
-      @include app-component-gradient();
+      // @include app-component-accent();
+      // @include app-component-gradient();
       position: relative;
       width:100%;
       min-height: 30vh;
