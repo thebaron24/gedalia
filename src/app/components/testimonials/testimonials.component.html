@@ -3,10 +3,22 @@
 	testimonials: testimonialsStoreService.testimonials$ | async
 	} as data; else elseBlock">
 
-	<div class="container-content" *ngFor="let item of data.pages.items | postFilter:'testimonials'">
-		<!-- <div [innerHTML]="item.content.rendered"></div> -->
-		<mat-card [innerHTML]="item.content.rendered | safeHtml"></mat-card>
-	</div>
+	<section>
+		<div class="container-content" *ngFor="let item of data.pages.items | postFilter:'testimonials'">
+			<!-- <div [innerHTML]="item.content.rendered"></div> -->
+			<mat-card *ngIf="item.content.rendered" [innerHTML]="item.content.rendered | safeHtml"></mat-card>
+		</div>
+		<div class="container-content">
+			<mat-card>
+				<mat-card-title fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center">
+					<span fxFlex="0 1 100%">Add your own testimonial about your experince with Gedalia</span>
+					<span>
+						<a mat-flat-button rel="nofollow" href="http://blog.gedaliahealingarts.com/testimonials/" target="_blank" color="accent">Add a Testimonial</a>
+					</span>
+				</mat-card-title>
+		</mat-card>
+		</div>
+	</section>
 
 	<section class="container-content">
 		<div
