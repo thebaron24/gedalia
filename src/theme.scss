@@ -1,5 +1,4 @@
 @import '~@angular/material/theming';
-@include mat-core();
 @import '~material-design-icons/iconfont/material-icons.css';
 
 $md-yellow: (
@@ -69,7 +68,7 @@ $md-blue: (
 );
 
 $custom-typography: mat-typography-config(
-    $font-family:   'Raleway, sans-serif',
+    $font-family:   '"Montserrat", sans-serif', //'Manrope, sans-serif' 'Raleway, sans-serif' 'Roboto, sans-serif'; //'Montserrat, sans-serif'
     $display-4:     mat-typography-level(112px, 112px, 300),
     $display-3:     mat-typography-level(56px, 56px, 400),
     $display-2:     mat-typography-level(45px, 48px, 400),
@@ -78,8 +77,8 @@ $custom-typography: mat-typography-config(
     $title:         mat-typography-level(20px, 32px, 500),
     $subheading-2:  mat-typography-level(18px, 28px, 400),
     $subheading-1:  mat-typography-level(18px, 24px, 400),
-    $body-2:        mat-typography-level(18px, 24px, 500),
-    $body-1:        mat-typography-level(18px, 20px, 400),
+    $body-2:        mat-typography-level(18px, 36px, 500),
+    $body-1:        mat-typography-level(18px, 34px, 400),
     $caption:       mat-typography-level(18px, 20px, 400),
     $button:        mat-typography-level(18px, 16px, 500),
     $input:         mat-typography-level(inherit, 1.125, 400)
@@ -151,6 +150,14 @@ $material-icons-font-family: 'Material Icons' !default;
     $key: primary
   );
 
+  .mat-body, .mat-body-1, .mat-typography {
+    @include mat-typography-level-to-styles($custom-typography, body-1);
+
+    p {
+      margin: 0 0 34px;
+    }
+  }
+
   .app-container {
     display: flex;
     flex-direction: column;
@@ -216,9 +223,6 @@ $material-icons-font-family: 'Material Icons' !default;
     }
 
     .jumbotron {
-      // Use mat-color to extract individual colors a palette.
-      // @include app-component-accent();
-      // @include app-component-gradient();
       position: relative;
       width:100%;
       min-height: 30vh;
@@ -255,49 +259,4 @@ $material-icons-font-family: 'Material Icons' !default;
   background: mat-color($primary, default);
   color: mat-color($primary, default-contrast);
   @content;
-}
-
-@mixin app-component-gradient($theme: $angular-universal-theme, $primary: map-get($angular-universal-theme, primary), $accent: map-get($angular-universal-theme, accent), $warn: map-get($angular-universal-theme, warn),  $background: map-get($angular-universal-theme, background),  $foreground: map-get($angular-universal-theme, foreground)) {
-  background: linear-gradient(-45deg, mat-color($accent, 50), mat-color($accent, 900), mat-color($primary, 50), mat-color($primary, 900));
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
-  @content;
-}
-
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
 }
