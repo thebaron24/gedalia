@@ -73,7 +73,7 @@ $custom-typography: mat-typography-config(
     $display-3:     mat-typography-level(56px, 56px, 400),
     $display-2:     mat-typography-level(45px, 48px, 400),
     $display-1:     mat-typography-level(34px, 40px, 400),
-    $headline:      mat-typography-level(24px, 32px, 400),
+    $headline:      mat-typography-level(36px, 32px, 400),
     $title:         mat-typography-level(20px, 32px, 500),
     $subheading-2:  mat-typography-level(18px, 28px, 400),
     $subheading-1:  mat-typography-level(18px, 24px, 400),
@@ -149,6 +149,11 @@ $material-icons-font-family: 'Material Icons' !default;
     $map: $theme,
     $key: primary
   );
+
+  .mat-card-header-text {
+    margin: 0;
+    width: 100%;
+  }
 
   .mat-body, .mat-body-1, .mat-typography {
     @include mat-typography-level-to-styles($custom-typography, body-1);
