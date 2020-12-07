@@ -1,6 +1,6 @@
 {
   "name": "gedalia",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "scripts": {
     "ng": "ng",
     "start": "npm run serve:ssr",
