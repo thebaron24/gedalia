@@ -91,6 +91,14 @@ export class DataService implements OnInit, OnDestroy {
 
   sendToStore(postType: string, state: Pages | Posts | Menus | Testimonials) {
 
+    if (window) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+
     if(postType === 'pages') {
       this.pagesStoreService.addPages(state.items, state.total);
     } else if (postType === 'posts') {
@@ -153,6 +161,7 @@ export class DataService implements OnInit, OnDestroy {
       let state: Pages | Posts | Menus | Testimonials = {
         total: slug ? 0 : Number(response.headers.get('X-WP-Total')),
         loaded: 0,
+        slug: slug,
         items: response.body
       }
 

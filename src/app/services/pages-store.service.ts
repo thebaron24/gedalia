@@ -19,6 +19,7 @@ export class PagesStoreService {
   private readonly _pages = new BehaviorSubject<Pages>({
     total: 0,
     loaded: 0,
+    slug: '',
     items: []
   });
 

@@ -19,6 +19,7 @@ export class PostsStoreService {
   private readonly _posts = new BehaviorSubject<Posts>({
     total: 0,
     loaded: 0,
+    slug: '',
     items: []
   });
 

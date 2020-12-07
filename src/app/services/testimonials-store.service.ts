@@ -19,6 +19,7 @@ export class TestimonialsStoreService {
   private readonly _testimonials = new BehaviorSubject<Testimonials>({
     total: 0,
     loaded: 0,
+    slug: '',
     items: []
   });
 

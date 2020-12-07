@@ -19,6 +19,7 @@ export class MenusStoreService {
   private readonly _menus = new BehaviorSubject<Menus>({
     total: 0,
     loaded: 0,
+    slug: '',
     items: []
   });
 
