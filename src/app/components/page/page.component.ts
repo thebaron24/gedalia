@@ -11,17 +11,13 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.scss']
 })
-export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
+export class PageComponent implements OnDestroy {
 
   subscriptions: any = {};
 
   constructor(public dataService: DataService, private router: Router, public pagesStoreService: PagesStoreService,
               public postsStoreService: PostsStoreService
     ) {}
-
-  ngOnInit(): void {}
-
-  ngAfterViewInit(): void {}
 
   ngOnDestroy(): void {
     Object.keys(this.subscriptions).forEach(key => this.subscriptions[key].unsubscribe());
@@ -31,9 +27,11 @@ export class PageComponent implements OnInit, AfterViewInit, OnDestroy {
     return this.router.url.replace('/', '');
   }
 
-  getImage(item: Object){
-    let srcUrl = ""
-    if(item && item['_embedded'] && item['_embedded']['wp:featuredmedia'] && item['_embedded']['wp:featuredmedia'].length && item['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url']){
+  getImage(item: Object): string {
+    let srcUrl = '';;
+
+    // tslint:disable-next-line:max-line-length
+    if (item && item['_embedded'] && item['_embedded']['wp:featuredmedia'] && item['_embedded']['wp:featuredmedia'].length && item['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium_large']['source_url']){
       srcUrl = item['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['full']['source_url'];
     }
     return srcUrl;
